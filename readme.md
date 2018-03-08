@@ -1,10 +1,10 @@
 # Group Member Information
 
-Student ID______________Name<br />
-s3536515________________Jianning Pan<br />
-s3620042________________Mun Whye Chen<br />
-s3448694________________Fuad Muhammad<br />
-s3544333________________Mai-Doua Moua<br />
+Student ID&nbsp;&nbsp;&nbsp;Name<br />
+s3536515&nbsp;&nbsp;&nbsp;Jianning Pan<br />
+s3620042&nbsp;&nbsp;&nbsp;Mun Whye Chen<br />
+s3448694&nbsp;&nbsp;&nbsp;Fuad Muhammad<br />
+s3544333&nbsp;&nbsp;&nbsp;Mai-Doua Moua<br />
 
 # Laravel PHP Framework
 
