@@ -10,13 +10,16 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-/*
+
 Route::get('/', function () {
     return view('welcome');
 });
-*/
-Route::get('/', function(){
+
+Route::get('/index', function(){
 	return view('index');
 });
 
-Route::get('/login', 'LoginController@show');
+//Route::get('/login', 'LoginController@show');
+Route::auth();
+
+Route::get('/home', 'HomeController@index');
