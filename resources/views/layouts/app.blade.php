@@ -15,9 +15,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
 
+    <!-- import our own css -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/main.css') }}" />
+
     <style>
         body {
             font-family: 'Lato';
+
         }
 
         .fa-btn {
@@ -27,11 +31,19 @@
             background-color: #19181A !important;
             color:#fff !important;
         }
-        
+        .home_nav{
+            background-color: #C96567 !important;
+        }
+
+        a{
+            text-decoration: none !important;
+            color: #19181A !important;
+        }
+
     </style>
 </head>
 <body id="app-layout">
-    <nav class="navbar navbar-default navbar-staus-top">
+    <nav class="navbar navbar-default navbar-staus-top home_nav">
         <div class="container">
             <div class="navbar-header">
 
