@@ -55,7 +55,7 @@ return [
     |
     */
 
-    'from' => ['address' => null, 'name' => null],
+    'from' => ['address' => 's3536515@student.rmit.edu.au', 'name' => 'John'],
 
     /*
     |--------------------------------------------------------------------------

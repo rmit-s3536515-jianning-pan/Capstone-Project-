@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use Illuminate\Http\Request;
-
+use App\Category; // getting the data 
 class HomeController extends Controller
 {
     /**
@@ -25,5 +25,11 @@ class HomeController extends Controller
     public function index()
     {
         return view('home');
+    }
+
+    public function welcome(){
+        $categories = Category::all();
+
+        return view('welcome',['categories' =>$categories]);
     }
 }
