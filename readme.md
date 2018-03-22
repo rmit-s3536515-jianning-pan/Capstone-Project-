@@ -5,11 +5,7 @@ s3536515&nbsp;&nbsp;&nbsp;Jianning Pan<br />
 s3620042&nbsp;&nbsp;&nbsp;Mun Whye Chen<br />
 s3448694&nbsp;&nbsp;&nbsp;Fuad Muhammad<br />
 s3544333&nbsp;&nbsp;&nbsp;Mai-Doua Moua<br />
-<<<<<<< HEAD
 11
-=======
-123
->>>>>>> master
 # Laravel PHP Framework
 
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)

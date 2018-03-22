@@ -1,59 +1,45 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Laravel</title>
 
-@section('content')
+        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
 
-    <div class="jumbotron text-center welcome_header">
-            <h1>Encounter</h1>
-    </div> 
+        <style>
+            html, body {
+                height: 100%;
+            }
 
-    <!--Explore by catory-->
-    <div class="container">
-        <h3>Explore By Catory</h3>
-        <div class="row">
-            @foreach($categories as $category)
-            <div class="col-md-4 col-sm-12">
-                <div class="thumbnail thumnail-border">
-        <a href="#">
-            <div class="jumbotron wel_pic"></div>
-         <!--  <img src="{{ url('/images/bird.png') }}" class="img-circle" alt="Nature" style="width:100%"> -->
-          <div class="caption text-center">
-            <p>{{ $category->cat_name}}</p>
-          </div>
-        </a>
-      </div>
-                <!-- <div class="card">
-                   <a href=""><img class="card-img-top" src="{{ url('/images/bird.png') }}" alt="Card image cap"></a>
-                    <div class="card-body text-center">
-                         <h3 class="card-title">{{ $category->cat_name}}</h3>
-                    </div>
-                </div> -->
+            body {
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                display: table;
+                font-weight: 100;
+                font-family: 'Lato';
+            }
+
+            .container {
+                text-align: center;
+                display: table-cell;
+                vertical-align: middle;
+            }
+
+            .content {
+                text-align: center;
+                display: inline-block;
+            }
+
+            .title {
+                font-size: 96px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="content">
+                <div class="title">Laravel 5</div>
             </div>
-            @endforeach
-           
         </div>
-    </div>
-
-    <!--Content-->
-    <div class="container-fluid minfooter">
-        <div class="row">
-            <div class="col-md-4 col-md-offset-3">
-                
-                <ul class="nav flex-column">
-                     @if (Auth::guest())
-                    <li class="nav-item"><h2>Your Account</h2>
-                    </li>
-                    <li class="nav-item">
-                        <h4><a class="nav-link" href="{{ url('/login') }}">Login</a></h4></li>
-                    <li class="nav-item">
-                        <h4><a class="nav-link" href="{{ url('/register') }}">Register</a></h4></li>
-                    @else
-                    <li class="nav-item"><h2>HELP</h2></li>
-                    @endif
-                </ul>
-            </div>
-            <div class="col-md-4 col-md-offset-1">
-                <h2>Discover</h2>
-            </div>
-    </div>
-</div>
-@endsection
+    </body>
+</html>
