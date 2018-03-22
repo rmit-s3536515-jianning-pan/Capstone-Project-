@@ -1,0 +1,32 @@
+/*
+    Welcome Page
+*/
+   .welcome_header{
+        background-color: #9E5A63 !important;
+        margin-top:-25px !important;
+   }
+
+   .welcome_header h1{
+        color:rgba(0,0,0,0.7) !important;
+   }
+
+   /*.card-img-top {
+        width: 100% !important;
+    }*/
+
+    .minfooter{
+        background-color: #314455 !important;
+        color: white !important;
+    }
+
+    .thumnail-border{
+        border:0 !important;
+    }
+
+    .wel_pic{
+      background-color: #97AABD !important;
+    }
+
+
+
+/*  */

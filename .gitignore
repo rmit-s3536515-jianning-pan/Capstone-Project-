@@ -6,4 +6,5 @@ Homestead.json
 /database/factories
 /database/seeds
 /database/database.php
+/public/images
 
