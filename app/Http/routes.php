@@ -21,6 +21,9 @@ Route::get('/', 'HomeController@welcome');
 Route::get('/index', function(){
 	return view('index');
 });
+Route::post('/register/step2','Auth\AuthController@store'); 
+Route::get('/register/step2','Auth\AuthController@step2')->name('step2');
+Route::post('/step2','Auth\AuthController@store2')->name('poststep2');
 
 //Route::get('/login', 'LoginController@show');
 Route::auth();
