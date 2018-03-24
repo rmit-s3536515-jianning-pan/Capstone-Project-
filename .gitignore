@@ -7,4 +7,4 @@ Homestead.json
 /database/seeds
 /database/database.php
 /public/images
-
+.env
