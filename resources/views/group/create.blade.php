@@ -21,7 +21,7 @@
        			 	</div>
 
 						@foreach($cates as $cate)
-				<div class="form-group col-md-3" >
+				<div class="form-group col-md-3 group_cate" >
             		<input type="checkbox" name="{{ $cate->cat_name}}" id="{{ $cate->cat_name}}" autocomplete="off" />
             		<div class="btn-group">
                			 <label for="{{ $cate->cat_name}}" class="btn btn-default">
