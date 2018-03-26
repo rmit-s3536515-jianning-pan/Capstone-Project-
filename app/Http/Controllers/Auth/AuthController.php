@@ -100,7 +100,9 @@ class AuthController extends Controller
     }
 
     public function store2(Request $request){
+
         $inputs = $request['cates'];
+        //return dd($inputs);
         //dd($inputs);
         $user = User::create([
             'name' =>session('name'),
