@@ -6,21 +6,27 @@
 	</div>
 	<div class="container">
 		<div class="row">
-			<!-- <div class="col-md-8 col-md-offset-2"> -->
+			<div class="col-md-8 col-md-offset-2">
 
 		<form role="form" method="POST" action="{{ route('poststep2') }}">
 			 {{ csrf_field() }}
-			<div class="form-row">
-			@foreach($categories as $cat)
-				<div class="form-group col-md-4" style="border:1px solid yellow">
-					<div class="checkbox checkbox-success">
-						<label class="form-check-label" for="{{ $cat->id }}">
-						<input class="form-check-input" type="checkbox" name="cates[]" 
-						id="{{ $cat->id }}" value="{{ $cat->id }}">{{ $cat->cat_name }}</label>
-					</div>
+			
+			@foreach($categories as $cate)
+				<div class="form-group col-md-4">
+					<input type="checkbox" name="cates[]" id="{{ $cate->id}}" autocomplete="off" value="{{ $cate->id}}" />
+            		<div class="btn-group">
+               			 <label  class="btn btn-default">
+                    		<span class="glyphicon glyphicon-ok"></span>
+                   			 <span> </span>
+                		</label>
+               		 <label for="{{ $cate->id}}" class="btn btn-default active">
+                    	{{ $cate->cat_name}}
+               		 </label>
+          		  </div>
+          		  
 				</div>
 			@endforeach
-			</div>
+			
 			 <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
@@ -31,7 +37,7 @@
         
 		</form>
 
-		<!-- </div> -->
+		</div>
 	</div>
 	</div>
 	<!-- @if (session('name'))
