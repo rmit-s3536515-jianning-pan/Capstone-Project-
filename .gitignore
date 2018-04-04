@@ -6,5 +6,7 @@ Homestead.json
 /database/factories
 /database/seeds
 /database/database.php
+/database/capstone.db
 /public/images
-
+.env
+config/database.php
