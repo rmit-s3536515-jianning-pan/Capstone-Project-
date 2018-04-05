@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use App\Category; // getting the data 
+use App\Events;
+
 class HomeController extends Controller
 {
     /**
@@ -29,7 +31,7 @@ class HomeController extends Controller
 
     public function welcome(){
         $categories = Category::all();
-
-        return view('welcome',['categories' =>$categories]);
+        $events = Events::all();
+        return view('welcome',['categories' =>$categories,'event'=>$events]);
     }
 }
