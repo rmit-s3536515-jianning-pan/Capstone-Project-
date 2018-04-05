@@ -10,7 +10,7 @@ class EventController extends Controller
 {
     // get method
     public function create(){
-    	return view('event.create');
+    	return view('Event.create');
     }
 
     // called by post method for creating event
