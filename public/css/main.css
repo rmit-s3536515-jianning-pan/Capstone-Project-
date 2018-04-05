@@ -3,7 +3,7 @@
 */
    .welcome_header{
         background-color: #9E5A63 !important;
-        margin-top:-25px !important;
+        margin-top:-20px !important;
    }
 
    .welcome_header h1{
@@ -29,4 +29,51 @@
 
 
 
-/*  */
+/* Create Group */
+
+.form-group input[type="checkbox"] {
+    display: none;
+}
+
+.form-group input[type="checkbox"] + .btn-group > label span {
+    width: 20px;
+}
+
+.form-group input[type="checkbox"] + .btn-group > label span:first-child {
+    display: none;
+}
+.form-group input[type="checkbox"] + .btn-group > label span:last-child {
+    display: inline-block;   
+}
+
+.form-group input[type="checkbox"]:checked + .btn-group > label span:first-child {
+    display: inline-block;
+}
+.form-group input[type="checkbox"]:checked + .btn-group > label span:last-child {
+    display: none;   
+}
+
+.marginbottom{
+  margin-bottom: 20px !important;
+}
+
+.resizeable{
+  resize: none !important;
+}
+
+/* event create */
+.event{
+  margin-right: 20px;
+}
+
+.event:nth-child(2n+1){
+    margin-right: :0px;
+}
+
+.card{
+    max-width: 100%;
+}
+
+.event .card-text{
+    word-wrap: break-word;
+}

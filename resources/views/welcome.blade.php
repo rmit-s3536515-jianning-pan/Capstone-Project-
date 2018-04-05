@@ -5,7 +5,29 @@
     <div class="jumbotron text-center welcome_header">
             <h1>Encounter</h1>
     </div> 
+    @if (count($event)>0)
+    <div class="container">
+            <h3>Current Events</h3>
 
+        <div class="row">
+            <!-- <div class="card-deck"> -->
+            @foreach ($event as $e)
+            <a href="#">
+            <div class="marginbottom card py-2 col-md-4 bg-primary"> 
+                <div class="card-body h-100">
+                    <h4 class="card-title text-center">{{ $e->title }}</h4>
+                    <hr>
+                    <p class="card-text">
+                        {{ $e->description }}
+                    </p>
+                </div>
+            </div>
+        </a>
+            @endforeach  
+            <!-- </div>  -->
+        </div>
+    </div>
+    @endif
     <!--Explore by catory-->
     <div class="container">
         <h3>Explore By Catory</h3>
