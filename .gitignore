@@ -10,3 +10,4 @@ Homestead.json
 /public/images
 .env
 config/database.php
+resources/views/layouts/app.blade.php
