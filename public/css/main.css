@@ -61,3 +61,19 @@
   resize: none !important;
 }
 
+/* event create */
+.event{
+  margin-right: 20px;
+}
+
+.event:nth-child(2n+1){
+    margin-right: :0px;
+}
+
+.card{
+    max-width: 100%;
+}
+
+.event .card-text{
+    word-wrap: break-word;
+}
