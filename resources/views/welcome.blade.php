@@ -165,23 +165,27 @@
     <div class="container">
             <h3>Recommanded Events</h3>
 
+        @foreach (array_chunk($event,3) as $e)
         <div class="row">
-            <!-- <div class="card-deck"> -->
-            @foreach ($event as $e)
-            <a href="#">
-            <div class="marginbottom card col-md-4 text-center"> 
-                <div class="card-body bg-primary">
-                    <h4 class="card-title text-center">{{ $e->title }}</h4>
-                    <hr>
-                    <p class="card-text">
-                        {{ $e->description }}
-                    </p>
+
+            @foreach($e as $add)
+            <div class="col-md-4 marginbottom">
+                <div class="panel panel-primary text-center">
+                    <div class="panel-heading">
+                        <h3>{{ $add["title"] }}</h3>
+                    </div>
+                    <div class="panel-body">
+                        <p>{{  $add["description"] }}</p>
+                        <div>{{ $add["start_date"] }}</div>
+                        <div>{{ $add["start_time"] }}</div>
+                    </div>
                 </div>
             </div>
-        </a>
-            @endforeach  
-            <!-- </div>  -->
+            @endforeach
+           
+            
         </div>
+        @endforeach  
     </div>
     @endif
     <!--Explore by catory-->
@@ -236,6 +240,11 @@
 </div>
 
 
+<script type="text/javascript">
+    $(function(){
+        $('.panel').matchHeight();
+    });
+</script>
 
 <script type="text/javascript">
     
