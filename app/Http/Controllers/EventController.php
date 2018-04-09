@@ -56,7 +56,9 @@ class EventController extends Controller
     public function show(){
         $records = Events::findRequested();
 
-        
+        $records = $records->toArray();
+        $records = $records["data"];
+        // dd($records);
         return view('Event.show',['records' =>$records] );
     }
 

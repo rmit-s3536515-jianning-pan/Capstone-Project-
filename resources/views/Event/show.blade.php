@@ -4,23 +4,33 @@
 	
 	<div class="container">
 		<h2>Events</h2>
-		<div class="row">
-			@foreach($records as $record)
-				<div class="panel panel-default text-center">
+		
+			@foreach(array_chunk($records,3) as $record)
+			<div class="row">
+				@foreach($record as $add)
+				<div class="col-md-4 marginbottom">
+				<div class="panel panel-primary text-center">
 					<div class="panel-heading">
-						<h3>{{ $record->title }}</h3>
+						<h3>{{ $add["title"] }}</h3>
 					</div>
 					<div class="panel-body">
-						<p>{{ $record->description}}</p>
+						<p>{{ $add["description"] }}</p>
 					</div>
 					<div class="panel-footer">
-						<span>Max Attendee: {{ $record->max_attend }}</span>
+						<span>Max Attendee: {{ $add["max_attend"] }}</span>
 					</div>
 				</div>
-
+			</div>
+				@endforeach
+			</div>
 			@endforeach
-		</div>
+		
 		
 	</div>
 
+	<script type="text/javascript">
+		$(function(){
+			$('.panel').matchHeight();
+		});
+	</script>
 @endsection
