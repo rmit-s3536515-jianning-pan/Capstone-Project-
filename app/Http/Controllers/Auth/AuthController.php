@@ -54,9 +54,11 @@ class AuthController extends Controller
         return Validator::make($data, [
             'name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
-            'password' => 'required|min:6|confirmed',
+            'password' => 'required|min:6|confirmed|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$/'
         ]);
     }
+
+
 
     /**
      * Create a new user instance after a valid registration.
@@ -77,7 +79,7 @@ class AuthController extends Controller
             $validator = $this->validate($request,[
                 'name' => 'required|max:255',
                 'email' => 'required|email|max:255|unique:users',
-                'password' => 'required|min:6|confirmed',
+                'password' => 'required|min:6|confirmed|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$/'
             ]);
 
           

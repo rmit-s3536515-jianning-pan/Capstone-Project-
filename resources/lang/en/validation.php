@@ -92,10 +92,14 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
+        /*'attribute-name' => [
             'rule-name' => 'custom-message',
+        ],*/
+        'password' => [
+            'regex' =>'Password must contain at least one number and both uppercase and lowercase letters.',
         ],
     ],
+
 
     /*
     |--------------------------------------------------------------------------
