@@ -41,13 +41,17 @@ class Events extends Model
     	$query = Events::query();
     	
     	//search results based on user input without case sensitive
+    	$cates = \Request::input('categories');
+    	if($cates!=null){
+    		
+    	}
     	$query->where(function($q){
-    		$q->where('title','ilike','%'.\Request::input('keywords').'%')
-    				->orWhere('description','ilike','%'.\Request::input('keywords').'%');
-    	});
+	    		$q->where('title','ilike','%'.\Request::input('keywords').'%')
+	    				->orWhere('description','ilike','%'.\Request::input('keywords').'%');
+    		});
     
     	
-    	$cates = \Request::input('categories');
+    	
 
     	return $query->paginate(5);
     }
