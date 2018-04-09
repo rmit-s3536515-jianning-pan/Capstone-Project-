@@ -7,9 +7,9 @@
 
     <title>Encounter</title>
 
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
-
     <script src="{{ asset('js/jquery-3.3.1.min.js')}}"></script>
+    <!-- external javascript for matching height -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.0/jquery.matchHeight-min.js"></script>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css')}}">
     <script src="{{ asset('js/bootstrap.min.js')}}"></script>
     <!-- Fonts -->

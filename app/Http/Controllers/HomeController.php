@@ -32,9 +32,12 @@ class HomeController extends Controller
     /* home page*/
     public function welcome(){
         $categories = Category::all();
-        $events = Events::all();
+        // $events = Events::all();
         $relatedEvents = Events::findInterestedCategory();
-        
+        $relatedEvents = $relatedEvents->toArray();
+        // print_r($relatedEvents["title"]);
+        // print_r($relatedEvents['0']["title"]);
+
         return view('welcome',['categories' =>$categories,'event'=>$relatedEvents]);
     }
 }
