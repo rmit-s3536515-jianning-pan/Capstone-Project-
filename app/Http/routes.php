@@ -27,6 +27,7 @@ Route::post('/step2','Auth\AuthController@store2')->name('poststep2');
 
 Route::get('/event/create','EventController@create');
 Route::post('/event/create','EventController@store');
+Route::get('/event/showall','EventController@show');
 
 Route::get('/createGroup','GroupController@create')->name('creategroup');
 //Route::get('/login', 'LoginController@show');

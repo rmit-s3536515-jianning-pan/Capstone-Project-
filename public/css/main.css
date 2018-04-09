@@ -2,8 +2,9 @@
     Welcome Page
 */
    .welcome_header{
-        background-color: #9E5A63 !important;
+        /*background-color: #9E5A63 !important;*/
         margin-top:-20px !important;
+        /*margin-bottom: 0 !important;*/
    }
 
    .welcome_header h1{
@@ -25,6 +26,47 @@
 
     .wel_pic{
       background-color: #97AABD !important;
+    }
+
+    .carousel-inner > .item > img {
+      width:100%;
+      height:600px;
+    }
+
+    .marginbottom.card .card-body{
+      transition: box-shadow 0.5s;
+    }
+
+    .marginbottom.card .card-body:hover{
+        box-shadow: 5px 0px 40px rgba(0,0,0,0.8);
+    }
+
+    .search{
+      padding-top:50px;
+      padding-bottom: 50px;
+    }
+
+    .item{
+      margin: 10px auto;
+    }
+
+    .item a input{
+        margin-right: 20px;
+        transform: scale(1.5,1.5);
+    }
+
+    .search .row .input-group, .search .row .btn-group{
+      width:100%;
+    }
+
+     .search .row .btn-group .btn,{
+      width:100%;
+    }
+     .search .row .btn-group .btn.dropdown-toggle{
+      width:100%;
+    }
+     .search .row .btn-group .dropdown-menu{
+      width:100%;
     }
 
 
@@ -74,6 +116,9 @@
     max-width: 100%;
 }
 
-.event .card-text{
+.card-text{
     word-wrap: break-word;
+    /*text-overflow: ellipsis;*/
 }
+
+

@@ -6,11 +6,16 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Events;
+use App\Category;
+use App\events_categories;
 class EventController extends Controller
 {
+
     // get method
     public function create(){
-    	return view('Event.create');
+
+        $categories = Category::all();
+    	return view('Event.create',['categories'=>$categories]);
     }
 
     // called by post method for creating event
@@ -21,15 +26,27 @@ class EventController extends Controller
     		$max = $request->input('max');
     		$startdate = $request->input('event_date');
     		$starttime = $request->input('event_time');
+            $cates = $request->input('cates');
 
-    		$event = new Events();
+            $event = new Events();
 
-    		$event->title = $name;
-    		$event->description = $desc;
-    		$event->max_attend = $max;
-    		$event->start_time = $starttime;
-    		$event->start_date = $startdate;
-    		$event->save();
+            $event->title = $name;
+            $event->description = $desc;
+            $event->max_attend = $max;
+            $event->start_time = $starttime;
+            $event->start_date = $startdate;
+            $event->save();
+
+            $event_id = Events::query()->where('title',$name)->first()->id;
+
+            
+            foreach($cates as $cate){
+                $events_cate = new events_categories;
+                 $events_cate->event_id = $event_id;
+                $events_cate->category_id = $cate;
+                $events_cate->save();
+            }
+    		
 
     		return redirect('/');
     		// echo $name.$max;
@@ -37,7 +54,10 @@ class EventController extends Controller
 
     // show event 
     public function show(){
+        $records = Events::findRequested();
 
+        
+        return view('Event.show',['records' =>$records] );
     }
 
 

@@ -7,12 +7,17 @@
 
     <title>Encounter</title>
 
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+
+    <script src="{{ asset('js/jquery-3.3.1.min.js')}}"></script>
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css')}}">
+    <script src="{{ asset('js/bootstrap.min.js')}}"></script>
     <!-- Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"> -->
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
 
     
@@ -35,7 +40,8 @@
             color:#fff !important;
         }
         .home_nav{
-            background-color: #C96567 !important;
+            background:rgba(201,101,103,0.85) !important;
+            /*background-color: #C96567 !important;*/
         }
 
         a{
@@ -46,11 +52,17 @@
         .br{
             border-right:1px solid black !important;
         }
+        .navbar{
+            border: 0;
+        }
 
+        .navbar-nav li a:hover, .navbar-nav li.active a{
+            background-color: #fff !important;
+        }
     </style>
 </head>
 <body id="app-layout">
-    <nav class="navbar navbar-default navbar-fixed-top home_nav">
+    <nav class="navbar t navbar-default navbar-fixed-top home_nav">
         <div class="container">
             <div class="navbar-header">
 
@@ -106,9 +118,11 @@
     @yield('content')
 
     <!-- JavaScripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
+   <!--  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-    <script
+ -->
+
+    <!-- <script
   src="https://code.jquery.com/jquery-2.2.4.js"
   integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
   crossorigin="anonymous"></script>
@@ -116,7 +130,7 @@
   <script
   src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
   integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
-  crossorigin="anonymous"></script>
+  crossorigin="anonymous"></script> -->
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
     
     <div class="container-fluid text-center footer">
