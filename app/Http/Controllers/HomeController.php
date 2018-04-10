@@ -34,7 +34,10 @@ class HomeController extends Controller
         $categories = Category::all();
         // $events = Events::all();
         $relatedEvents = Events::findInterestedCategory();
+        
         $relatedEvents = $relatedEvents->toArray();
+        $relatedEvents = $relatedEvents['data'];
+        // dd($relatedEvents);
         // print_r($relatedEvents["title"]);
         // print_r($relatedEvents['0']["title"]);
 
