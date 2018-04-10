@@ -68,7 +68,7 @@
 
                         <ul class="dropdown-menu">
                             @foreach ($categories as $cate)
-                                <li class="item"><a href="#" data-value="{{ $cate->cat_name }}" tabIndex="-1"><input type="checkbox" name="categories[]" value="{{ $cate->cat_name}}"><span>{{ $cate->cat_name}}</span></a></li>
+                                <li class="item"><a href="#" data-value="{{ $cate->cat_name }}" tabIndex="-1"><input type="checkbox" name="categories[]" value="{{ $cate->id}}"><span>{{ $cate->cat_name}}</span></a></li>
                             @endforeach
                         </ul>
                     </div>
