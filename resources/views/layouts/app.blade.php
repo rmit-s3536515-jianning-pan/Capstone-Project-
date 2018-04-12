@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
 
-    
+
 
   <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
     <!-- import our own css -->
@@ -24,7 +24,7 @@
     <style>
         body {
             font-family: 'Lato';
-            padding-top: 70px; 
+            padding-top: 70px;
         }
 
         .fa-btn {
@@ -42,7 +42,7 @@
             text-decoration: none !important;
             color: #19181A !important;
         }
-       
+
         .br{
             border-right:1px solid black !important;
         }
@@ -79,7 +79,7 @@
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->
-                    
+
                     @if (Auth::guest())
 
                         <li><a href="{{ url('/login') }}">Login</a></li>
@@ -87,13 +87,14 @@
                     @else
                           <li ><a class="br" href="{{ url('/event/create') }}">Create a Event</a></li>
                          <li ><a class="br" href="{{ route('creategroup')}}">Create a Group</a></li>
-                       
+
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                 {{ Auth::user()->name }} <span class="caret"></span>
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
+                                <li><a href="{{ url('/profile') }}"><i class="glyphicon glyphicon-user one"></i> Profile</a></li>
                                 <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
                             </ul>
                         </li>
@@ -118,15 +119,15 @@
   integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
   crossorigin="anonymous"></script>
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
-    
+
     <div class="container-fluid text-center footer">
             <div class="row">
                 <div class="col-md-12">
-                     <p>@2018 COPYRIGHT ENCOUNTER</p> 
+                     <p>@2018 COPYRIGHT ENCOUNTER</p>
                 </div>
             </div>
     </div>
 
-    
+
 </body>
 </html>

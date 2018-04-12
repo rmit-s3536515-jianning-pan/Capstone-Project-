@@ -21,7 +21,7 @@ Route::get('/', 'HomeController@welcome');
 Route::get('/index', function(){
 	return view('index');
 });
-Route::post('/register/step2','Auth\AuthController@store'); 
+Route::post('/register/step2','Auth\AuthController@store');
 Route::get('/register/step2','Auth\AuthController@step2')->name('step2');
 Route::post('/step2','Auth\AuthController@store2')->name('poststep2');
 
@@ -32,6 +32,9 @@ Route::get('/createGroup','GroupController@create')->name('creategroup');
 //Route::get('/login', 'LoginController@show');
 Route::auth();
 
-
-
 Route::get('/home', 'HomeController@index');
+
+//Route for Manage Account(Profile)
+Route::get('/profile', 'ProfileController@profileView')->name('profile');
+Route::get('/updateDetail', 'ProfileController@formView')->name('updateView');
+Route::post('/insertDetail', 'ProfileController@update')->name('insert');
