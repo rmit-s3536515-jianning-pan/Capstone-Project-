@@ -4,15 +4,26 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    
     <title>Encounter</title>
+    
+    <script src="{{ asset('js/jquery-3.3.1.min.js')}}"></script>
+    <!-- external javascript for matching height -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.0/jquery.matchHeight-min.js"></script>
 
+    <!-- jquery for multi select  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css')}}">
+    <script src="{{ asset('js/bootstrap.min.js')}}"></script>
     <!-- Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"> -->
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
 
 
@@ -33,9 +44,15 @@
         .footer{
             background-color: #19181A !important;
             color:#fff !important;
+            padding-top:25px;
+            padding-bottom:25px;
         }
         .home_nav{
-            background-color: #C96567 !important;
+            -webkit-box-shadow: 0px 3px 21px 3px rgba(0,0,0,0.67);
+-moz-box-shadow: 0px 3px 21px 3px rgba(0,0,0,0.67);
+box-shadow: 0px 3px 21px 3px rgba(0,0,0,0.67);
+            background:rgba(201,101,103,0.85) !important;
+            /*background-color: #C96567 !important;*/
         }
 
         a{
@@ -46,7 +63,13 @@
         .br{
             border-right:1px solid black !important;
         }
+        .navbar{
+            border: 0;
+        }
 
+        .navbar-nav li a:hover, .navbar-nav li.active a{
+            background-color: #fff !important;
+        }
     </style>
 </head>
 <body id="app-layout">
@@ -87,15 +110,23 @@
                     @else
                           <li ><a class="br" href="{{ url('/event/create') }}">Create a Event</a></li>
                          <li ><a class="br" href="{{ route('creategroup')}}">Create a Group</a></li>
+<<<<<<< HEAD
 
+=======
+                        <li><a class="br" href="{{ url('logout') }}">Logout</a></li>
+>>>>>>> 2cfdd62871f3f3ee3cb5b1acf49f28f98160ffe6
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                 {{ Auth::user()->name }} <span class="caret"></span>
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
+<<<<<<< HEAD
                                 <li><a href="{{ url('/profile') }}"><i class="glyphicon glyphicon-user one"></i> Profile</a></li>
                                 <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+=======
+                                <li><a href="{{ url('logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+>>>>>>> 2cfdd62871f3f3ee3cb5b1acf49f28f98160ffe6
                             </ul>
                         </li>
                     @endif
@@ -107,9 +138,11 @@
     @yield('content')
 
     <!-- JavaScripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
+   <!--  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-    <script
+ -->
+
+    <!-- <script
   src="https://code.jquery.com/jquery-2.2.4.js"
   integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
   crossorigin="anonymous"></script>
@@ -117,7 +150,7 @@
   <script
   src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
   integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
-  crossorigin="anonymous"></script>
+  crossorigin="anonymous"></script> -->
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
 
     <div class="container-fluid text-center footer">

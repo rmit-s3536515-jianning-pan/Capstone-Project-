@@ -20,7 +20,11 @@
             			</div>
        	</div>
 
+<<<<<<< HEAD
 						@foreach($cates as $cate)
+=======
+				@foreach($cates as $cate)
+>>>>>>> 2cfdd62871f3f3ee3cb5b1acf49f28f98160ffe6
 				<div class="form-group col-md-4 group_cate" >
             		<input type="checkbox" name="{{ $cate->cat_name}}" id="{{ $cate->cat_name}}" autocomplete="off" />
             		<div class="btn-group">
@@ -56,7 +60,11 @@
                                     Create Group
                                 </button>
                             </div>
+<<<<<<< HEAD
             </div>
+=======
+           		 </div>		
+>>>>>>> 2cfdd62871f3f3ee3cb5b1acf49f28f98160ffe6
 				</form>
 			</div>
 

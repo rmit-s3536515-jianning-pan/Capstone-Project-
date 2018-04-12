@@ -2,18 +2,12 @@
     Welcome Page
 */
    .welcome_header{
-        background-color: #9E5A63 !important;
+        /*background-color: #9E5A63 !important;*/
         margin-top:-20px !important;
+       /* margin-bottom: -10px !important;*/
+        /*margin-bottom: 0 !important;*/
+
    }
-
-   .welcome_header h1{
-        color:rgba(0,0,0,0.7) !important;
-   }
-
-   /*.card-img-top {
-        width: 100% !important;
-    }*/
-
     .minfooter{
         background-color: #314455 !important;
         color: white !important;
@@ -23,12 +17,123 @@
         border:0 !important;
     }
 
-    .wel_pic{
-      background-color: #97AABD !important;
+    .minfooter{
+      padding:20px 0;
+      opacity: 0.8;
+    }
+    
+    .carousel-inner > .item > img {
+      width:100%;
+      height:600px;
+      max-height: 100%;
     }
 
+    .marginbottom .panel{
+      transition: box-shadow 0.5s;
+    }
 
+    .marginbottom .panel:hover{
+        cursor: pointer;
+        box-shadow: 5px 0px 40px rgba(0,0,0,0.8);
+    }
 
+    .search{
+      padding-top:50px;
+      padding-bottom: 50px;
+    }
+
+    .margin-t-b{
+      margin: 10px auto;
+    }
+
+    .margin-t-b a input{
+        margin-right: 20px;
+        transform: scale(1.5,1.5);
+    }
+
+    .search .row .input-group, .search .row .btn-group{
+      width:100%;
+    }
+
+     .search .row .btn-group .btn,{
+      width:100%;
+    }
+     .search .row .btn-group .btn.dropdown-toggle{
+      width:100%;
+    }
+     .search .row .btn-group .dropdown-menu{
+      width:100%;
+    }
+
+    .check {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.check input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.check:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.check input:checked ~ .checkmark {
+    background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.check:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.check input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.check .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+/*.subcatmenu{
+  display: none;
+}
+*/
 /* Create Group */
 
 .form-group input[type="checkbox"] {
@@ -62,18 +167,39 @@
 }
 
 /* event create */
-.event{
-  margin-right: 20px;
+
+
+/*show events*/
+.panel-body{
+  word-wrap: break-word;
 }
 
-.event:nth-child(2n+1){
-    margin-right: :0px;
+hr.noresult{
+    overflow: visible; /* For IE */
+    height: 30px;
+    border-style: solid;
+    border-color: green;
+    border-width: 1px 0 0 0;
+    border-radius: 20px;
+    color:green;
+}
+hr.noresult:before { /* Not really supposed to work, but does */
+    display: block;
+    content: "";
+    height: 30px;
+    margin-top: -31px;
+    border-style: solid;
+    border-color: green;
+    border-width: 0 0 1px 0;
+    border-radius: 20px;
+
 }
 
-.card{
-    max-width: 100%;
-}
 
-.event .card-text{
-    word-wrap: break-word;
+
+@media (max-width:768px){
+  .carousel-inner > .item > img {
+      width:100%;
+      height:300px;
+    }
 }
