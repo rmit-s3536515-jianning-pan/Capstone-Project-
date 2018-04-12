@@ -10,6 +10,12 @@
     <script src="{{ asset('js/jquery-3.3.1.min.js')}}"></script>
     <!-- external javascript for matching height -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.0/jquery.matchHeight-min.js"></script>
+
+    <!-- jquery for multi select  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css')}}">
     <script src="{{ asset('js/bootstrap.min.js')}}"></script>
     <!-- Fonts -->
@@ -40,6 +46,9 @@
             color:#fff !important;
         }
         .home_nav{
+            -webkit-box-shadow: 0px 3px 21px 3px rgba(0,0,0,0.67);
+-moz-box-shadow: 0px 3px 21px 3px rgba(0,0,0,0.67);
+box-shadow: 0px 3px 21px 3px rgba(0,0,0,0.67);
             background:rgba(201,101,103,0.85) !important;
             /*background-color: #C96567 !important;*/
         }
@@ -62,7 +71,7 @@
     </style>
 </head>
 <body id="app-layout">
-    <nav class="navbar t navbar-default navbar-fixed-top home_nav">
+    <nav class="navbar navbar-default navbar-fixed-top home_nav">
         <div class="container">
             <div class="navbar-header">
 

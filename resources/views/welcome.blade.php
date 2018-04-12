@@ -66,9 +66,26 @@
                         <button class="btn btn-lg btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Any Classification<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
                         </button>
 
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu scrollable-menu" id="main-menu">
                             @foreach ($categories as $cate)
-                                <li class="item"><a href="#" data-value="{{ $cate->cat_name }}" tabIndex="-1"><input type="checkbox" name="categories[]" value="{{ $cate->id}}"><span>{{ $cate->cat_name}}</span></a></li>
+                                <li class="item">
+                                   <!--  <label class="check">{{ $cate->cat_name}}
+                                     <input type="checkbox" name="categories[]" value="{{ $cate->id}}">
+                                         <span class="checkmark"></span>
+                                      </label> -->
+                                    <a href="#" data-value="{{ $cate->cat_name }}" tabIndex="-1" class="{{$cate->id}}"><input type="checkbox" name="categories[]" value="{{ $cate->id}}"><span>{{ $cate->cat_name}}</span></a>
+                                   
+                                        <ul class="subcatmenu"> 
+                                            <!-- <li><a href="#" ><input type="checkbox" id="checkAll"><span>Check All</span></a></li> -->
+                                            @foreach ($subs as $sub)
+                                                @if ($sub->cate_id==$cate->id)   
+                                            <li>
+                                               <a href="#" data-value="{{ $sub->name }} " tabIndex="-1" ><input type="checkbox" name="subs[]" value="{{ $sub->id}}"><span>{{ $sub->name}}</span></a>
+                                            </li>
+                                                @endif
+                                            @endforeach
+                                        </ul>
+                                    </li>
                             @endforeach
                         </ul>
                     </div>
@@ -82,104 +99,9 @@
                 </div>
             </div>
 
-            <!-- <div class="row">
-                <div class="col-md-5">
-                    <div class="input-group input-group-lg">
-                        <input type="text" name="keywords" class="form-control" placeholder="Enter keywords">
-                    </div>
-                </div>
-                <div class="col-md-5">
-                    <div class="dropdown btn-group btn-group-lg">
-                        <button class="btn btn-lg btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Any Classification<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
-                        </button>
-
-                        <ul class="dropdown-menu">
-                            @foreach ($categories as $cate)
-                                <li class="item"><a href="#" data-value="{{ $cate->cat_name }}" tabIndex="-1"><input type="checkbox" name="categories[]" value="{{ $cate->cat_name}}"><span>{{ $cate->cat_name}}</span></a></li>
-                            @endforeach
-                        </ul>
-                    </div> -->
-                    <!--  <select class="form-control" name="category_id">
-                        <option value="" > All </option>   
-                            @foreach ($categories as $cate)
-                                @if(Request::input('category_id')==$cate->id)
-                                    <option value ="{{ $cate->id }}" selected>{{ $cate->cat_name}} </option>   
-                                @else
-                                <option value ="{{ $cate->id }}" >{{ $cate->cat_name}}  </option>   
-                                
-                                @endif
-                            @endforeach
-                    </select> -->
-                <!-- </div> -->
-                <!-- <div class="col-md-2">
-                    <div class="input-group input-group-lg">
-                        <button type="submit" class="btn btn-success btn-lg" style="width:100%">Search</button>
-                    </div>
-                    
-                </div> -->
             </div>
         </form>
     </div>
-
-    <!-- start searching bar -->
-
-   <!--  <div class="table-responsive container col-md-12">  
-    <table class="table table-striped grid-view-tbl" id="home_search_table">
-        
-        <thead>
-        <tr class="header-row" style="color:#337ab7;">
-       
-            <th>Name</th>
-       
-        
-            <th>Category</th>
-            
-            <th></th>
-        </tr>
-        <tr class="search-row">
-            <form id="search_form" class="search-form">
-             
-                <td><input type="text" class="form-control" name="name" value="" placeholder="Enter Keywords"></td>
-              
-                <td>
-                    <select class="form-control" name="category_id">
-                        <option value="" > All </option>   
-                            @foreach ($categories as $cate)
-                                @if(Request::input('category_id')==$cate->id)
-                                    <option value ="{{ $cate->id }}" selected>{{ $cate->cat_name}} </option>   
-                                @else
-                                <option value ="{{ $cate->id }}" >{{ $cate->cat_name}}  </option>   
-                                
-                                @endif
-                            @endforeach
-                    </select>
-                </td>
-                <td>
-                    <div class="form-group">
-                        <button style="width:100%; font-size: 4vmin;" type="submit" class="btn btn-success">Search</button>
-                    </div>
-                </td>
-                <input type="hidden" id="rand" name="rand" value="">
-
-            </form>
-        </tr>
-        </thead>
-
-        <tbody>
-        
-        </tbody>
-
-    </table>
-
-    <div class="text-center" >
-        <button  style="width:40%; font-size: 4vmin;" class="btn btn-primary" onclick="$('#search_form').submit()">Start Searching</button>
-    </div>
-
-</div>
- -->
-<!-- end of searching  -->
-
-
 
     <!-- <p>{{ Auth::user()->id }}</p> -->
     @if (count($event)>0)
@@ -194,6 +116,7 @@
                 <div class="panel panel-primary text-center">
                     <div class="panel-heading">
                         <h3>{{ $add["title"] }}</h3>
+                        <h4>Matching Percentage: {{ Session::get($add['id'])}}%</h4>    
                     </div>
                     <div class="panel-body">
                         <p>{{  $add["description"] }}</p>
@@ -211,29 +134,26 @@
     @endif
     <!--Explore by catory-->
     <div class="container">
-        <h3>Explore By Catory</h3>
-        <div class="row">
-            @foreach($categories as $category)
-            <div class="col-md-4 col-sm-12">
-                <div class="thumbnail thumnail-border">
-        <a href="#">
-            <div class="jumbotron wel_pic"></div>
-         <!--  <img src="{{ url('/images/bird.png') }}" class="img-circle" alt="Nature" style="width:100%"> -->
-          <div class="caption text-center">
-            <p>{{ $category->cat_name}}</p>
-          </div>
-        </a>
-      </div>
-                <!-- <div class="card">
-                   <a href=""><img class="card-img-top" src="{{ url('/images/bird.png') }}" alt="Card image cap"></a>
-                    <div class="card-body text-center">
-                         <h3 class="card-title">{{ $category->cat_name}}</h3>
+        <h3>Explore By Category</h3>
+        
+            @foreach($categories->chunk(3) as $category)
+                <div class="row">
+                    @foreach($category as $c)
+                    <div class="col-md-4 col-sm-12 marginbottom">
+                                 
+                            <div class="panel panel-success text-center" >
+                                <div class="panel-heading" style="height: 100px; font-size: 40px" >{{ $c['cat_name'] }}</div>
+                                
+
+                            </div>
+                    
                     </div>
-                </div> -->
+                    @endforeach
+               
             </div>
             @endforeach
            
-        </div>
+       
     </div>
 
     <!--Content-->
@@ -289,9 +209,35 @@ $( '.dropdown-menu a' ).on( 'click', function( event ) {
 
    $( event.target ).blur();
       
-   console.log( options );
    return false;
 });
+    </script>
 
+    <!-- <script>
+        $(document).ready(function(){
+            $('#checkAll').click(function(){
+                if( ($(this).prop('checked'))){
+                   $('input:checkbox').prop('checked',true);
+                }else{
+                    $('input:checkbox').prop('checked',false);
+                }
+                
+            });
+        });
+    </script> -->
+
+    <script>
+       
+        $(document).ready(function() {
+            $('#main-menu .subcatmenu').hide();
+
+            $('#main-menu >li a').click(function(){
+                
+                $('#main-menu >li .subcatmenu').show();
+                
+            });
+          
+        });
+        
     </script>
 @endsection
