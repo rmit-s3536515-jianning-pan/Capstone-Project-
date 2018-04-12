@@ -44,6 +44,8 @@
         .footer{
             background-color: #19181A !important;
             color:#fff !important;
+            padding-top:25px;
+            padding-bottom:25px;
         }
         .home_nav{
             -webkit-box-shadow: 0px 3px 21px 3px rgba(0,0,0,0.67);

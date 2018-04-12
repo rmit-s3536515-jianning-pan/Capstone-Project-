@@ -158,24 +158,10 @@
 
     <!--Content-->
     <div class="container-fluid minfooter">
-        <div class="row">
-            <div class="col-md-4 col-md-offset-3">
-                
-                <ul class="nav flex-column">
-                     @if (Auth::guest())
-                    <li class="nav-item"><h2>Your Account</h2>
-                    </li>
-                    <li class="nav-item">
-                        <h4><a class="nav-link" href="{{ url('/login') }}">Login</a></h4></li>
-                    <li class="nav-item">
-                        <h4><a class="nav-link" href="{{ url('/register') }}">Register</a></h4></li>
-                    @else
-                    <li class="nav-item"><h2>HELP</h2></li>
-                    @endif
-                </ul>
-            </div>
-            <div class="col-md-4 col-md-offset-1">
-                <h2>Discover</h2>
+        <div class="row ">
+            <div class="col-md-8 col-md-offset-2">
+              <div class="col-md-6 text-center"><h2>HELP</h2></div>
+              <div class="col-md-6 text-center"><h2>DISCOVER</h2></div>
             </div>
     </div>
 </div>

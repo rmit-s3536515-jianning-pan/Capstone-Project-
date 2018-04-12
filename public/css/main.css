@@ -17,10 +17,10 @@
         border:0 !important;
     }
 
-    .wel_pic{
-      background-color: #97AABD !important;
+    .minfooter{
+      padding:20px 0;
+      opacity: 0.8;
     }
-
     
     .carousel-inner > .item > img {
       width:100%;
