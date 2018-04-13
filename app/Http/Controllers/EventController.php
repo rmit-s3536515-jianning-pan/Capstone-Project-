@@ -80,5 +80,8 @@ class EventController extends Controller
         return view('Event.show',['records' =>$records] );
     }
 
+    public function singleEvent($eventId){
+            return 'I am event id'.$eventId;
+    }
 
 }

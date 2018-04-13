@@ -63,17 +63,19 @@
 
             @foreach($e as $add)
             <div class="col-md-4 marginbottom">
-                <div class="panel panel-primary text-center">
-                    <div class="panel-heading">
-                        <h3>{{ $add["title"] }}</h3>
-                        <h4>Matching Percentage: {{ Session::get($add['id'])}}%</h4>    
-                    </div>
-                    <div class="panel-body">
-                        <p>{{  $add["description"] }}</p>
-                        <div>{{ $add["start_date"] }}</div>
-                        <div>{{ $add["start_time"] }}</div>
-                    </div>
-                </div>
+                <a href="{{ url('event/'.$add['id']) }}">
+                  <div class="panel panel-primary text-center">
+                      <div class="panel-heading">
+                          <h3>{{ $add["title"] }}</h3>
+                          <h4>Matching Percentage: {{ Session::get($add['id'])}}%</h4>    
+                      </div>
+                      <div class="panel-body">
+                          <p>{{  $add["description"] }}</p>
+                          <div>{{ $add["start_date"] }}</div>
+                          <div>{{ $add["start_time"] }}</div>
+                      </div>
+                  </div>
+                </a>
             </div>
             @endforeach
            
@@ -82,7 +84,7 @@
         @endforeach  
     </div>
     @endif
-    <!--Explore by catory-->
+    <!--Explore by category-->
     <div class="container">
         <h3>Explore By Category</h3>
         
@@ -90,13 +92,13 @@
                 <div class="row">
                     @foreach($category as $c)
                     <div class="col-md-4 col-sm-12 marginbottom">
-                                 
+                            <a href="{{ url('group/'.$c['id']) }}">
                             <div class="panel panel-success text-center" >
                                 <div class="panel-heading" style="height: 100px; font-size: 40px" >{{ $c['cat_name'] }}</div>
                                 
 
                             </div>
-                    
+                           </a>
                     </div>
                     @endforeach
                
