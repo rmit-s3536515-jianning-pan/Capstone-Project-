@@ -32,10 +32,11 @@ class Events extends Model
             
             array_push($e_ids,$r->event_id);
         }
+        // dd($e_ids);
         $unique_eid = array_unique($e_ids);
 
         $query->findMany($unique_eid);
-
+        // dd($unique_eid);
         foreach($unique_eid as $r){
             $count =0;
             foreach($e_ids as $i){
@@ -43,10 +44,13 @@ class Events extends Model
                     $count = $count + 1;
                 }
             }
+
             $points = ($count / (float)count($u_subid))*100;
+            // dd($r);
             request()->session()->put($r,$points);
+            // request()->session()->save();
         }
-    
+        
     	// $result = collect();
      //    foreach($user_cates as $user_cate){ //outside user loop
      //            $uid = $user_cate['0']['original']['user_id'];//get the user id

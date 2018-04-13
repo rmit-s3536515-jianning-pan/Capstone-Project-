@@ -132,4 +132,13 @@ class AuthController extends Controller
         return redirect('/');
     }
 
+    public function logout()
+    {
+        Auth::guard($this->getGuard())->logout();
+        
+        // request()->session()->flush();
+
+        return redirect(property_exists($this, 'redirectAfterLogout') ? $this->redirectAfterLogout : '/');
+    }
+
 }
