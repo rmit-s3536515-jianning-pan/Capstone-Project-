@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-	<div class="jumbotron text-center">
+	<div class="jumbotron welcome_header text-center">
 			<h1>Get Few Interest</h1>
 	</div>
 	<div class="container">
@@ -11,21 +11,25 @@
 		<form role="form" method="POST" action="{{ route('poststep2') }}">
 			 {{ csrf_field() }}
 			
-			@foreach($categories as $cate)
-				<div class="form-group col-md-4">
-					<input type="checkbox" name="cates[]" id="{{ $cate->id}}" autocomplete="off" value="{{ $cate->id}}" />
-            		<div class="btn-group">
-               			 <label  class="btn btn-default">
-                    		<span class="glyphicon glyphicon-ok"></span>
-                   			 <span> </span>
-                		</label>
-               		 <label for="{{ $cate->id}}" class="btn btn-default active">
-                    	{{ $cate->cat_name}}
-               		 </label>
-          		  </div>
-          		  
-				</div>
-			@endforeach
+			@foreach($categories->chunk(3) as $cate)
+						<div class="row">
+							@foreach($cate as $c)
+							<div class="col-md-4 margin-t-b">
+							<select class="selectpicker form-control" name="pref[]" multiple="" title="{{$c['original']['cat_name']}}" data-selected-text-format="count" data-size="5" data-actions-box="true">
+							
+							@foreach($subs as $sub)
+								@if($sub->cate_id==$c['original']['id'])
+								<option value="{{ $sub->id }}">{{ $sub->name }}</option>
+								@endif
+							@endforeach
+						</select>
+					</div>
+							@endforeach
+						
+						</div>
+					
+			
+        		@endforeach
 			
 			 <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">

@@ -3,14 +3,6 @@
 
 @section('content')
 
-
- <script type="text/javascript">
-    $(document).ready(function(){
-       	$('.jumbotron-fluid h2').click(function(){
-       		alert("hello");
-       	});
-    });
-</script>
 <div class="jumbotron-fluid text-center">
 		<h2>Create Event</h2>
 </div>
@@ -43,23 +35,31 @@
 				
 				
 				
-				<div>
-					<div class="col-md-12">
+				<div class="col-md-12">
+					<!-- <div class="col-md-12">
 						<label>Choose Categories</label>
+					</div> -->
+					<h5>Choose Categories</h5>
+					@foreach($categories->chunk(3) as $cate)
+						<div class="row">
+							@foreach($cate as $c)
+							<div class="col-md-4 margin-t-b">
+							<div class="form-group">							<select class="selectpicker form-control" name="pref[]" multiple="" title="{{$c['original']['cat_name']}}" data-selected-text-format="count" data-size="5" data-actions-box="true">
+							
+							@foreach($subs as $sub)
+								@if($sub->cate_id==$c['original']['id'])
+								<option value="{{ $sub->id }}">{{ $sub->name }}</option>
+								@endif
+							@endforeach
+						</select>
 					</div>
-					@foreach($categories as $cate)
-				<div class="form-group col-md-4 group_cate" >
-            		<input type="checkbox" name="cates[]" id="{{ $cate->id}}" autocomplete="off" value="{{ $cate->id}}" />
-            		<div class="btn-group">
-               			 <label for="{{ $cate->id}}" class="btn btn-default">
-                    		<span class="glyphicon glyphicon-ok"></span>
-                   			 <span> </span>
-                		</label>
-               		 <label for="{{ $cate->id}}" class="btn btn-default active">
-                    	{{ $cate->cat_name}}
-               		 </label>
-          		  </div>
-        	</div>
+
+					</div>
+							@endforeach
+						
+						</div>
+					
+			
         		@endforeach
 				</div>
 				<div class="form-group col-md-12">

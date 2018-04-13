@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
+
 @section('content')
 	
 	<div class="container">
@@ -25,7 +26,27 @@
 			</div>
 			@endforeach
 		@else
-			<p><span class="glyphicon glyphicon-warning"></span>Result is not found!</p>
+			<div class="row">
+				<div class="col-md-12">
+					<hr class="noresult">
+					<div class="row">
+						
+						<div class="col-md-4 text-center">
+							<span class="glyphicon glyphicon-exclamation-sign" style="color: green; font-size: 70px"></span>
+
+						</div>
+
+						<div class="col-md-8 text-left">
+							<h3>Sorry, we couldn't find any results matching with your search!</h3>
+						</div>
+					</div>
+					
+					
+					<hr class="noresult">
+				</div>
+			</div>
+			
+			
 		@endif
 	</div>
 

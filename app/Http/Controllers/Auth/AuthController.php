@@ -11,6 +11,9 @@ use Illuminate\Http\Request;
 use App\Category;
 use App\users_categories;
 use Illuminate\Support\Facades\Auth;
+use App\SubCategory;
+use App\users_subs;
+
 class AuthController extends Controller
 {
     /*
@@ -96,14 +99,14 @@ class AuthController extends Controller
 
     public function step2(){
 
-        $categories = Category::all();
-
-        return view('auth.regcate',['categories'=>$categories]);
+        $categories = array(Category::all());
+        $subs = SubCategory::all();
+        return view('auth.regcate',['categories'=>$categories['0'],'subs'=>$subs]);
     }
 
     public function store2(Request $request){
 
-        $inputs = $request['cates'];
+        $inputs = $request->input('pref');
         //return dd($inputs);
         //dd($inputs);
         $user = User::create([
@@ -116,10 +119,10 @@ class AuthController extends Controller
 
         
         foreach($inputs as $i){
-            $users_cate = new users_categories;
-            $users_cate->user_id = $id;
-            $users_cate->category_id = $i;
-            $users_cate->save();
+            $users_subs = new users_subs;
+            $users_subs->user_id = $id;
+            $users_subs->sub_id = $i;
+            $users_subs->save();
         }
        
         session()->flush();
@@ -127,6 +130,15 @@ class AuthController extends Controller
         \Illuminate\Support\Facades\Auth::guard($this->getGuard())->login($user);
 
         return redirect('/');
+    }
+
+    public function logout()
+    {
+        Auth::guard($this->getGuard())->logout();
+        
+        // request()->session()->flush();
+
+        return redirect(property_exists($this, 'redirectAfterLogout') ? $this->redirectAfterLogout : '/');
     }
 
 }

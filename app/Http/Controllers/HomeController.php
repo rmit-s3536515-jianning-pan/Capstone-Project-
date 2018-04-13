@@ -6,6 +6,7 @@ use App\Http\Requests;
 use Illuminate\Http\Request;
 use App\Category; // getting the data 
 use App\Events;
+use App\SubCategory;
 
 class HomeController extends Controller
 {
@@ -31,16 +32,17 @@ class HomeController extends Controller
 
     /* home page*/
     public function welcome(){
-        $categories = Category::all();
-        // $events = Events::all();
+        $categories = array(Category::all());
+        // dd(gettype($categories));
+        $subs = SubCategory::all();
+        // dd($categories);
+        
         $relatedEvents = Events::findInterestedCategory();
         
         $relatedEvents = $relatedEvents->toArray();
         $relatedEvents = $relatedEvents['data'];
-        // dd($relatedEvents);
-        // print_r($relatedEvents["title"]);
-        // print_r($relatedEvents['0']["title"]);
+        
 
-        return view('welcome',['categories' =>$categories,'event'=>$relatedEvents]);
+        return view('welcome',['categories' =>$categories['0'],'event'=>$relatedEvents,'subs'=>$subs]);
     }
 }
