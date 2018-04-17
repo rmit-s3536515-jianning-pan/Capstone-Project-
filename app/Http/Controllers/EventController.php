@@ -65,8 +65,8 @@ class EventController extends Controller
 
     // show event 
     public function show(){
-        $records = Events::findRequested();
-        // dd($records->get());
+        $records = Events::findRequested()->get();
+        // dd($records);
 
         if(!$records->isEmpty()){
              $records = $records->toArray();
