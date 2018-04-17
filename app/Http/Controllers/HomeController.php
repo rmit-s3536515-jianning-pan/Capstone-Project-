@@ -18,6 +18,7 @@ class HomeController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        $this->middleware('admin');
     }
 
     /**
@@ -44,5 +45,9 @@ class HomeController extends Controller
         
 
         return view('welcome',['categories' =>$categories['0'],'event'=>$relatedEvents,'subs'=>$subs]);
+    }
+
+    public function admin(){
+        return view('admin.administration');
     }
 }
