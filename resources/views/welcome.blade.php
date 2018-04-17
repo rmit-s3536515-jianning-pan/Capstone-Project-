@@ -82,6 +82,7 @@
             
         </div>
         @endforeach  
+        
     </div>
     @endif
     <!--Explore by category-->
