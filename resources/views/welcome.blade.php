@@ -82,6 +82,7 @@
             
         </div>
         @endforeach  
+        
     </div>
     @endif
     <!--Explore by category-->
@@ -117,14 +118,27 @@
             </div>
     </div>
 </div>
-@endsection
-
 <script type="text/javascript">
     $(function(){
         $('.panel').matchHeight();
     });
 </script>
 
+    <script>
+       
+        $(document).ready(function() {
+            $('#main-menu .subcatmenu').hide();
+
+            $('#main-menu >li a').click(function(){
+                
+                $('#main-menu >li .subcatmenu').show();
+                
+            });
+          
+        });
+        
+    </script>
+@endsection
 <script type="text/javascript">
     
 
@@ -151,31 +165,8 @@ $( '.dropdown-menu a' ).on( 'click', function( event ) {
 });
     </script>
 
-    <!-- <script>
-        $(document).ready(function(){
-            $('#checkAll').click(function(){
-                if( ($(this).prop('checked'))){
-                   $('input:checkbox').prop('checked',true);
-                }else{
-                    $('input:checkbox').prop('checked',false);
-                }
-                
-            });
-        });
-    </script> -->
 
-    <script>
-       
-        $(document).ready(function() {
-            $('#main-menu .subcatmenu').hide();
 
-            $('#main-menu >li a').click(function(){
-                
-                $('#main-menu >li .subcatmenu').show();
-                
-            });
-          
-        });
-        
-    </script>
+
+
 

@@ -16,14 +16,31 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
 
+    
+    <!-- datetime picker -->
+
+    <!-- http://felicegattuso.com/projects/datedropper/ -->
+    <link href="{{ asset('css/datedropper.css') }}" rel="stylesheet" type="text/css" />
+    <script src="{{ asset('js/datedropper.js') }}"></script>
+    
+
+    <!-- time picker -->
+    <link href="{{ asset('css/jquery.timepicker.css') }}" rel="stylesheet">
+    <script type="text/javascript" src="{{ asset('js/jquery.timepicker.js') }}"></script>
+
+    <!-- restrict input to numeric value -->
+    <!-- https://www.jqueryscript.net/form/jQuery-Plugin-To-Restrict-Input-To-Numeric-Values-Mask-As-Number.html -->
+    <script src="{{ asset('js/jquery-mask-as-number.js') }}"></script>
+
+
+
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css')}}">
     <script src="{{ asset('js/bootstrap.min.js')}}"></script>
     <!-- Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700">
 
-    <!-- Styles -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"> -->
+   
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
 
 
@@ -135,20 +152,7 @@ box-shadow: 0px 3px 21px 3px rgba(0,0,0,0.67);
 
     @yield('content')
 
-    <!-- JavaScripts -->
-   <!--  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
- -->
-
-    <!-- <script
-  src="https://code.jquery.com/jquery-2.2.4.js"
-  integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
-  crossorigin="anonymous"></script>
-
-  <script
-  src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
-  integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
-  crossorigin="anonymous"></script> -->
+   
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
 
     <div class="container-fluid text-center footer">

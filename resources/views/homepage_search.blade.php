@@ -10,34 +10,35 @@
                 </div>
                 <div class="col-md-5 margin-t-b">
                     <label>Classification</label>
-                    <div class="dropdown btn-group btn-group-lg">
-                        <button class="btn btn-lg btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Any Classification<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
-                        </button>
-
-                        <ul class="dropdown-menu scrollable-menu" id="main-menu">
+                    <div class="input-group input-group-lg">
+                        <select class="selectpicker" multiple="multiple" name="subs[]"  data-selected-text-format="count" data-actions-box="true"
+                        data-size="8" title="Any Classification">
                             @foreach ($categories as $cate)
-                                <li class="item">
+                                <optgroup label="{{ $cate->cat_name }}" title="{{ $cate->cat_name}}" > 
+                                     @foreach ($subs as $sub)
+                                                @if ($sub->cate_id==$cate->id)   
+                                            <option value="{{ $sub->id}}">
+                                                {{ $sub->name}}
+                                            </option>>
+                                               
+                                                @endif
+                                    @endforeach
+                                </optgroup> 
                                    <!--  <label class="check">{{ $cate->cat_name}}
                                      <input type="checkbox" name="categories[]" value="{{ $cate->id}}">
                                          <span class="checkmark"></span>
                                       </label> -->
-                                    <a href="#" data-value="{{ $cate->cat_name }}" tabIndex="-1" class="{{$cate->id}}"><input type="checkbox" name="categories[]" value="{{ $cate->id}}"><span>{{ $cate->cat_name}}</span></a>
                                    
-                                        <ul class="subcatmenu"> 
-                                            <!-- <li><a href="#" ><input type="checkbox" id="checkAll"><span>Check All</span></a></li> -->
-                                            @foreach ($subs as $sub)
-                                                @if ($sub->cate_id==$cate->id)   
-                                            <li>
-                                               <a href="#" data-value="{{ $sub->name }} " tabIndex="-1" ><input type="checkbox" name="subs[]" value="{{ $sub->id}}"><span>{{ $sub->name}}</span></a>
-                                            </li>
-                                                @endif
-                                            @endforeach
-                                        </ul>
-                                    </li>
                             @endforeach
-                        </ul>
+                        </select>   
+
+                       
+                            
+                        
                     </div>
                 </div>
+
+
                 <div class="col-md-2 margin-t-b">
                     <label class="invisible">hidden</label>
                     <div class="input-group input-group-lg">
