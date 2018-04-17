@@ -5,22 +5,26 @@
 			<h1> Create a new Group</h1>
 			<p>We will help you to find the right people</p>
 		</div>
-		
+
 
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2">
 				<form>
 				<fieldset class="text-left">
-					<legend><h1>What will you group be about?</h1>
-					
+					<h1>What will you group be about?</h1>
+					<hr>
 					<div class="form-group">
            				 <div class="col-sm-12 col-md-12 col-lg-12 marginbottom">
                 			<input type="search" class="form-control" id="search" placeholder="Add your options..">
             			</div>
-       			 	</div>
+       	</div>
 
+<<<<<<< HEAD
+						@foreach($cates as $cate)
+=======
 				@foreach($cates as $cate)
+>>>>>>> 2cfdd62871f3f3ee3cb5b1acf49f28f98160ffe6
 				<div class="form-group col-md-4 group_cate" >
             		<input type="checkbox" name="{{ $cate->cat_name}}" id="{{ $cate->cat_name}}" autocomplete="off" />
             		<div class="btn-group">
@@ -34,9 +38,9 @@
           		  </div>
         	</div>
         		@endforeach
-					</legend>
-					
-					
+
+
+
 				</fieldset>
 
 				<fieldset class="text-left">
@@ -56,7 +60,11 @@
                                     Create Group
                                 </button>
                             </div>
+<<<<<<< HEAD
+            </div>
+=======
            		 </div>		
+>>>>>>> 2cfdd62871f3f3ee3cb5b1acf49f28f98160ffe6
 				</form>
 			</div>
 

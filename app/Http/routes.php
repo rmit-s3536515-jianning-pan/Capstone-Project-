@@ -17,10 +17,14 @@ Route::get('/', function () {
 */
 
 Route::get('/', 'HomeController@welcome');
+Route::get('/admin','HomeController@admin');
 
 Route::get('/index', function(){
 	return view('index');
 });
+
+Route::post('/register/step2','Auth\AuthController@store');
+
 // Route::get('/auth/logout', 'Auth\AuthController@getLogout')->name('logout');
 Route::get('/event/create','EventController@create');
 Route::post('/event/create','EventController@store');
@@ -29,6 +33,7 @@ Route::get('/event/{id}',['uses'=>'EventController@singleEvent']);
 
 Route::auth();
 Route::post('/register/step2','Auth\AuthController@store'); 
+
 Route::get('/register/step2','Auth\AuthController@step2')->name('step2');
 Route::post('/step2','Auth\AuthController@store2')->name('poststep2');
 
@@ -38,6 +43,9 @@ Route::get('/createGroup','GroupController@create')->name('creategroup');
 //Route::get('/login', 'LoginController@show');
 
 
-
-
 Route::get('/home', 'HomeController@index');
+
+//Route for Manage Account(Profile)
+Route::get('/profile', 'ProfileController@profileView')->name('profile');
+Route::get('/updateDetail', 'ProfileController@formView')->name('updateView');
+Route::post('/insertDetail', 'ProfileController@update')->name('insert');

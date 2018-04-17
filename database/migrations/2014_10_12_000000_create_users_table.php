@@ -17,6 +17,11 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
+            $table->date('dob')->nullable();
+            $table->string('gender')->nullable();
+            $table->string('address')->nullable();
+            $table->string('bio')->nullable();
+            $table->binary('userPic')->nullable(); //to hold/store a picture (blob)
             $table->rememberToken();
             $table->timestamps();
         });
