@@ -10,9 +10,9 @@
 
 		<form role="form" method="POST" action="{{ route('poststep2') }}">
 			 {{ csrf_field() }}
-<<<<<<< HEAD
 
-			@foreach($categories as $cate)
+
+			<!-- @foreach($categories as $cate)
 				<div class="form-group col-md-4">
 					<input type="checkbox" name="cates[]" id="{{ $cate->id}}" autocomplete="off" value="{{ $cate->id}}" />
             		<div class="btn-group">
@@ -26,9 +26,9 @@
           		  </div>
 
 				</div>
-			@endforeach
+			@endforeach -->
 
-=======
+
 			
 			@foreach($categories->chunk(3) as $cate)
 						<div class="row">
@@ -50,7 +50,7 @@
 			
         		@endforeach
 			
->>>>>>> 2cfdd62871f3f3ee3cb5b1acf49f28f98160ffe6
+
 			 <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">

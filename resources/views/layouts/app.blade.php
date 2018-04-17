@@ -110,23 +110,21 @@ box-shadow: 0px 3px 21px 3px rgba(0,0,0,0.67);
                     @else
                           <li ><a class="br" href="{{ url('/event/create') }}">Create a Event</a></li>
                          <li ><a class="br" href="{{ route('creategroup')}}">Create a Group</a></li>
-<<<<<<< HEAD
 
-=======
-                        <li><a class="br" href="{{ url('logout') }}">Logout</a></li>
->>>>>>> 2cfdd62871f3f3ee3cb5b1acf49f28f98160ffe6
+
+                        <!-- <li><a class="br" href="{{ url('logout') }}">Logout</a></li> -->
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                 {{ Auth::user()->name }} <span class="caret"></span>
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
-<<<<<<< HEAD
+
                                 <li><a href="{{ url('/profile') }}"><i class="glyphicon glyphicon-user one"></i> Profile</a></li>
-                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
-=======
+                                
+
                                 <li><a href="{{ url('logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
->>>>>>> 2cfdd62871f3f3ee3cb5b1acf49f28f98160ffe6
+
                             </ul>
                         </li>
                     @endif
