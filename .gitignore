@@ -1,9 +1,13 @@
 /vendor
 /node_modules
 /public/storage
+.env
 Homestead.yaml
 Homestead.json
 /database/factories
 /database/seeds
 /database/database.php
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
