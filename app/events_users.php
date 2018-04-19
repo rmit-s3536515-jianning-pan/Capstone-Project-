@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Groups extends Model
+class events_users extends Model
 {
     //
     public $timestamps = false;

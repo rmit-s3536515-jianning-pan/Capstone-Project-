@@ -17,6 +17,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
 
     
+    <link rel="stylesheet" type="text/css" href="{{asset('css/m-buttons.min.css') }}">
+    <script src="{{ asset('js/m-dropdown.min.js') }}"></script>
+    <script src="{{ asset('js/m-radio.min.js') }}"></script>
     <!-- datetime picker -->
 
     <!-- http://felicegattuso.com/projects/datedropper/ -->
