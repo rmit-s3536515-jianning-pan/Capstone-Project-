@@ -82,8 +82,8 @@
 
 
 				<div class="form-group col-md-6">
-					<button type="submit" name="submit" class="btn btn-primary">
-						Submit
+					<button class="m-btn blue ">
+						Submit<span class="glyphicon glyphicon-chevron-right"></span>
 					</button>
 				</div>
 
@@ -91,6 +91,7 @@
 		</div>
 	</div>
 </div>
+
 <script type="text/javascript">
 	$('.datepicker').dateDropper();
 </script>

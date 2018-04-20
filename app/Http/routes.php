@@ -35,7 +35,10 @@ Route::post('/register/step2','Auth\AuthController@store');
 Route::get('/event/create','EventController@create');
 Route::post('/event/create','EventController@store');
 Route::get('/event/showall','EventController@show');
+Route::get('/event/{id}/join','EventController@join');
+Route::get('/event/{id}/leave','EventController@leave');
 Route::get('/event/{id}',['uses'=>'EventController@singleEvent']);
+
 
 Route::auth();
 Route::post('/register/step2','Auth\AuthController@store'); 
