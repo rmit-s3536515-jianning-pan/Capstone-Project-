@@ -7,3 +7,8 @@ Homestead.json
 /database/factories
 /database/seeds
 /database/database.php
+
+.env
+config/database.php
+readme.md
+public/css/datedropper.css

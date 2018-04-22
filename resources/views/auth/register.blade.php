@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+<div class="container limiter">
+    <div class="row container-login">
+        <div class="col-md-8 col-md-offset-2 wrap-login reverse">
             <div class="panel panel-default">
-                <div class="panel-heading">Register</div>
+                <div class="panel-heading login100-form-title">Register</div>
                 <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/register/step2') }}">
                         {{ csrf_field() }}
@@ -68,7 +68,7 @@
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
-                                <button class="m-btn blue">
+                                <button class="m-btn blue btn-new">
                                     <i class="fa fa-btn fa-user"></i> Register
                                 </button>
                             </div>
@@ -76,6 +76,19 @@
                     </form>
                 </div>
             </div>
+
+            <div class="login-img" style="background-image: url('images/bg-01.jpg');">
+                <div class="img">
+                      <div class="img__text m--in">
+                        <h2>New here?</h2>
+                        <p>Sign up and discover a great amount of new opportunities!</p>
+                      </div>
+                      <div class="img__btn">
+                        <span class="m--up">Sign Up</span>
+                      </div>
+                </div>
+            </div>
+
         </div>
     </div>
 </div>

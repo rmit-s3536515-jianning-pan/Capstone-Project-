@@ -150,3 +150,301 @@ hr.noresult:before { /* Not really supposed to work, but does */
       height:300px;
     }
 }
+
+
+
+/*------------------------------------------------------------------
+[ Login Page ]*/
+
+[ FONT ]*/
+
+@font-face {
+  font-family: Poppins-Regular;
+  src: url('../fonts/poppins/Poppins-Regular.ttf'); 
+}
+
+@font-face {
+  font-family: Montserrat-Bold;
+  src: url('../fonts/montserrat/Montserrat-Bold.ttf'); 
+}
+
+
+
+.login-body {
+  height: 100%;
+  font-family: Poppins-Regular, sans-serif;
+  margin: 0px; 
+  padding: 0px; 
+  box-sizing: border-box;
+}
+
+.limiter {
+  width: 100%;
+  margin: 0 auto;
+  padding:0 0;
+}
+
+
+.container-login {
+  width: 100%;  
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background: #f2f2f2;
+  margin: 0;
+}
+
+.wrap-login {
+  width: 100%;
+  background: #fff;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  /*flex-direction: row-reverse;*/
+  margin-left:0;
+  padding:0;
+}
+
+/* [Register] */
+.reverse {
+  flex-direction: row-reverse;
+}
+
+/* [background Image ]*/
+.login-img{
+  width: calc(100% - 750px);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 1;
+}
+
+.login-img:before {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background: rgba(0,0,0,0.1);
+}
+
+.login-img:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/*[ Login container ]*/
+.panel {
+
+}
+
+.p-container {
+  box-shadow: none;
+  width: 750px;
+  min-height: 100vh;
+  display: block;
+  /*background-color: #f7f7f7;*/
+  padding: 100px 55px 55px 55px;
+  border:none;
+}
+
+/*[ Login Heading ]*/
+.login100-form-title {
+  width: 100%;
+  padding: 10px 0;
+  display: block;
+  font-size: 30px;
+  color: #333333;
+  line-height: 1.2;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+
+/*[ login button ]*/
+.btn-new {
+  width: 100%;
+  height: 50px;
+  border-radius: 10px;
+  background: #6675df;
+  color: #fff;
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/*[ Input text box ]*/
+.form-box {
+    background: transparent;
+}
+
+input.form-box {
+  outline: none;
+}
+
+.wrap-input100 {
+  width: 100%;
+}
+
+/*[ text container and button]*/
+.img {
+  padding-top: 200px;
+}
+
+.img__text {
+  z-index: 2;
+  position: absolute;
+  left: 0;
+  top: 50px;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  margin-top: 120px;
+}
+
+.img__text p {
+  line-height: 1.5;
+}
+
+.img__btn {
+  z-index: 2;
+  position: relative;
+  width: 110px;
+  height: 40px;
+  margin:0 auto;
+  background: transparent;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 20px;
+  cursor: pointer;
+  margin-top: 100px;
+}
+.img__btn:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #fff;
+  border-radius: 30px;
+}
+.img__btn span{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+
+/*------------------------------------------------------------------
+[ Index Page ]*/
+
+header {
+
+}
+
+@media (min-width: 992px) {
+  header {
+    /*padding: 156px 0 100px;*/
+  }
+}
+
+#about, #services, #contact {
+  padding: 150px 0;
+}
+
+.bg-light {
+  background-color: #f8f9fa;
+}
+
+.bg-purple {
+  background-color: #6675df;
+}
+
+div.mx-auto {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+
+.row-clear {
+  margin: 0;
+}
+
+
+
+/*[ Banner ]*/
+#banner {
+  background-color: #0c0c0c;
+  background-image: url("../../images/header-bg.jpg")!important;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  padding: 15em 0 11em 0;
+}
+
+.actions {
+  padding: 0;
+  list-style-type: none;
+}
+
+.actions li {
+  list-style: none;
+  padding-left:0;
+}
+
+.start-btn {
+  font-weight: 700;
+  color: #fff !important;
+  background-color: #6675df;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 300px;
+  font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
+  display: inline;
+}
+
+
+.btn-xl {
+  text-transform: uppercase;
+  padding: 1.5rem 3rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+}
+
+
+.text-white {
+    color: #fff!important;
+}
+
+.text-center {
+    text-align: center!important;
+}
+
+hr {
+    max-width: 50px;
+    border-width: 3px;
+    border-color: #f05f40;
+    border-color: #fff;
+}
