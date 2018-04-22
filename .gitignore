@@ -8,7 +8,9 @@ Homestead.json
 /database/seeds
 /database/database.php
 
+
 .env
 config/database.php
 readme.md
 public/css/datedropper.css
+

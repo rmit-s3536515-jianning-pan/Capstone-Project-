@@ -1,52 +1,6 @@
 @extends('layouts.app')
 
-
 @section('content')
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Laravel</title>
-
-        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
-<!--       
-        <style>
-            html, body {
-                height: 100%;
-            }
-
-            body {
-                margin: 0;
-                padding: 0;
-                width: 100%;
-                display: table;
-                font-weight: 100;
-                font-family: 'Lato';
-            }
-
-            .container {
-                text-align: center;
-                display: table-cell;
-                vertical-align: middle;
-            }
-
-            .content {
-                text-align: center;
-                display: inline-block;
-            }
-
-            .title {
-                font-size: 96px;
-            }
-        </style>-->
-    </head>
-    <body>
-        <div class="container">
-            <div class="content">
-                <div class="title">Laravel 5</div>
-            </div>
-        </div>
-    </body>
-</html>
 
     <!-- <div class="jumbotron text-center welcome_header">
             <h1>Encounter</h1>
@@ -174,7 +128,6 @@
        
         $(document).ready(function() {
             $('#main-menu .subcatmenu').hide();
-
             $('#main-menu >li a').click(function(){
                 
                 $('#main-menu >li .subcatmenu').show();
@@ -187,16 +140,12 @@
 @endsection
 <script type="text/javascript">
     
-
         var options = [];
-
 $( '.dropdown-menu a' ).on( 'click', function( event ) {
-
    var $target = $( event.currentTarget ),
        val = $target.attr( 'data-value' ),
        $inp = $target.find( 'input' ),
        idx;
-
    if ( ( idx = options.indexOf( val ) ) > -1 ) {
       options.splice( idx, 1 );
       setTimeout( function() { $inp.prop( 'checked', false ) }, 0);
@@ -204,14 +153,10 @@ $( '.dropdown-menu a' ).on( 'click', function( event ) {
       options.push( val );
       setTimeout( function() { $inp.prop( 'checked', true ) }, 0);
    }
-
    $( event.target ).blur();
       
    return false;
 });
     </script>
-
-
-
 
 

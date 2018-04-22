@@ -56,3 +56,4 @@ Route::get('/home', 'HomeController@index');
 Route::get('/profile', 'ProfileController@profileView')->name('profile');
 Route::get('/updateDetail', 'ProfileController@formView')->name('updateView');
 Route::post('/insertDetail', 'ProfileController@update')->name('insert');
+
