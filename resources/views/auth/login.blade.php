@@ -51,11 +51,15 @@
                         
 
                         <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
+                            <div class="col-md-6 col-md-offset-4 flex-sb-m">
                                 <div class="checkbox">
                                     <label>
                                         <input type="checkbox" name="remember"> Remember Me
                                     </label>
+                                </div>
+                                
+                                <div>
+                                    <a class="btn btn-link" href="{{ url('/password/reset') }}">Forgot Password?</a>
                                 </div>
                             </div>
                         </div>
@@ -66,7 +70,7 @@
                                     <i class="fa fa-btn fa-sign-in"></i> Login
                                 </button>
 
-                                <a class="btn btn-link" href="{{ url('/password/reset') }}">Forgot Your Password?</a>
+                                
                             </div>
                         </div>
                     </form>

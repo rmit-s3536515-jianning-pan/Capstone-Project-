@@ -60,8 +60,7 @@
         .footer{
             background-color: #19181A !important;
             color:#fff !important;
-            padding-top:25px;
-            padding-bottom:25px;
+            padding:10px 0;
         }
         .home_nav{
             -webkit-box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.67);
@@ -127,7 +126,7 @@
                 </button>
 
                 <!-- Branding Image -->
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="{{ url('/index') }}">
                     Encounter
                 </a>
             </div>
@@ -178,6 +177,57 @@
 
    
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
+
+<footer class="footer-main">
+     <div class="container">
+       <div class="row">
+       
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                  <span><a class="text-white navbar-brand" href="{{ url('/index') }}">
+                    Encounter
+                </a></span>
+                </div>
+                
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <ul class="menu">
+                         <span>Menu</span>    
+                         <li>
+                            <a href="#">Home</a>
+                          </li>
+                               
+                          <li>
+                             <a href="#">About</a>
+                          </li>
+                               
+                          <li>
+                            <a href="#">Blog</a>
+                          </li>
+                               
+                          <li>
+                             <a href="#">Gallery </a>
+                          </li>
+                     </ul>
+                </div>
+           
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                  <ul class="address">
+                        <span>Contact</span>       
+                        <li>
+                           <i class="fa fa-phone" aria-hidden="true"></i> <a href="#">Phone</a>
+                        </li>
+                        <li>
+                           <i class="fa fa-map-marker" aria-hidden="true"></i> <a href="#">Adress</a>
+                        </li> 
+                        <li>
+                           <i class="fa fa-envelope" aria-hidden="true"></i> <a href="#">Email</a>
+                        </li> 
+                   </ul>
+               </div>
+           
+           
+           </div> 
+        </div>
+    </footer>
 
 
     <footer class="container-fluid text-center footer">
