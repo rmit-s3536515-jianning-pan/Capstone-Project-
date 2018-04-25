@@ -57,7 +57,7 @@ class ProfileController extends Controller
             'bio' => $data['bio'],
           ]);
 
-        DB::table('users_categories')
+        /*DB::table('users_categories')
           ->where('user_id', '=', Auth::user()->id)
           ->delete();
 
@@ -70,7 +70,7 @@ class ProfileController extends Controller
             ->insert([
               ['user_id' => Auth::user()->id, 'category_id' => $i]
             ]);
-        }
+        }*/
 
         return redirect('/profile');
     }
