@@ -136,8 +136,7 @@
                     <li><a href="{{ url('/') }}">Services</a></li>
                     <li><a href="{{ url('/') }}">About Us</a></li>
                     @else
-                    <li><a href="{{ url('/') }}">Services</a></li>
-                    <li><a href="{{ url('/') }}">About Us</a></li>
+                    <li><a href="{{ url('/') }}">Events</a></li>
                     <li><a href="{{ url('/createGroup/index') }}">Groups</a></li>
                 </ul>
 
@@ -203,11 +202,11 @@
                           </li>
                                
                           <li>
-                            <a href="#">Blog</a>
+                            <a href="#">Services</a>
                           </li>
                                
                           <li>
-                             <a href="#">Gallery </a>
+                             <a href="#">Gallery</a>
                           </li>
                      </ul>
                 </div>
