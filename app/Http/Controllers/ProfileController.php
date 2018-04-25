@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use App\User;
+use App\Category;
 use DB;
 use Auth;
 
@@ -18,7 +19,12 @@ class ProfileController extends Controller
     */
     public function profileView()
     {
-        return view('profile');
+        $data = DB::table('categories')
+          ->join('users_categories', 'categories.id', '=', 'category_id')
+          ->where('user_id', '=', Auth::user()->id)
+          ->get();
+
+        return view('profile', ['data'=>$data]);
     }
 
     /**
@@ -27,7 +33,15 @@ class ProfileController extends Controller
     */
     public function formView()
     {
-        return view('updateDetail');
+        $data = Category::all();
+
+        $selected = DB::table('categories')
+          ->join('users_categories', 'categories.id', '=', 'category_id')
+          ->where('users_categories.user_id', '=', Auth::user()->id)
+          ->select('users_categories.*', 'categories.cat_name')
+          ->get();
+
+        return view('updateDetail', ['data'=>$data, 'selected'=>$selected]);
     }
 
     public function update(Request $data)
@@ -42,7 +56,23 @@ class ProfileController extends Controller
             'address' => $data['address'],
             'bio' => $data['bio'],
           ]);
-          return redirect('/profile');
+
+        /*DB::table('users_categories')
+          ->where('user_id', '=', Auth::user()->id)
+          ->delete();
+
+        $inputs = $data['cates'];
+
+        foreach($inputs as $i){
+            DB::table('users_categories')
+            ->where('user_id', '=', Auth::user()->id)
+            ->where('category_id', '=', $i)
+            ->insert([
+              ['user_id' => Auth::user()->id, 'category_id' => $i]
+            ]);
+        }*/
+
+        return redirect('/profile');
     }
 
 }

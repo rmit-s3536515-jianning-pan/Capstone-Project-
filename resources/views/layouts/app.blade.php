@@ -7,12 +7,60 @@
 
     <title>Encounter</title>
 
+    <script src="{{ asset('js/jquery-3.3.1.min.js')}}"></script>
+    <!-- external javascript for matching height -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.0/jquery.matchHeight-min.js"></script>
+
+    <!-- jquery for multi select  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+
+
+<!-- ____________________________________________SB Admin 2 Bootstraps____________________________________________ -->
+    <!-- Bootstrap Core CSS -->
+    <link href="{{ asset('bs/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="{{ asset('bs/vendor/metisMenu/metisMenu.min.css') }}" rel="stylesheet">
+
+    <!-- DataTables CSS -->
+    <link href="{{ asset('bs/vendor/datatables-plugins/dataTables.bootstrap.css') }}" rel="stylesheet">
+
+    <!-- DataTables Responsive CSS -->
+    <link href="{{ asset('bs/vendor/datatables-responsive/dataTables.responsive.css') }}" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="{{ asset('bs/vendor/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+<!--______________________________________________________________________________________________________________-->
+
+    <link rel="stylesheet" type="text/css" href="{{asset('css/m-buttons.min.css') }}">
+    <script src="{{ asset('js/m-dropdown.min.js') }}"></script>
+    <script src="{{ asset('js/m-radio.min.js') }}"></script>
+    <!-- datetime picker -->
+
+    <!-- http://felicegattuso.com/projects/datedropper/ -->
+    <link href="{{ asset('css/datedropper.css') }}" rel="stylesheet" type="text/css" />
+    <script src="{{ asset('js/datedropper.js') }}"></script>
+
+
+    <!-- time picker -->
+    <link href="{{ asset('css/jquery.timepicker.css') }}" rel="stylesheet">
+    <script type="text/javascript" src="{{ asset('js/jquery.timepicker.js') }}"></script>
+
+    <!-- restrict input to numeric value -->
+    <!-- https://www.jqueryscript.net/form/jQuery-Plugin-To-Restrict-Input-To-Numeric-Values-Mask-As-Number.html -->
+    <script src="{{ asset('js/jquery-mask-as-number.js') }}"></script>
+
+
+
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css')}}">
+    <script src="{{ asset('js/bootstrap.min.js')}}"></script>
     <!-- Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700">
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
 
 
@@ -32,9 +80,15 @@
         .footer{
             background-color: #19181A !important;
             color:#fff !important;
+            padding-top:25px;
+            padding-bottom:25px;
         }
         .home_nav{
-            background-color: #C96567 !important;
+            -webkit-box-shadow: 0px 3px 21px 3px rgba(0,0,0,0.67);
+-moz-box-shadow: 0px 3px 21px 3px rgba(0,0,0,0.67);
+box-shadow: 0px 3px 21px 3px rgba(0,0,0,0.67);
+            background:rgba(201,101,103,0.85) !important;
+            /*background-color: #C96567 !important;*/
         }
         a{
             text-decoration: none !important;
@@ -43,6 +97,14 @@
 
         .br{
             border-right:1px solid black !important;
+        }
+
+        .navbar{
+            border: 0;
+        }
+
+        .navbar-nav li a:hover, .navbar-nav li.active a{
+            background-color: #fff !important;
         }
     </style>
 </head>
@@ -82,16 +144,23 @@
                         <li><a href="{{ url('/login') }}">Login</a></li>
                         <li><a href="{{ url('/register') }}">Register</a></li>
                     @else
-                          <li ><a class="br" href="{{ url('/event/create') }}">Create a Event</a></li>
-                         <li ><a class="br" href="{{ route('creategroup')}}">Create a Group</a></li>
+                         <li><a class="br" href="{{ url('/myEvent') }}">Joined Event</a></li>
+                         <li ><a class="br" href="{{ url('/event/create') }}">Create Event</a></li>
+                         <li ><a class="br" href="{{ route('creategroup')}}">Create Group</a></li>
 
+                        <!-- <li><a class="br" href="{{ url('logout') }}">Logout</a></li> -->
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                 {{ Auth::user()->name }} <span class="caret"></span>
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+
+                                <li><a href="{{ url('/profile') }}"><i class="glyphicon glyphicon-user one"></i> Profile</a></li>
+
+
+                                <li><a href="{{ url('logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+
                             </ul>
                         </li>
                     @endif
@@ -102,8 +171,9 @@
 
     @yield('content')
 
+
     <!-- JavaScripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <script
   src="https://code.jquery.com/jquery-2.2.4.js"
@@ -113,7 +183,30 @@
   <script
   src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
   integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
-  crossorigin="anonymous"></script>
+  crossorigin="anonymous"></script> -->
+
+<!-- ____________________________________________SB Admin 2 Bootstraps____________________________________________ -->
+  <!-- jQuery -->
+    <script src="{{ asset('bs/vendor/jquery/jquery.min.js') }}"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="{{ asset('bs/vendor/metisMenu/metisMenu.min.js') }}"></script>
+
+    <!-- DataTables JavaScript -->
+    <script src="{{ asset('bs/vendor/datatables/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('bs/vendor/datatables-plugins/dataTables.bootstrap.min.js') }}"></script>
+    <script src="{{ asset('bs/vendor/datatables-responsive/dataTables.responsive.js') }}"></script>
+
+    <!-- Page-Level Demo Scripts - Tables - Use for reference -->
+    <script>
+    $(document).ready(function() {
+        $('#dataTables-example').DataTable({
+            responsive: true
+        });
+    });
+    </script>
+<!--______________________________________________________________________________________________________________-->
+
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
 
     <div class="container-fluid text-center footer">

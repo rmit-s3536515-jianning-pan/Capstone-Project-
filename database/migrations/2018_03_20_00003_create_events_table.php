@@ -12,16 +12,19 @@ class CreateEventsTable extends Migration
      */
     public function up()
     {
+        
         Schema::create('events', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
-            $table->string('description');
-            $table->integer('maximum attendee');
-            
-            $table->integer('group_id')->unsigned();
-            $table->foreign('group_id')->references('id')->on('groups');
+            $table->string("description",1000);
+            $table->integer('max_attend');
+            $table->date("start_date")->nullable();
+            $table->time("start_time")->nullable();
+            // $table->integer('group_id')->unsigned();
+            // $table->foreign('group_id')->references('id')->on('groups');
 
         });
+    
     }
 
     /**

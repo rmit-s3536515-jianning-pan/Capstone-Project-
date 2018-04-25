@@ -1,6 +1,7 @@
 /vendor
 /node_modules
 /public/storage
+.env
 Homestead.yaml
 Homestead.json
 /database/factories
@@ -8,4 +9,3 @@ Homestead.json
 /database/database.php
 /database/capstone.db
 /public/images
-.env
