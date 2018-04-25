@@ -4,8 +4,8 @@
 <div class="container limiter">
     <div class="row container-login">
         <div class="col-md-8 col-md-offset-2 wrap-login reverse">
-            <div class="panel panel-default">
-                <div class="panel-heading login100-form-title">Register</div>
+            <div class="panel panel-default p-container">
+                <div class="login100-form-title">Register</div>
                 <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/register/step2') }}">
                         {{ csrf_field() }}
@@ -77,15 +77,16 @@
                 </div>
             </div>
 
-            <div class="login-img" style="background-image: url('images/bg-01.jpg');">
+            <div class="login-img" style="background-image: url('images/c.jpg');">
                 <div class="img">
                       <div class="img__text m--in">
-                        <h2>New here?</h2>
-                        <p>Sign up and discover a great amount of new opportunities!</p>
-                      </div>
-                      <div class="img__btn">
-                        <span class="m--up">Sign Up</span>
-                      </div>
+                        <h2>One of us?</h2>
+                        <p>If you already have an account, just sign in.</p>
+                    <a class="lala" href="{{ url('/login') }}">
+                        <div class="img__btn">
+                            <span class="">Sign In</span>
+                        </div>
+                    </a>
                 </div>
             </div>
 

@@ -5,7 +5,7 @@
     <!-- <div class="jumbotron text-center welcome_header">
             <h1>Encounter</h1>
     </div>  -->
-    
+<!--    
     <div class="container-fluid welcome_header" >
         <div class="row">
         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -50,6 +50,7 @@
 
         </div>
     </div>
+  -->
 
     <!-- include search page -->
     @include('homepage_search')
@@ -110,7 +111,7 @@
     </div>
 
     <!--Content-->
-    <div class="container-fluid minfooter">
+<!--    <div class="container-fluid minfooter">
         <div class="row ">
             <div class="col-md-8 col-md-offset-2">
               <div class="col-md-6 text-center"><h2>HELP</h2></div>
@@ -118,6 +119,8 @@
             </div>
     </div>
 </div>
+-->
+
 <script type="text/javascript">
     $(function(){
         $('.panel').matchHeight();

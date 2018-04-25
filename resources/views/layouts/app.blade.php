@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
+    
     <title>Encounter</title>
     
     <script src="{{ asset('js/jquery-3.3.1.min.js')}}"></script>
@@ -57,11 +58,7 @@
         .fa-btn {
             margin-right: 6px;
         }
-        .footer{
-            background-color: #19181A !important;
-            color:#fff !important;
-            padding:10px 0;
-        }
+
         .home_nav{
             -webkit-box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.67);
             -moz-box-shadow: 0px 3px 21px 3px rgba(0,0,0,0.67);
@@ -86,7 +83,7 @@
         }
 
         .br{
-            border-right:1px solid black !important;
+            /*border-right:1px solid black !important;*/
         }
 
         .navbar{
@@ -99,7 +96,7 @@
         }
 
         #app-layout {
-         margin-top: 45px;
+         margin-top: 50px;
         }
 
         
@@ -134,9 +131,14 @@
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
+                    @if (Auth::guest())
                     <li><a href="{{ url('/index') }}">Home</a></li>
                     <li><a href="{{ url('/') }}">Services</a></li>
                     <li><a href="{{ url('/') }}">About Us</a></li>
+                    @else
+                    <li><a href="{{ url('/') }}">Services</a></li>
+                    <li><a href="{{ url('/') }}">About Us</a></li>
+                    <li><a href="{{ url('/createGroup/index') }}">Groups</a></li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->
@@ -148,8 +150,8 @@
                         <li><a href="{{ url('/login') }}">Login</a></li>
                         <li><a href="{{ url('/register') }}">Register</a></li>
                     @else
-                          <li ><a class="br" href="{{ url('/event/create') }}">Create a Event</a></li>
-                         <li ><a class="br" href="{{ route('creategroup')}}">Create a Group</a></li>
+                          <li ><a class="br" href="{{ url('/event/create') }}">Create Event</a></li>
+                         <li ><a class="br" href="{{ route('creategroup')}}">Create Group</a></li>
 
 
                         <!-- <li><a class="br" href="{{ url('logout') }}">Logout</a></li> -->
@@ -167,6 +169,7 @@
 
                             </ul>
                         </li>
+                        @endif
                     @endif
                 </ul>
             </div>
@@ -223,21 +226,12 @@
                         </li> 
                    </ul>
                </div>
-           
-           
            </div> 
         </div>
+        <div class="col-md-12 text-center footer">
+            <p>@2018 COPYRIGHT ENCOUNTER</p>
+        </div>
     </footer>
-
-
-    <footer class="container-fluid text-center footer">
-            <div class="row">
-                <div class="col-md-12">
-                     <p>@2018 COPYRIGHT ENCOUNTER</p>
-                </div>
-            </div>
-    </footer>
-
 
 </body>
 </html>

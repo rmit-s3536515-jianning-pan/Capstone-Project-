@@ -1,12 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-
-<body class = "login-body" style="background-color: #666666;">
-
 <div class="container limiter">
     <div class="row container-login">
         <div class="col-md-8 col-md-offset-2 wrap-login">
+
             <div class="panel panel-default p-container">
                 <div class="login100-form-title">
                     <span class="login100-form-title">
@@ -77,20 +75,22 @@
                 </div>
             </div>
             
-            <div class="login-img" style="background-image: url('images/bg-01.jpg');">
+            <div class="login-img" style="background-image: url('images/03.jpg');">
                 <div class="img">
-                      <div class="img__text m--in">
+                    <div class="img__text">
                         <h2>New here?</h2>
                         <p>Sign up and discover a great amount of new opportunities!</p>
-                      </div>
-                      <div class="img__btn">
-                        <span class="m--up">Sign Up</span>
-                      </div>
+                    </div>
+                    <a class="lala" href="{{ url('/register') }}">
+                        <div class="img__btn">
+                            <span class="">Sign Up</span>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
     </div>
 </div>
-</body>
+
 
 @endsection

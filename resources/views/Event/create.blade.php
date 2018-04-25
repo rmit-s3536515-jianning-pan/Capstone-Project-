@@ -3,12 +3,14 @@
 
 @section('content')
 
-<div class="jumbotron-fluid text-center">
-		<h2>Create Event</h2>
-</div>
+	<div class="jumbotron welcome_header text-center">
+		<h1> Event</h1>
+		<p>Share the experience with other people</p>
+	</div>
+
 <div class="container"><hr></div>
 
-<div class="container">
+<div class="container event-container">
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
 			<form role="form" method="POST" action="{{ url('/event/create') }}">
