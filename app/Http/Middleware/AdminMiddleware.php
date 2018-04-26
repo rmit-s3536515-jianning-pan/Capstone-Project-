@@ -17,15 +17,14 @@ class AdminMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if ($request->user() && $request->user()->isAdmin != TRUE)
+        if ($request->user() && $request->user()->isAdmin == TRUE)
         {
-            return response('Unauthorized.', 401);
+            return $next($request);
+            
         }
-        else{
-            return redirect('/');
-        }
+        return response()->view('admin.adminonly');
 
-        return $next($request);
+        
         
     }
 }

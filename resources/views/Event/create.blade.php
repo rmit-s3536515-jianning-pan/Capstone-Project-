@@ -20,17 +20,29 @@
 
 				<div class="form-group col-md-6">
 					<label for="max">Max Attendees</label>
-					<input type="number" name="max" class="form-control" placeholder="Max Attendee" min="5" max="30" required>
+					<!-- <input type="number" name="max" class="form-control" placeholder="Max Attendee" min="5" max="30" required> -->
+					<input class="textField form-control" name="max" maxlength="2"
+					data-mask-as-number-min="5" data-mask-as-number-max="30"
+					placeholder="Minimum 5">
 				</div>
 
 				<div class="form-group col-md-6">
 					<label for="event_date">Event date</label>
-					<input type="date" name="event_date" class="form-control" placeholder="date" min="<?php echo date("Y-m-d");?>" required>
+					
+					<input type="text"  class="datepicker form-control" name="event_date" placeholder="date" data-large-mode="true" data-lock="from" data-large-default="true" data-modal="true" required>
+					
+					
 				</div>
 
 				<div class="form-group col-md-6">
 					<label for="event_time">Event time</label>
-					<input type="time" name="event_time" class="form-control" placeholder="time" required>
+					<!-- <div class="timepicker"> -->
+					
+					
+						<!-- <input type="hidden" name="event_time" class="form-control"> -->
+						<input type="text" name="event_time" class="form-control" id="timepicker" placeholder="12:00" required>
+					<!-- </div> -->
+					
 				</div>
 				
 				
@@ -70,8 +82,8 @@
 
 
 				<div class="form-group col-md-6">
-					<button type="submit" name="submit" class="btn btn-primary">
-						Submit
+					<button class="m-btn blue ">
+						Submit<span class="glyphicon glyphicon-chevron-right"></span>
 					</button>
 				</div>
 
@@ -80,4 +92,14 @@
 	</div>
 </div>
 
+<script type="text/javascript">
+	$('.datepicker').dateDropper();
+</script>
+
+<script type="text/javascript">
+	$('.textField').maskAsNumber();
+</script>
+<script type="text/javascript">
+	$('#timepicker').timepicker();
+</script>
 @endsection

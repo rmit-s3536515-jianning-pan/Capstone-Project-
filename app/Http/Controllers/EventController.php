@@ -10,6 +10,7 @@ use App\Category;
 use App\events_categories;
 use App\SubCategory;
 use App\events_subs;
+use App\events_users;
 class EventController extends Controller
 {
 
@@ -66,10 +67,11 @@ class EventController extends Controller
     // show event 
     public function show(){
         $records = Events::findRequested();
-        // dd($records->get());
+        // dd($records);
 
         if(!$records->isEmpty()){
              $records = $records->toArray();
+             // dd($records);
              $records = $records["data"];
         }
         else{
@@ -81,7 +83,38 @@ class EventController extends Controller
     }
 
     public function singleEvent($eventId){
-            return 'I am event id'.$eventId;
+            $e = Events::findOrFail($eventId);
+            $e = $e['original'];
+            $id = auth()->user()->id;
+            $attends = events_users::where('event_id',$eventId)->where('user_id',$id)->get();
+            // dd($attends);
+            $attend = 0;
+            if($attends->isEmpty()){
+                $attend = 0;
+            }
+            else{
+                $attend = 1;
+            }
+
+            // dd($attend);
+            return view('Event.oneevent',['id'=>$eventId , 'event'=>$e,'attend'=>$attend]);
+    }
+
+    public function join($eventId){
+        $id = auth()->user()->id;
+        $attend = new events_users();
+        $attend->user_id = $id;
+        $attend->event_id = $eventId;
+        $attend->save();
+        return redirect('event/'.$eventId);
+    }
+
+    public function leave($eventId){
+        $id = auth()->user()->id;
+        $leave = events_users::where('event_id',$eventId)->where('user_id',$id);
+        $leave->delete();
+
+        return redirect('event/'.$eventId);
     }
 
 }
