@@ -13,7 +13,7 @@
 
     <!-- jquery for multi select  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
-<<<<<<< HEAD
+
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
     <!-- select2 -->
@@ -21,7 +21,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
     
     
-=======
+
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
 
@@ -43,7 +43,7 @@
     <link href="{{ asset('bs/vendor/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
 <!--______________________________________________________________________________________________________________-->
 
->>>>>>> ac69e84012dbbd735fc86530cd3cb2c1a2c73849
+
     <link rel="stylesheet" type="text/css" href="{{asset('css/m-buttons.min.css') }}">
     <script src="{{ asset('js/m-dropdown.min.js') }}"></script>
     <script src="{{ asset('js/m-radio.min.js') }}"></script>

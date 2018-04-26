@@ -62,9 +62,8 @@ class ProfileController extends Controller
             'bio' => $data['bio'],
           ]);
 
-<<<<<<< HEAD
         DB::table('users_subs')
-=======
+
         /*DB::table('users_categories')
 >>>>>>> ac69e84012dbbd735fc86530cd3cb2c1a2c73849
           ->where('user_id', '=', Auth::user()->id)
