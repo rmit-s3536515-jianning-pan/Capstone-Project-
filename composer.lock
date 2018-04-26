@@ -1050,8 +1050,7 @@
         },
         {
             "name": "nesbot/carbon",
-<<<<<<< HEAD
-<<<<<<< HEAD
+
             "version": "1.23.0",
             "source": {
                 "type": "git",
@@ -1062,11 +1061,11 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/4a874a39b2b00d7e0146cd46fab6f47c41ce9e65",
                 "reference": "4a874a39b2b00d7e0146cd46fab6f47c41ce9e65",
-=======
+
             "version": "1.25.0",
-=======
+
             "version": "1.26.4",
->>>>>>> 438a00eb021c50b203b2af5dfd820b23e2ddfa6c
+
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
@@ -1074,14 +1073,13 @@
             },
             "dist": {
                 "type": "zip",
-<<<<<<< HEAD
+
                 "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/cbcf13da0b531767e39eb86e9687f5deba9857b4",
                 "reference": "cbcf13da0b531767e39eb86e9687f5deba9857b4",
->>>>>>> master
-=======
+
                 "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/e3d9014279133a3cccc01f6a691322a2d5a6a87b",
                 "reference": "e3d9014279133a3cccc01f6a691322a2d5a6a87b",
->>>>>>> 438a00eb021c50b203b2af5dfd820b23e2ddfa6c
+
                 "shasum": ""
             },
             "require": {
@@ -1116,8 +1114,7 @@
                 "datetime",
                 "time"
             ],
-<<<<<<< HEAD
-<<<<<<< HEAD
+
             "time": "2018-02-28T09:22:05+00:00"
 =======
             "time": "2018-03-19T15:50:49+00:00"
