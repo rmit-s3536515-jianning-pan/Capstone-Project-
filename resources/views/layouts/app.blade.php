@@ -47,10 +47,8 @@
     <link rel="stylesheet" type="text/css" href="{{asset('css/m-buttons.min.css') }}">
     <script src="{{ asset('js/m-dropdown.min.js') }}"></script>
     <script src="{{ asset('js/m-radio.min.js') }}"></script>
-<<<<<<< HEAD
-=======
 
->>>>>>> 9fe9cfd87e9d8396abfe2801041e41e2b8c6f28b
+
     <!-- datetime picker -->
 
     <!-- http://felicegattuso.com/projects/datedropper/ -->
@@ -180,14 +178,7 @@
                         <li><a href="{{ url('/login') }}">Login</a></li>
                         <li><a href="{{ url('/register') }}">Register</a></li>
                     @else
-<<<<<<< HEAD
-                          <li ><a class="br" href="{{ url('/event/create') }}">Create Event</a></li>
-                         <li ><a class="br" href="{{ route('creategroup')}}">Create Group</a></li>
-
-                         <li><a class="br" href="{{ url('/myEvent') }}">Joined Event</a></li>
-                         <li ><a class="br" href="{{ url('/event/create') }}">Create Event</a></li>
-                         <li ><a class="br" href="{{ route('creategroup')}}">Create Group</a></li>
-=======
+                          
 
                          
 
@@ -195,7 +186,6 @@
                          <li ><a class="br" href="{{ url('/event/create') }}">Create Event</a></li>
                          <li ><a class="br" href="{{ url('/creategroup')}}">Create Group</a></li>
 
->>>>>>> 9fe9cfd87e9d8396abfe2801041e41e2b8c6f28b
 
                         <!-- <li><a class="br" href="{{ url('logout') }}">Logout</a></li> -->
                         <li class="dropdown">
