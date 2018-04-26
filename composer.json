@@ -7,7 +7,8 @@
     "require": {
         "php": ">=5.5.9",
         "laravel/framework": "5.2.*",
-        "doctrine/dbal":"v2.5.13"
+        "doctrine/dbal":"v2.5.13",
+        "loilo/fuse": "^3.2"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
@@ -17,6 +18,7 @@
         "symfony/dom-crawler": "2.8.*|3.0.*"
     },
     "autoload": {
+        "files":["vendor/loilo/fuse/src/Fuse.php"],
         "classmap": [
             "database"
         ],

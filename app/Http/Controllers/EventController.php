@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+// use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Response;
 
 use App\Http\Requests;
 use App\Events;
@@ -58,7 +60,22 @@ class EventController extends Controller
             //     $events_cate->category_id = $cate;
             //     $events_cate->save();
             // }
-    		
+    	   $table = Events::all();
+    $filename = "events.csv";
+    $handle = fopen($filename, 'w+');
+    fputcsv($handle, array('title', 'description', 'max_attend', 'start_date','start_time'));
+
+    foreach($table as $row) {
+        fputcsv($handle, array($row['title'], $row['description'], $row['max_attend'], $row['start_date'], $row['start_time']));
+    }
+
+    fclose($handle);
+
+    $headers = array(
+        'Content-Type' => 'text/csv',
+    );
+
+    Response::download($filename, 'events.csv', $headers);
 
     		return redirect('/');
     		// echo $name.$max;
@@ -69,14 +86,8 @@ class EventController extends Controller
         $records = Events::findRequested();
         // dd($records);
 
-        if(!$records->isEmpty()){
-             $records = $records->toArray();
-             // dd($records);
-             $records = $records["data"];
-        }
-        else{
-            $records = array();//empty array since no results
-        }
+        // if(!$records->isEmpty()){
+        
        
         // dd($records);
         return view('Event.show',['records' =>$records] );

@@ -13,6 +13,15 @@
 
     <!-- jquery for multi select  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+    <!-- select2 -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+    
+    
+
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
 
@@ -33,6 +42,7 @@
     <!-- Custom Fonts -->
     <link href="{{ asset('bs/vendor/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
 <!--______________________________________________________________________________________________________________-->
+
 
     <link rel="stylesheet" type="text/css" href="{{asset('css/m-buttons.min.css') }}">
     <script src="{{ asset('js/m-dropdown.min.js') }}"></script>

@@ -31,6 +31,8 @@
                 <input type="text" name="address" style="width:400px;" value="{{ Auth::user()->address }}"><br><br>
 
                 <p><h4><b>Preferences :</b></h4></p><hr>
+<<<<<<< HEAD
+=======
                 <!--@foreach($data as $cate)
                  @php $check =null; @endphp
                   @foreach($selected as $checked)
@@ -67,13 +69,46 @@
                       </div>
                   @endif
                 @endforeach-->
+>>>>>>> ac69e84012dbbd735fc86530cd3cb2c1a2c73849
 
-                <input type="submit" value"Update" class="form-control"><br>
+                <div class="form-group">
+                     
+                     <select class="js-example-basic-multiple form-control  " name="pref[]" multiple="multiple">
+                  @foreach($categories as $cate)
+                    <optgroup label="{{$cate->cat_name}}">
+                      @foreach($subs as $sub)
+                          @if($sub->cate_id==$cate['original']['id'])
+                              @if(in_array($sub->id,$selected))
+                                <option value="{{$sub->id}}" selected>{{$sub->name}}</option>
+                              @else
+                                 <option value="{{$sub->id}}">{{$sub->name}}</option>
+                              @endif
+                          @endif
+                      @endforeach
+                    </optgroup>
+                  @endforeach
+                </select>
+              
+                </div>
+              
+         
+                <div class="form-group">
+                     <button type="submit" value="Update" class="form-control m-btn red ">Update</button>
+                </div>
+               <br>
             </form>
           </div>
         </div>
       </div>
   </div>
 </div>
-
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('.js-example-basic-multiple').select2({
+        placeholder: "Add interests"
+    });
+});
+</script>
 @endsection
+
+
