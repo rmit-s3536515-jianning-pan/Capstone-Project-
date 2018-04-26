@@ -178,13 +178,11 @@
                         <li><a href="{{ url('/register') }}">Register</a></li>
                     @else
 
-                          <li ><a class="br" href="{{ url('/event/create') }}">Create Event</a></li>
-                         <li ><a class="br" href="{{ route('creategroup')}}">Create Group</a></li>
-
+                         
 
                          <li><a class="br" href="{{ url('/myEvent') }}">Joined Event</a></li>
                          <li ><a class="br" href="{{ url('/event/create') }}">Create Event</a></li>
-                         <li ><a class="br" href="{{ route('creategroup')}}">Create Group</a></li>
+                         <li ><a class="br" href="{{ url('/creategroup')}}">Create Group</a></li>
 
 
                         <!-- <li><a class="br" href="{{ url('logout') }}">Logout</a></li> -->
