@@ -4,12 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-<<<<<<< HEAD
-    
-    
-=======
 
->>>>>>> 438a00eb021c50b203b2af5dfd820b23e2ddfa6c
     <title>Encounter</title>
 
     <script src="{{ asset('js/jquery-3.3.1.min.js')}}"></script>
@@ -39,13 +34,10 @@
     <link href="{{ asset('bs/vendor/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
 <!--______________________________________________________________________________________________________________-->
 
-<<<<<<< HEAD
-    
-=======
+
     <link rel="stylesheet" type="text/css" href="{{asset('css/m-buttons.min.css') }}">
     <script src="{{ asset('js/m-dropdown.min.js') }}"></script>
     <script src="{{ asset('js/m-radio.min.js') }}"></script>
->>>>>>> 438a00eb021c50b203b2af5dfd820b23e2ddfa6c
     <!-- datetime picker -->
 
     <!-- http://felicegattuso.com/projects/datedropper/ -->
@@ -99,9 +91,9 @@
         }
 
         ul li a{
-        display: block; 
+        display: block;
         padding: 30px 20px;
-        color: #222; 
+        color: #222;
         font-size: 12px;
         letter-spacing: 1px;
         text-decoration: none;
@@ -125,7 +117,7 @@
          margin-top: 50px;
         }
 
-        
+
         .navbar-brand {
             font-style: oblique, serif;
             font-weight: bold;
@@ -163,7 +155,7 @@
                     <li><a href="{{ url('/') }}">About Us</a></li>
                     @else
                     <li><a href="{{ url('/') }}">Events</a></li>
-                    <li><a href="{{ url('/createGroup/index') }}">Groups</a></li>
+                    <li><a href="{{ url('/') }}">Groups</a></li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->
@@ -175,15 +167,10 @@
                         <li><a href="{{ url('/login') }}">Login</a></li>
                         <li><a href="{{ url('/register') }}">Register</a></li>
                     @else
-<<<<<<< HEAD
-                          <li ><a class="br" href="{{ url('/event/create') }}">Create Event</a></li>
-                         <li ><a class="br" href="{{ route('creategroup')}}">Create Group</a></li>
-
-=======
                          <li><a class="br" href="{{ url('/myEvent') }}">Joined Event</a></li>
                          <li ><a class="br" href="{{ url('/event/create') }}">Create Event</a></li>
-                         <li ><a class="br" href="{{ route('creategroup')}}">Create Group</a></li>
->>>>>>> 438a00eb021c50b203b2af5dfd820b23e2ddfa6c
+                         <li ><a class="br" href="{{ url('createGroup')}}">Create Group</a></li>
+
 
                         <!-- <li><a class="br" href="{{ url('logout') }}">Logout</a></li> -->
                         <li class="dropdown">
@@ -225,7 +212,6 @@
 
 <!-- ____________________________________________SB Admin 2 Bootstraps____________________________________________ -->
   <!-- jQuery -->
-    <script src="{{ asset('bs/vendor/jquery/jquery.min.js') }}"></script>
 
     <!-- Metis Menu Plugin JavaScript -->
     <script src="{{ asset('bs/vendor/metisMenu/metisMenu.min.js') }}"></script>
@@ -250,49 +236,49 @@
 <footer class="footer-main">
      <div class="container">
        <div class="row">
-       
+
                 <div class="col-md-4 col-sm-6 col-xs-12">
                   <span><a class="text-white navbar-brand" href="{{ url('/index') }}">
                     Encounter
                 </a></span>
                 </div>
-                
+
                 <div class="col-md-4 col-sm-6 col-xs-12">
                     <ul class="menu">
-                         <span>Menu</span>    
+                         <span>Menu</span>
                          <li>
                             <a href="#">Home</a>
                           </li>
-                               
+
                           <li>
                              <a href="#">About</a>
                           </li>
-                               
+
                           <li>
                             <a href="#">Services</a>
                           </li>
-                               
+
                           <li>
                              <a href="#">Gallery</a>
                           </li>
                      </ul>
                 </div>
-           
+
                 <div class="col-md-4 col-sm-6 col-xs-12">
                   <ul class="address">
-                        <span>Contact</span>       
+                        <span>Contact</span>
                         <li>
                            <i class="fa fa-phone" aria-hidden="true"></i> <a href="#">Phone</a>
                         </li>
                         <li>
                            <i class="fa fa-map-marker" aria-hidden="true"></i> <a href="#">Adress</a>
-                        </li> 
+                        </li>
                         <li>
                            <i class="fa fa-envelope" aria-hidden="true"></i> <a href="#">Email</a>
-                        </li> 
+                        </li>
                    </ul>
                </div>
-           </div> 
+           </div>
         </div>
         <div class="col-md-12 text-center footer">
             <p>@2018 COPYRIGHT ENCOUNTER</p>

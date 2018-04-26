@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
 use App\Events;
 use App\Category;
@@ -58,13 +57,13 @@ class EventController extends Controller
             //     $events_cate->category_id = $cate;
             //     $events_cate->save();
             // }
-    		
+
 
     		return redirect('/');
     		// echo $name.$max;
     }
 
-    // show event 
+    // show event
     public function show(){
         $records = Events::findRequested();
         // dd($records);
@@ -77,7 +76,7 @@ class EventController extends Controller
         else{
             $records = array();//empty array since no results
         }
-       
+
         // dd($records);
         return view('Event.show',['records' =>$records] );
     }

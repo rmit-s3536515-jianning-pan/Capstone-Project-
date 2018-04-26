@@ -16,7 +16,7 @@ class Events extends Model
 
     // find only interested category
     public static function findInterestedCategory(){
-    	// get the user id 
+    	// get the user id
     	$user_id = auth()->user()->id;
     	$user_cates = users_subs::all()->groupBy('user_id');
     	$events_cates = events_subs::all()->groupBy('event_id');
@@ -29,7 +29,7 @@ class Events extends Model
         })->get();
         $e_ids = array();
         foreach($results as $r){
-            
+
             array_push($e_ids,$r->event_id);
         }
         // dd($e_ids);
@@ -50,13 +50,13 @@ class Events extends Model
             request()->session()->put($r,$points);
             // request()->session()->save();
         }
-        
+
     	// $result = collect();
      //    foreach($user_cates as $user_cate){ //outside user loop
      //            $uid = $user_cate['0']['original']['user_id'];//get the user id
      //            // dd($user_cate);
      //            if($uid==$user_id){ //verify if it is same user
-     //                foreach($user_cate as $uc){ // loop for same id 
+     //                foreach($user_cate as $uc){ // loop for same id
      //                    $u_cat_id = $uc['original']['category_id'];//get the cat_id
      //                     foreach($events_cates as $event_cate){// outside of event loop
      //                        // dd($events_cates);
@@ -70,25 +70,25 @@ class Events extends Model
      //                                    $isRight = true;
      //                                    break;
      //                            }
-                            
+
      //                        }
      //                        if($isRight){
 
      //                            $result->push($e_event_id);//push event_id
      //                            // $result->push($query->find($e_event_id));
-                                
-                                
+
+
      //                        }
      //                    }
      //                }
-                   
+
      //                 break;
      //            }
-               
+
      //    }
      //    $result = $result->unique();
      //    $query->findMany($result->toArray());
-    	return $query->paginate(5);	
+    	return $query->paginate(5);
     }
 
     // find the result based on the keywords and category
@@ -98,17 +98,17 @@ class Events extends Model
     	//search results based on user input without case sensitive
     	$cates = \Request::input('categories');
         $subs = \Request::input('subs');
-        // dd($subs); 
+        // dd($subs);
     	$events_cates = events_subs::all()->groupBy('event_id');
 
     	// dd($events_cates);
-        $result = collect(); //create empty collection 
+        $result = collect(); //create empty collection
     	if($subs!=null){ //if the request from category not null
-    		foreach($events_cates as $ec){ 
+    		foreach($events_cates as $ec){
                 // dd($ec);
                 $count = 0;
                 $ec_event_id  = $ec['0']['original']['event_id'];
-                
+
                 foreach($ec as $e){ //inside the loop of same event id
                         $e_cate_id  = $e['original']['sub_id'];
                         // dd($e_cate_id);
@@ -119,32 +119,23 @@ class Events extends Model
                         }
                     }
                 }
-                
+
                 if($count == count($subs)){
                     $result->push($ec_event_id);
                 }
-                
+
             }
             // $result = \DB::table('events_categories')->whereIn('category_id',$cates)->lists('event_id');
             // $result = events_categories::query()->find($cates)->lists('event_id');
             // dd($result);
             if(count($result)==0){
                 return $query->limit(0);// might have other issue
-               
+
             }
     		 $query->findMany($result->toArray());
             // dd($query->get());
-            
-    	}
-        if(\Request::input('keywords')!=null){
-    	   $query->where(function($q){
-	    		$q->where('title','ilike','%'.\Request::input('keywords').'%')
-	    				->orWhere('description','ilike','%'.\Request::input('keywords').'%');
-    		});
-       }
-                       
-    	
-    	
+
+    	}       
 
     	return $query->paginate(5);
     }

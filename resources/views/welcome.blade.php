@@ -5,11 +5,8 @@
     <!-- <div class="jumbotron text-center welcome_header">
             <h1>Encounter</h1>
     </div>  -->
-<<<<<<< HEAD
-<!--    
-=======
 
->>>>>>> 438a00eb021c50b203b2af5dfd820b23e2ddfa6c
+<!--
     <div class="container-fluid welcome_header" >
         <div class="row">
         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -102,7 +99,7 @@
                             <div class="panel panel-success text-center" >
                                 <div class="panel-heading" style="height: 100px; font-size: 40px" >{{ $c['cat_name'] }}</div>
 
-                                  
+
                             </div>
                            </a>
                     </div>
@@ -146,12 +143,7 @@
     </script>
 @endsection
 <script type="text/javascript">
-<<<<<<< HEAD
-    
-=======
 
-
->>>>>>> 438a00eb021c50b203b2af5dfd820b23e2ddfa6c
         var options = [];
 $( '.dropdown-menu a' ).on( 'click', function( event ) {
    var $target = $( event.currentTarget ),
@@ -170,8 +162,3 @@ $( '.dropdown-menu a' ).on( 'click', function( event ) {
    return false;
 });
     </script>
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 438a00eb021c50b203b2af5dfd820b23e2ddfa6c

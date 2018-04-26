@@ -11,11 +11,9 @@
 			<div class="row">
 				<!-- <div class="col-md-8 col-md-offset-2"> -->
 				<div class="col-md-12">
-<<<<<<< HEAD
-				<form method="post" action="">
-=======
-				<form name="form_G" method="post" action="{{ route('create') }}">
->>>>>>> 438a00eb021c50b203b2af5dfd820b23e2ddfa6c
+
+				<form name="form_G" method="post" action="{{ route('store') }}">
+
 					{{ csrf_field() }}
 					<h1>What will you group be about?</h1>
 					<!-- <hr>
@@ -52,15 +50,7 @@
         		@endforeach
 				</div>
 
-<<<<<<< HEAD
-
-
-				
-
-				<h1>What will the Group's name be?</h1>
-=======
 				<h1>What will be Group's name be?</h1>
->>>>>>> 438a00eb021c50b203b2af5dfd820b23e2ddfa6c
 						<div class="form-group">
 							<input type="text" name="group_name" class="form-control" id="group_name" placeholder="Group name" required>
 						</div>
@@ -81,9 +71,6 @@
 			</div>
 
 		</div>
-
-
-
 
 
 @endsection

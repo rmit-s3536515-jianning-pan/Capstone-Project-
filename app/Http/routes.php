@@ -43,11 +43,11 @@ Route::post('/step2','Auth\AuthController@store2')->name('poststep2');
 Route::get('/createGroup','GroupController@create')->name('creategroup');
 Route::post('/createGroup','GroupController@store');
 Route::get('/createGroup/index','GroupController@index');
-*/ 
+*/
 
 //Route for Group
 Route::get('/createGroup','GroupController@createGroup')->name('creategroup');
-Route::post('/storeGroup', 'GroupController@storeGroup')->name('create');
+Route::post('/storeGroup', 'GroupController@storeGroup')->name('store');
 
 Route::get('/home', 'HomeController@index');
 //Route for Manage Account(Profile)
@@ -60,4 +60,3 @@ Route::post('/insertDetail', 'ProfileController@update')->name('insert');
 Route::get('/myEvent', 'MyEventController@showEventList')->name('myEvent');
 Route::get('/leaveEvent/{event_id}', 'MyEventController@leaveEvent');
 Route::get('/{groupname}','HomeController@showGroups');
-
