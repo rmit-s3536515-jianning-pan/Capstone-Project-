@@ -29,49 +29,45 @@
                 <input type="text" name="address" style="width:400px;" value="{{ Auth::user()->address }}"><br><br>
 
                 <p><h4><b>Preferences :</b></h4></p><hr>
-                @foreach($data as $cate)
-                <?php $check =null; ?>
-                  @foreach($selected as $checked)
-                    @if($cate->id == $checked->category_id)
-                      <div class="form-group col-md-4">
-                        <input type="checkbox" name="cates[]" id="{{ $cate->id }}" autocomplete="off" value="{{ $cate->id }}" checked/>
-                        <div class="btn-group">
-                             <label  class="btn btn-default">
-                                <span class="glyphicon glyphicon-ok"></span>
-                                 <span> </span>
-                            </label>
-                           <label for="{{ $cate->id }}" class="btn btn-default active">
-                              {{ $cate->cat_name }}
-                           </label>
-                         </div>
-                      </div>
-                     <?php $check = $checked->category_id; ?>
-                     @break
-                    @endif
+
+                <div class="form-group">
+                     
+                     <select class="js-example-basic-multiple form-control  " name="pref[]" multiple="multiple">
+                  @foreach($categories as $cate)
+                    <optgroup label="{{$cate->cat_name}}">
+                      @foreach($subs as $sub)
+                          @if($sub->cate_id==$cate['original']['id'])
+                              @if(in_array($sub->id,$selected))
+                                <option value="{{$sub->id}}" selected>{{$sub->name}}</option>
+                              @else
+                                 <option value="{{$sub->id}}">{{$sub->name}}</option>
+                              @endif
+                          @endif
+                      @endforeach
+                    </optgroup>
                   @endforeach
-                  @if ($check != $cate->id)
-                     <div class="form-group col-md-4">
-                     <input type="checkbox" name="cates[]" id="{{ $cate->id }}" autocomplete="off" value="{{ $cate->id }}"/>
-
-                       <div class="btn-group">
-                            <label  class="btn btn-default">
-                               <span class="glyphicon glyphicon-ok"></span>
-                                <span> </span>
-                           </label>
-                          <label for="{{ $cate->id }}" class="btn btn-default active">
-                             {{ $cate->cat_name }}
-                          </label>
-                        </div>
-                      </div>
-                  @endif
-                @endforeach
-
-                <input type="submit" value"Update" class="form-control"><br>
+                </select>
+              
+                </div>
+              
+         
+                <div class="form-group">
+                     <button type="submit" value="Update" class="form-control m-btn red ">Update</button>
+                </div>
+               <br>
             </form>
           </div>
         </div>
       </div>
   </div>
 </div>
-
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('.js-example-basic-multiple').select2({
+        placeholder: "Add interests"
+    });
+});
+</script>
 @endsection
+
+

@@ -39,9 +39,9 @@ class HomeController extends Controller
         // dd($categories);
         
         $relatedEvents = Events::findInterestedCategory();
-        
-        $relatedEvents = $relatedEvents->toArray();
-        $relatedEvents = $relatedEvents['data'];
+        // dd($relatedEvents);
+        // $relatedEvents = $relatedEvents->toArray();
+        // $relatedEvents = $relatedEvents['data'];
         
 
         return view('welcome',['categories' =>$categories['0'],'event'=>$relatedEvents,'subs'=>$subs]);

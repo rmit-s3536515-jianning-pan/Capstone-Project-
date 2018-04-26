@@ -37,7 +37,7 @@ Route::get('/event/{id}/join','EventController@join');
 Route::get('/event/{id}/leave','EventController@leave');
 Route::get('/event/{id}',['uses'=>'EventController@singleEvent']);
 
-
+// auth controller
 Route::auth();
 Route::post('/register/step2','Auth\AuthController@store'); 
 
@@ -45,8 +45,9 @@ Route::get('/register/step2','Auth\AuthController@step2')->name('step2');
 Route::post('/step2','Auth\AuthController@store2')->name('poststep2');
 
 
-
+// group controller
 Route::get('/createGroup','GroupController@create')->name('creategroup');
+Route::post('/group/store','GroupController@store');
 //Route::get('/login', 'LoginController@show');
 
 
