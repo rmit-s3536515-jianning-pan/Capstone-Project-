@@ -52,6 +52,7 @@ class HomeController extends Controller
     }
 
     public function showGroups($groupname){
+        
         return view('grouplist');
     }
 }
