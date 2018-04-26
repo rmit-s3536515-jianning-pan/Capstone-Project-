@@ -925,6 +925,7 @@
                 "storage"
             ],
             "time": "2018-04-06T09:58:14+00:00"
+<<<<<<< HEAD
         },
         {
             "name": "loilo/fuse",
@@ -973,6 +974,8 @@
             ],
             "description": "Fuzzy search for PHP based on Bitap algorithm",
             "time": "2018-04-02T21:05:34+00:00"
+=======
+>>>>>>> ac69e84012dbbd735fc86530cd3cb2c1a2c73849
         },
         {
             "name": "monolog/monolog",
@@ -1098,6 +1101,7 @@
         },
         {
             "name": "nesbot/carbon",
+<<<<<<< HEAD
             "version": "1.27.0",
             "source": {
                 "type": "git",
@@ -1108,6 +1112,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/ef81c39b67200dcd7401c24363dcac05ac3a4fe9",
                 "reference": "ef81c39b67200dcd7401c24363dcac05ac3a4fe9",
+=======
+            "version": "1.26.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/briannesbitt/Carbon.git",
+                "reference": "e3d9014279133a3cccc01f6a691322a2d5a6a87b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/e3d9014279133a3cccc01f6a691322a2d5a6a87b",
+                "reference": "e3d9014279133a3cccc01f6a691322a2d5a6a87b",
+>>>>>>> ac69e84012dbbd735fc86530cd3cb2c1a2c73849
                 "shasum": ""
             },
             "require": {
@@ -1142,7 +1158,11 @@
                 "datetime",
                 "time"
             ],
+<<<<<<< HEAD
             "time": "2018-04-23T09:02:57+00:00"
+=======
+            "time": "2018-04-17T15:35:42+00:00"
+>>>>>>> ac69e84012dbbd735fc86530cd3cb2c1a2c73849
         },
         {
             "name": "nikic/php-parser",
