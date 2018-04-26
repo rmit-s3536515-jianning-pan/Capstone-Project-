@@ -97,7 +97,7 @@
                             <div class="panel panel-success text-center" >
                                 <div class="panel-heading" style="height: 100px; font-size: 40px" >{{ $c['cat_name'] }}</div>
 
-
+                                  
                             </div>
                            </a>
                     </div>
