@@ -227,8 +227,8 @@
 
 <!-- ____________________________________________SB Admin 2 Bootstraps____________________________________________ -->
   <!-- jQuery -->
-    <script src="{{ asset('bs/vendor/jquery/jquery.min.js') }}"></script>
-
+   <!--  <script src="{{ asset('bs/vendor/jquery/jquery.min.js') }}"></script>
+ -->
     <!-- Metis Menu Plugin JavaScript -->
     <script src="{{ asset('bs/vendor/metisMenu/metisMenu.min.js') }}"></script>
 

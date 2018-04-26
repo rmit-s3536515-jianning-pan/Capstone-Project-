@@ -31,50 +31,11 @@
                 <input type="text" name="address" style="width:400px;" value="{{ Auth::user()->address }}"><br><br>
 
                 <p><h4><b>Preferences :</b></h4></p><hr>
-<<<<<<< HEAD
-=======
-                <!--@foreach($data as $cate)
-                 @php $check =null; @endphp
-                  @foreach($selected as $checked)
-                    @if($cate->id == $checked->category_id)
-                      <div class="form-group col-md-4">
-                        <input type="checkbox" name="cates[]" id="{{ $cate->id }}" autocomplete="off" value="{{ $cate->id }}" checked/>
-                        <div class="btn-group">
-                             <label  class="btn btn-default">
-                                <span class="glyphicon glyphicon-ok"></span>
-                                 <span> </span>
-                            </label>
-                           <label for="{{ $cate->id }}" class="btn btn-default active">
-                              {{ $cate->cat_name }}
-                           </label>
-                         </div>
-                      </div>
-                     @php $check = $checked->category_id; @endphp
-                     @break
-                    @endif
-                  @endforeach
-                  @if ($check != $cate->id)
-                     <div class="form-group col-md-4">
-                     <input type="checkbox" name="cates[]" id="{{ $cate->id }}" autocomplete="off" value="{{ $cate->id }}"/>
 
-                       <div class="btn-group">
-                            <label  class="btn btn-default">
-                               <span class="glyphicon glyphicon-ok"></span>
-                                <span> </span>
-                           </label>
-                          <label for="{{ $cate->id }}" class="btn btn-default active">
-                             {{ $cate->cat_name }}
-                          </label>
-                        </div>
-                      </div>
-                  @endif
-                @endforeach-->
->>>>>>> ac69e84012dbbd735fc86530cd3cb2c1a2c73849
 
-<<<<<<< HEAD
                 <div class="form-group">
                      
-                     <select class="js-example-basic-multiple form-control  " name="pref[]" multiple="multiple">
+                     <select class="js-example-basic-multiple  form-control" name="pref[]" multiple="multiple">
                   @foreach($categories as $cate)
                     <optgroup label="{{$cate->cat_name}}">
                       @foreach($subs as $sub)
@@ -97,9 +58,8 @@
                      <button type="submit" value="Update" class="form-control m-btn red ">Update</button>
                 </div>
                <br>
-=======
-                <input type="submit" value="Update" class="form-control"><br>
->>>>>>> 9fb14e4d5cb6cba1725bd6ff64c075b966a85e7f
+               <!--  <input type="submit" value="Update" class="form-control"><br> -->
+
             </form>
           </div>
         </div>
@@ -107,10 +67,8 @@
   </div>
 </div>
 <script type="text/javascript">
-  $(document).ready(function() {
-    $('.js-example-basic-multiple').select2({
-        placeholder: "Add interests"
-    });
+  $(document).ready(function(){
+    $('.js-example-basic-multiple').select2();
 });
 </script>
 @endsection
