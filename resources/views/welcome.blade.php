@@ -67,11 +67,8 @@
                   <div class="panel panel-primary text-center">
                       <div class="panel-heading">
 
-                          <h3>{{ $add['item']["title"] }}</h3>
+                          <h3>{{ $add["item"]["title"] }}</h3>
                           <h4>Matching Percentage: {{ $add['score'] }}%</h4>    
-
-                          <h3>{{ $add["title"] }}</h3>
-                          <h4>Matching Percentage: {{ Session::get($add['id'])}}%</h4>
 
                       </div>
                       <div class="panel-body">
