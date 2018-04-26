@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-	
+
 		<div class="jumbotron-fluid welcome_header bg-primary text-center" style="padding:50px 0">
 			<h1>Event Page</h1>
 		</div>
-	
+
 
 	<div class="container-fluid">
 		<div class="row" >
@@ -18,19 +18,16 @@
 
 				<div>
 					<h4>Who's coming</h4>
-					
-							
+
+
 						<div class="circle bg-success block">
 								<p>sd</p>
 						</div>
-					
-				</div>
-				
 
+				</div>
 
 			</div>
 
-			
 				<div class="col-md-4">
 					@if($attend==0)
 					<a class="form-control m-btn red big" data-toggle="modal" data-target="#myModal">Join</a>
@@ -40,7 +37,7 @@
 					<div class="modal fade" id="leave" role="dialog">
 						<form method="get" action="{{ url('event/'.$id.'/leave') }}">
 						<div class="modal-dialog">
-    
+
 					      <!-- Modal content-->
 					      <div class="modal-content">
 					        <div class="modal-header">
@@ -57,7 +54,7 @@
 					<div class="modal fade" id="myModal" role="dialog">
 						<form method="get" action="{{ url('event/'.$id.'/join') }}">
 						<div class="modal-dialog">
-    
+
 					      <!-- Modal content-->
 					      <div class="modal-content">
 					        <div class="modal-header">
@@ -73,16 +70,16 @@
 					      </div>
 					  </div>
 					</form>
-					</div>	
+					</div>
 				</div>
-				
+
 				<!-- <button href="#" class="m-btn big red">Join</a> -->
 		</div>
 
-		
-		
+
+
 	</div>
-	
+
 	<script type="text/javascript">
 		$(function(){
 			$('.h').matchHeight();
