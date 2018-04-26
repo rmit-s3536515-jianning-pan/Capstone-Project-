@@ -142,11 +142,390 @@ hr.noresult:before { /* Not really supposed to work, but does */
 
 }
 
-
-
 @media (max-width:768px){
   .carousel-inner > .item > img {
       width:100%;
       height:300px;
     }
 }
+
+
+
+/*------------------------------------------------------------------
+[ Login Page + Register Page ]*/
+
+[ FONT ]*/
+
+@font-face {
+  font-family: Poppins-Regular;
+  src: url('../fonts/poppins/Poppins-Regular.ttf'); 
+}
+
+@font-face {
+  font-family: Montserrat-Bold;
+  src: url('../fonts/montserrat/Montserrat-Bold.ttf'); 
+}
+
+.login-body {
+  height: 100%;
+  font-family: Poppins-Regular, sans-serif;
+  margin: 0px; 
+  padding: 0px; 
+  box-sizing: border-box;
+}
+.limiter {
+  width: 100%;
+  margin: 0 auto;
+  padding:0 0;
+}
+.container-login {
+  width: 100%;  
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background: #f2f2f2;
+  margin: 0;
+}
+.wrap-login {
+  width: 100%;
+  background: #fff;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  /*flex-direction: row-reverse;*/
+  margin-left:0;
+  padding:0;
+}
+
+/* [Register] */
+.reverse {
+  flex-direction: row-reverse;
+}
+
+/* [background Image ]*/
+.login-img{
+  width: calc(100% - 750px);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 1;
+}
+.login-img:before {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background: rgba(0,0,0,0.1);
+}
+.login-img:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/*[ Login container ]*/
+.p-container {
+  box-shadow: none;
+  width: 750px;
+  min-height: 100vh;
+  display: block;
+  /*background-color: #f7f7f7;*/
+  padding: 100px 55px 55px 55px;
+  border:none;
+}
+
+/*[ Login Heading ]*/
+.login100-form-title {
+  width: 100%;
+  padding: 10px 0;
+  display: block;
+  font-size: 30px;
+  color: #333333;
+  line-height: 1.2;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/*[ login button ]*/
+.btn-new {
+  width: 100%;
+  height: 50px;
+  border-radius: 10px;
+  background: #6675df;
+  color: #fff;
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/*[ Input text box ]*/
+.form-box {
+    background: transparent;
+}
+input.form-box {
+  outline: none;
+}
+
+
+/*[ text container and button]*/
+.img {
+  padding-top: 200px;
+}
+.img__text {
+  z-index: 2;
+  position: absolute;
+  left: 0;
+  top: 50px;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  margin-top: 120px;
+}
+.img__text p {
+  line-height: 1.5;
+}
+.img__btn {
+  z-index: 2;
+  position: relative;
+  width: 110px;
+  height: 40px;
+  margin:auto;
+  background: transparent;
+  color: #fff !important;
+  text-transform: uppercase;
+  font-size: 20px;
+  cursor: pointer;
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #fff;
+  border-radius: 5px;
+}
+ 
+  
+/*------------------------------------------------------------------
+[ Index Page ]*/
+#about, #services, #contact {
+  padding: 50px 0;
+}
+.row-clear {
+  margin: 0;
+}
+
+/*[ Banner ]*/
+#banner {
+  background-color: #0c0c0c;
+  background-image: url("../../images/w.png")!important;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center, center;
+  background-repeat: no-repeat;
+  position: relative;
+  padding: 15em 0 11em 0;
+}
+
+/*[ 'Get Started' Button ]*/
+.actions {
+  padding: 0;
+  list-style-type: none;
+}
+.actions li {
+  list-style: none;
+  padding-left:0;
+}
+.start-btn {
+  font-weight: 700;
+  color: #fff !important;
+  background-color: #05bca9;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 5px;
+  font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
+  display: inline;
+}
+.btn-xl {
+  text-transform: uppercase;
+  padding: 1.5rem 3rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+}
+.text-white {
+    color: #fff!important;
+}
+.title h1{
+  font-size: 60px; 
+  padding-bottom: 10px;
+}
+.flex-sb-m {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: space-between;
+}
+section h2.section-heading {
+  font-size: 40px;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+section h3.section-subheading {
+  font-size: 16px;
+  font-weight: 400;
+  font-style: italic;
+  margin-bottom: 75px;
+  text-transform: none;
+  font-family: 'Droid Serif', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+@media (min-width: 768px) {
+  section {
+    padding: 100px 0;
+  }
+}
+
+/*[ Section 1 of index page ]*/
+.bg-purple {
+  /*background-color: #6675df;*/
+}
+.rounded-circle {
+    border-radius: 5%!important;
+}
+.img-fluid {
+    max-width: 90%;
+    height: auto;
+    vertical-align: middle;
+    border-style: none;
+}
+.service-box {
+    max-width: 400px;
+    display: inline-block;
+}
+.ml-auto, .mx-auto {
+    margin-left: auto!important;
+    margin-right: auto!important;
+}
+
+
+/*[ 'how it works?' Section 2 of index page ]*/
+.bg-light {
+  background-color: #f8f9fa;
+}
+.process-content {
+  position: relative;
+  text-align: center;
+}
+.process-content .item[data-item]::before {
+  background: #38424e;
+  color: #FFFFFF;
+  border-radius: 100%;
+  font-family: "montserrat-bold", sans-serif;
+  content: attr(data-item);
+  display: inline-block;
+  font-size: 18px;
+  height: 42px;
+  width: 42px;
+  line-height: 42px;
+  text-align: center;
+  vertical-align: middle;
+  margin-bottom: 1.5rem;
+}
+.process-content h5 {
+  color: #05bca9;
+  font-size: 1.6rem;
+  line-height: 1.875;
+  letter-spacing: .2rem;
+  margin-bottom: .3rem;
+}
+
+/*[ Main Footer section ]*/
+.footer{
+    background-color: #19181A !important;
+    color:#fff !important;
+    padding:10px;
+}
+
+.footer-main{
+     background-color: #33383c;
+     padding-top:30px;
+}        
+.logo{
+    color:#FFF;
+    font-weight:700;
+    font-size:30px;
+}
+.address span , .menu span{
+   color: #FFF; 
+   font-weight: bold; 
+   border-bottom: 1px solid #c7c7c7; 
+   padding:10px 0px;
+   display: block;
+   text-transform: uppercase;
+   font-size: 16px;
+   letter-spacing: 3px;
+}
+.address li a , .menu li a{
+    color:#FFF!important;
+    padding: 0!important;
+    text-decoration:none;
+    display: inline-block;
+}
+.address li, .menu li{
+    margin:20px 0px;
+    list-style: none;
+}
+.address .fa{
+    color: #da3e44;
+    margin-right: 10px;
+    font-size:18px;
+}
+
+/*------------------------------------------------------------------
+[ Create Event ]*/
+.jumbotron-fluid {
+  padding-top: 20px;
+}
+.event-container {
+  padding-bottom: 100px
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*------------------------------------------------------------------
+[ Create Group ]*/
+
+
+
+
+
+
+
