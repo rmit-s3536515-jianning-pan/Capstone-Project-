@@ -925,7 +925,7 @@
                 "storage"
             ],
             "time": "2018-04-06T09:58:14+00:00"
-<<<<<<< HEAD
+
         },
         {
             "name": "loilo/fuse",
@@ -974,8 +974,7 @@
             ],
             "description": "Fuzzy search for PHP based on Bitap algorithm",
             "time": "2018-04-02T21:05:34+00:00"
-=======
->>>>>>> ac69e84012dbbd735fc86530cd3cb2c1a2c73849
+
         },
         {
             "name": "monolog/monolog",
@@ -1101,8 +1100,7 @@
         },
         {
             "name": "nesbot/carbon",
-<<<<<<< HEAD
-<<<<<<< HEAD
+
             "version": "1.27.0",
             "source": {
                 "type": "git",
@@ -1113,8 +1111,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/ef81c39b67200dcd7401c24363dcac05ac3a4fe9",
                 "reference": "ef81c39b67200dcd7401c24363dcac05ac3a4fe9",
-=======
-<<<<<<< HEAD
+
             "version": "1.23.0",
             "source": {
                 "type": "git",
@@ -1125,12 +1122,10 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/4a874a39b2b00d7e0146cd46fab6f47c41ce9e65",
                 "reference": "4a874a39b2b00d7e0146cd46fab6f47c41ce9e65",
-=======
+
             "version": "1.25.0",
->>>>>>> 9fb14e4d5cb6cba1725bd6ff64c075b966a85e7f
-=======
             "version": "1.26.4",
->>>>>>> 438a00eb021c50b203b2af5dfd820b23e2ddfa6c
+
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
@@ -1138,18 +1133,13 @@
             },
             "dist": {
                 "type": "zip",
-<<<<<<< HEAD
+
                 "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/cbcf13da0b531767e39eb86e9687f5deba9857b4",
                 "reference": "cbcf13da0b531767e39eb86e9687f5deba9857b4",
->>>>>>> master
-=======
+
                 "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/e3d9014279133a3cccc01f6a691322a2d5a6a87b",
                 "reference": "e3d9014279133a3cccc01f6a691322a2d5a6a87b",
-<<<<<<< HEAD
->>>>>>> ac69e84012dbbd735fc86530cd3cb2c1a2c73849
-=======
->>>>>>> 438a00eb021c50b203b2af5dfd820b23e2ddfa6c
->>>>>>> 9fb14e4d5cb6cba1725bd6ff64c075b966a85e7f
+
                 "shasum": ""
             },
             "require": {
@@ -1184,22 +1174,18 @@
                 "datetime",
                 "time"
             ],
-<<<<<<< HEAD
-<<<<<<< HEAD
+
             "time": "2018-04-23T09:02:57+00:00"
-=======
             "time": "2018-04-17T15:35:42+00:00"
->>>>>>> ac69e84012dbbd735fc86530cd3cb2c1a2c73849
-=======
-<<<<<<< HEAD
+
+
+
             "time": "2018-02-28T09:22:05+00:00"
-=======
+
             "time": "2018-03-19T15:50:49+00:00"
->>>>>>> master
-=======
+
             "time": "2018-04-17T15:35:42+00:00"
->>>>>>> 438a00eb021c50b203b2af5dfd820b23e2ddfa6c
->>>>>>> 9fb14e4d5cb6cba1725bd6ff64c075b966a85e7f
+
         },
         {
             "name": "nikic/php-parser",
