@@ -4,12 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-<<<<<<< HEAD
-    
-    
-=======
 
->>>>>>> 438a00eb021c50b203b2af5dfd820b23e2ddfa6c
     <title>Encounter</title>
 
     <script src="{{ asset('js/jquery-3.3.1.min.js')}}"></script>
@@ -48,17 +43,11 @@
     <link href="{{ asset('bs/vendor/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
 <!--______________________________________________________________________________________________________________-->
 
-<<<<<<< HEAD
 
-=======
-<<<<<<< HEAD
-    
-=======
->>>>>>> 9fb14e4d5cb6cba1725bd6ff64c075b966a85e7f
     <link rel="stylesheet" type="text/css" href="{{asset('css/m-buttons.min.css') }}">
     <script src="{{ asset('js/m-dropdown.min.js') }}"></script>
     <script src="{{ asset('js/m-radio.min.js') }}"></script>
->>>>>>> 438a00eb021c50b203b2af5dfd820b23e2ddfa6c
+
     <!-- datetime picker -->
 
     <!-- http://felicegattuso.com/projects/datedropper/ -->
@@ -188,15 +177,15 @@
                         <li><a href="{{ url('/login') }}">Login</a></li>
                         <li><a href="{{ url('/register') }}">Register</a></li>
                     @else
-<<<<<<< HEAD
+
                           <li ><a class="br" href="{{ url('/event/create') }}">Create Event</a></li>
                          <li ><a class="br" href="{{ route('creategroup')}}">Create Group</a></li>
 
-=======
+
                          <li><a class="br" href="{{ url('/myEvent') }}">Joined Event</a></li>
                          <li ><a class="br" href="{{ url('/event/create') }}">Create Event</a></li>
                          <li ><a class="br" href="{{ route('creategroup')}}">Create Group</a></li>
->>>>>>> 438a00eb021c50b203b2af5dfd820b23e2ddfa6c
+
 
                         <!-- <li><a class="br" href="{{ url('logout') }}">Logout</a></li> -->
                         <li class="dropdown">
