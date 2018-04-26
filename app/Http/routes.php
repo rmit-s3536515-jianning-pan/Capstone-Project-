@@ -38,7 +38,7 @@ Route::get('/register/step2','Auth\AuthController@step2')->name('step2');
 Route::post('/step2','Auth\AuthController@store2')->name('poststep2');
 
 
-
+Route::get('/{groupname}','HomeController@showGroups')->name('grouplist');
 Route::get('/createGroup','GroupController@create')->name('creategroup');
 //Route::get('/login', 'LoginController@show');
 
