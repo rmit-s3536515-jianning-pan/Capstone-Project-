@@ -3,6 +3,7 @@
 @section('content')
 
 <div class="container">
+
   <div class="col-md-10 col-md-offset-1">
     <div class="panel panel-default">
       <div class="panel-heading"><h3>Update Details</h3></div>
@@ -25,12 +26,13 @@
                             <option value"Female">Female</option>
                         </select>
                         <br><br>
+
                 Address : <br>
                 <input type="text" name="address" style="width:400px;" value="{{ Auth::user()->address }}"><br><br>
 
                 <p><h4><b>Preferences :</b></h4></p><hr>
-                @foreach($data as $cate)
-                <?php $check =null; ?>
+                <!--@foreach($data as $cate)
+                 @php $check =null; @endphp
                   @foreach($selected as $checked)
                     @if($cate->id == $checked->category_id)
                       <div class="form-group col-md-4">
@@ -45,7 +47,7 @@
                            </label>
                          </div>
                       </div>
-                     <?php $check = $checked->category_id; ?>
+                     @php $check = $checked->category_id; @endphp
                      @break
                     @endif
                   @endforeach
@@ -64,9 +66,9 @@
                         </div>
                       </div>
                   @endif
-                @endforeach
+                @endforeach-->
 
-                <input type="submit" value"Update" class="form-control"><br>
+                <input type="submit" value="Update" class="form-control"><br>
             </form>
           </div>
         </div>
