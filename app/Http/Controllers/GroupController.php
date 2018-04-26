@@ -22,6 +22,14 @@ class GroupController extends Controller
     	 return view('group.create',['categories'=>$categories['0'], 'subs'=>$subs]);
     }
 
+    // post for creating group
+    public function store(Request $request){
+    		$name = $request->input('group_name');
+    		$desc = $request->input('description');
+            $allpref = $request->input('pref');
+            dd($allpref);
+    }
+ 
     public function storeGroup(Request $data){
 
         $name = $data->input('group_name');
@@ -42,7 +50,6 @@ class GroupController extends Controller
 						$groups_subs->sub_id = $pref;
 						$groups_subs->save();
 				}
-
         return redirect('/createGroup');
     }
 

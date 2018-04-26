@@ -13,7 +13,6 @@
 				<div class="col-md-12">
 
 				<form name="form_G" method="post" action="{{ route('store') }}">
-
 					{{ csrf_field() }}
 					<h1>What will you group be about?</h1>
 					<!-- <hr>
@@ -56,6 +55,7 @@
 						</div>
 						<h2>Describe who should join, and what your Meetup will do.</h2>
 						<div class="form-group">
+
 							<textarea class="form-control resizeable" rows="5" name="description" id="description" required maxlength="300" placeholder="describe your group" required></textarea>
 						</div>
 
