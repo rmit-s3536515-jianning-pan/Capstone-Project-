@@ -6,10 +6,7 @@
             <h1>Encounter</h1>
     </div>  -->
 
-<!--    
-=======
-
->>>>>>> 438a00eb021c50b203b2af5dfd820b23e2ddfa6c
+<!--
     <div class="container-fluid welcome_header" >
         <div class="row">
         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -68,18 +65,16 @@
 
             @foreach($e as $add)
             <div class="col-md-4 marginbottom">
-                <a href="{{ url('event/'.$add['item']['id']) }}">
+                <a href="{{ url('event/'.$add['id']) }}">
                   <div class="panel panel-primary text-center">
                       <div class="panel-heading">
-
-                          <h3>{{ $add["item"]["title"] }}</h3>
-                          <h4>Matching Percentage: {{ $add['score'] }}%</h4>    
-
+                          <h3>{{ $add["title"] }}</h3>
+                          <h4>Matching Percentage: {{ Session::get($add['id'])}}%</h4>
                       </div>
                       <div class="panel-body">
-                          <p>{{  $add['item']["description"] }}</p>
-                          <div>{{ $add['item']["start_date"] }}</div>
-                          <div>{{ $add['item']["start_time"] }}</div>
+                          <p>{{  $add["description"] }}</p>
+                          <div>{{ $add["start_date"] }}</div>
+                          <div>{{ $add["start_time"] }}</div>
                       </div>
                   </div>
                 </a>
@@ -104,7 +99,7 @@
                             <div class="panel panel-success text-center" >
                                 <div class="panel-heading" style="height: 100px; font-size: 40px" >{{ $c['cat_name'] }}</div>
 
-                                  
+
                             </div>
                            </a>
                     </div>

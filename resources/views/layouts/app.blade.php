@@ -101,9 +101,9 @@
         }
 
         ul li a{
-        display: block; 
+        display: block;
         padding: 30px 20px;
-        color: #222; 
+        color: #222;
         font-size: 12px;
         letter-spacing: 1px;
         text-decoration: none;
@@ -127,7 +127,7 @@
          margin-top: 50px;
         }
 
-        
+
         .navbar-brand {
             font-style: oblique, serif;
             font-weight: bold;
@@ -165,7 +165,7 @@
                     <li><a href="{{ url('/') }}">About Us</a></li>
                     @else
                     <li><a href="{{ url('/') }}">Events</a></li>
-                    <li><a href="{{ url('/createGroup/index') }}">Groups</a></li>
+                    <li><a href="{{ url('/') }}">Groups</a></li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->
@@ -177,12 +177,10 @@
                         <li><a href="{{ url('/login') }}">Login</a></li>
                         <li><a href="{{ url('/register') }}">Register</a></li>
                     @else
-
-                         
-
                          <li><a class="br" href="{{ url('/myEvent') }}">Joined Event</a></li>
                          <li ><a class="br" href="{{ url('/event/create') }}">Create Event</a></li>
-                         <li ><a class="br" href="{{ url('/creategroup')}}">Create Group</a></li>
+                         <li ><a class="br" href="{{ url('createGroup')}}">Create Group</a></li>
+
 
 
                         <!-- <li><a class="br" href="{{ url('logout') }}">Logout</a></li> -->
@@ -250,49 +248,49 @@
 <footer class="footer-main">
      <div class="container">
        <div class="row">
-       
+
                 <div class="col-md-4 col-sm-6 col-xs-12">
                   <span><a class="text-white navbar-brand" href="{{ url('/index') }}">
                     Encounter
                 </a></span>
                 </div>
-                
+
                 <div class="col-md-4 col-sm-6 col-xs-12">
                     <ul class="menu">
-                         <span>Menu</span>    
+                         <span>Menu</span>
                          <li>
                             <a href="#">Home</a>
                           </li>
-                               
+
                           <li>
                              <a href="#">About</a>
                           </li>
-                               
+
                           <li>
                             <a href="#">Services</a>
                           </li>
-                               
+
                           <li>
                              <a href="#">Gallery</a>
                           </li>
                      </ul>
                 </div>
-           
+
                 <div class="col-md-4 col-sm-6 col-xs-12">
                   <ul class="address">
-                        <span>Contact</span>       
+                        <span>Contact</span>
                         <li>
                            <i class="fa fa-phone" aria-hidden="true"></i> <a href="#">Phone</a>
                         </li>
                         <li>
                            <i class="fa fa-map-marker" aria-hidden="true"></i> <a href="#">Adress</a>
-                        </li> 
+                        </li>
                         <li>
                            <i class="fa fa-envelope" aria-hidden="true"></i> <a href="#">Email</a>
-                        </li> 
+                        </li>
                    </ul>
                </div>
-           </div> 
+           </div>
         </div>
         <div class="col-md-12 text-center footer">
             <p>@2018 COPYRIGHT ENCOUNTER</p>
