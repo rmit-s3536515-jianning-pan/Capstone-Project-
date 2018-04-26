@@ -11,8 +11,20 @@
 			<div class="row">
 				<!-- <div class="col-md-8 col-md-offset-2"> -->
 				<div class="col-md-12">
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+				<form method="post" action="{{ url('group/store')}}">
+=======
+<<<<<<< HEAD
+>>>>>>> 9fe9cfd87e9d8396abfe2801041e41e2b8c6f28b
 				<form method="post" action="">
 				<form name="form_G" method="post" action="{{ route('create') }}">
+<<<<<<< HEAD
+=======
+>>>>>>> 438a00eb021c50b203b2af5dfd820b23e2ddfa6c
+>>>>>>> 9fb14e4d5cb6cba1725bd6ff64c075b966a85e7f
+>>>>>>> 9fe9cfd87e9d8396abfe2801041e41e2b8c6f28b
 					{{ csrf_field() }}
 					<h1>What will you group be about?</h1>
 					<!-- <hr>
@@ -58,7 +70,11 @@
 						</div>
 						<h2>Describe who should join, and what your Meetup will do.</h2>
 						<div class="form-group">
+<<<<<<< HEAD
+							<textarea class="form-control resizeable" rows="5" id="description" name="description" required maxlength="300" placeholder="describe your group" required></textarea>
+=======
 							<textarea class="form-control resizeable" rows="5" name="description" id="description" required maxlength="300" placeholder="describe your group" required></textarea>
+>>>>>>> 9fb14e4d5cb6cba1725bd6ff64c075b966a85e7f
 						</div>
 
 				 <div class="form-group">

@@ -7,6 +7,10 @@ Homestead.json
 /database/factories
 /database/seeds
 /database/database.php
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9fe9cfd87e9d8396abfe2801041e41e2b8c6f28b
 
 
 .env
@@ -14,5 +18,12 @@ config/database.php
 readme.md
 public/css/datedropper.css
 
+<<<<<<< HEAD
 /database/capstone.db
 /public/images
+=======
+
+/database/capstone.db
+/public/images
+
+>>>>>>> 9fe9cfd87e9d8396abfe2801041e41e2b8c6f28b

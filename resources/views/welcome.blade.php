@@ -5,7 +5,15 @@
     <!-- <div class="jumbotron text-center welcome_header">
             <h1>Encounter</h1>
     </div>  -->
+<<<<<<< HEAD
     
+=======
+
+<!--    
+=======
+
+>>>>>>> 438a00eb021c50b203b2af5dfd820b23e2ddfa6c
+>>>>>>> 9fe9cfd87e9d8396abfe2801041e41e2b8c6f28b
     <div class="container-fluid welcome_header" >
         <div class="row">
         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -63,6 +71,7 @@
 
             @foreach($e as $add)
             <div class="col-md-4 marginbottom">
+<<<<<<< HEAD
                 <div class="panel panel-primary text-center">
                     <div class="panel-heading">
                         <h3>{{ $add["title"] }}</h3>
@@ -74,6 +83,23 @@
                         <div>{{ $add["start_time"] }}</div>
                     </div>
                 </div>
+=======
+                <a href="{{ url('event/'.$add['item']['id']) }}">
+                  <div class="panel panel-primary text-center">
+                      <div class="panel-heading">
+
+                          <h3>{{ $add["item"]["title"] }}</h3>
+                          <h4>Matching Percentage: {{ $add['score'] }}%</h4>    
+
+                      </div>
+                      <div class="panel-body">
+                          <p>{{  $add['item']["description"] }}</p>
+                          <div>{{ $add['item']["start_date"] }}</div>
+                          <div>{{ $add['item']["start_time"] }}</div>
+                      </div>
+                  </div>
+                </a>
+>>>>>>> 9fe9cfd87e9d8396abfe2801041e41e2b8c6f28b
             </div>
             @endforeach
            
@@ -124,7 +150,11 @@
 </script>
 
 <script type="text/javascript">
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> 9fe9cfd87e9d8396abfe2801041e41e2b8c6f28b
         var options = [];
 $( '.dropdown-menu a' ).on( 'click', function( event ) {
    var $target = $( event.currentTarget ),
@@ -143,6 +173,7 @@ $( '.dropdown-menu a' ).on( 'click', function( event ) {
    return false;
 });
     </script>
+<<<<<<< HEAD
 
     <!-- <script>
         $(document).ready(function(){
@@ -171,3 +202,5 @@ $( '.dropdown-menu a' ).on( 'click', function( event ) {
         
     </script>
 @endsection
+=======
+>>>>>>> 9fe9cfd87e9d8396abfe2801041e41e2b8c6f28b
