@@ -8,4 +8,5 @@ class Groups extends Model
 {
     //
     public $timestamps = false;
+    protected $fillable = ['group_name', 'description'];
 }
