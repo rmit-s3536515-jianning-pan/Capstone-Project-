@@ -62,21 +62,7 @@ class ProfileController extends Controller
             'bio' => $data['bio'],
           ]);
 
-        // DB::table('users_subs')
-
-        /*DB::table('users_categories')
->>>>>>> ac69e84012dbbd735fc86530cd3cb2c1a2c73849
-          ->where('user_id', '=', Auth::user()->id)
-          ->delete();
-
-        $inputs = $data['pref'];
-        // dd($inputs);
-        foreach($inputs as $i){
-            DB::table('users_subs')
-            ->insert([
-              ['user_id' => Auth::user()->id, 'sub_id' => $i]
-            ]);
-        }*/
+       
 
         return redirect('/profile');
     }
