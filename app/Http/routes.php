@@ -51,7 +51,6 @@ Route::post('/storeGroup', 'GroupController@storeGroup')->name('create');
 Route::get('/myEvent', 'MyEventController@showEventList')->name('myEvent');
 Route::get('/leaveEvent/{event_id}', 'MyEventController@leaveEvent');
 
-
 //Route::get('/login', 'LoginController@show');
 Route::get('/home', 'HomeController@index');
 
