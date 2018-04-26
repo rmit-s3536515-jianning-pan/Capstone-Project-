@@ -71,6 +71,7 @@
                 @endforeach-->
 >>>>>>> ac69e84012dbbd735fc86530cd3cb2c1a2c73849
 
+<<<<<<< HEAD
                 <div class="form-group">
                      
                      <select class="js-example-basic-multiple form-control  " name="pref[]" multiple="multiple">
@@ -96,6 +97,9 @@
                      <button type="submit" value="Update" class="form-control m-btn red ">Update</button>
                 </div>
                <br>
+=======
+                <input type="submit" value="Update" class="form-control"><br>
+>>>>>>> 9fb14e4d5cb6cba1725bd6ff64c075b966a85e7f
             </form>
           </div>
         </div>

@@ -6,6 +6,10 @@
             <h1>Encounter</h1>
     </div>  -->
 
+<!--    
+=======
+
+>>>>>>> 438a00eb021c50b203b2af5dfd820b23e2ddfa6c
     <div class="container-fluid welcome_header" >
         <div class="row">
         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -50,6 +54,7 @@
 
         </div>
     </div>
+  -->
 
     <!-- include search page -->
     @include('homepage_search')
@@ -112,7 +117,7 @@
     </div>
 
     <!--Content-->
-    <div class="container-fluid minfooter">
+<!--    <div class="container-fluid minfooter">
         <div class="row ">
             <div class="col-md-8 col-md-offset-2">
               <div class="col-md-6 text-center"><h2>HELP</h2></div>
@@ -120,6 +125,8 @@
             </div>
     </div>
 </div>
+-->
+
 <script type="text/javascript">
     $(function(){
         $('.panel').matchHeight();
@@ -130,7 +137,6 @@
 
         $(document).ready(function() {
             $('#main-menu .subcatmenu').hide();
-
             $('#main-menu >li a').click(function(){
 
                 $('#main-menu >li .subcatmenu').show();
@@ -143,16 +149,12 @@
 @endsection
 <script type="text/javascript">
 
-
         var options = [];
-
 $( '.dropdown-menu a' ).on( 'click', function( event ) {
-
    var $target = $( event.currentTarget ),
        val = $target.attr( 'data-value' ),
        $inp = $target.find( 'input' ),
        idx;
-
    if ( ( idx = options.indexOf( val ) ) > -1 ) {
       options.splice( idx, 1 );
       setTimeout( function() { $inp.prop( 'checked', false ) }, 0);
@@ -160,7 +162,6 @@ $( '.dropdown-menu a' ).on( 'click', function( event ) {
       options.push( val );
       setTimeout( function() { $inp.prop( 'checked', true ) }, 0);
    }
-
    $( event.target ).blur();
 
    return false;
