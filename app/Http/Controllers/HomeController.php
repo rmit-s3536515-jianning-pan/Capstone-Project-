@@ -50,4 +50,9 @@ class HomeController extends Controller
     public function admin(){
         return view('admin.administration');
     }
+
+    public function showGroups($groupname){
+        
+        return view('grouplist');
+    }
 }
