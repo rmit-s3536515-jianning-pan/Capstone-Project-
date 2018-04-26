@@ -68,7 +68,7 @@
                   @endif
                 @endforeach-->
 
-                <input type="submit" value"Update" class="form-control"><br>
+                <input type="submit" value="Update" class="form-control"><br>
             </form>
           </div>
         </div>
