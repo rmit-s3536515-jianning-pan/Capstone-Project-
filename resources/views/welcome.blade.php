@@ -93,7 +93,7 @@
                 <div class="row">
                     @foreach($category as $c)
                     <div class="col-md-4 col-sm-12 marginbottom">
-                            <a href="{{ url('group/'.$c['id']) }}">
+                            <a href="{{ route('grouplist') }}">
                             <div class="panel panel-success text-center" >
                                 <div class="panel-heading" style="height: 100px; font-size: 40px" >{{ $c['cat_name'] }}</div>
 
