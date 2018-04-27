@@ -50,4 +50,8 @@ class GroupController extends Controller
                 }
         return redirect('/createGroup');
     }
+
+    public function join($groupid){
+        return view('group.join');
+    }
 }
