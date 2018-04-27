@@ -17,9 +17,9 @@ class GroupController extends Controller
 
         return view('group.show')->withTasks($tasks);
     }
-    
+
     //
-    public function createGroup(){
+    public function create(){
          $categories = array(Category::all());
        $subs = SubCategory::all();
        // dd($categories);
