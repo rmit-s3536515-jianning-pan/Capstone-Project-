@@ -11,15 +11,8 @@
 			<div class="row">
 				<!-- <div class="col-md-8 col-md-offset-2"> -->
 				<div class="col-md-12">
-<<<<<<< HEAD
-				<form method="post" action="{{ url('group/store')}}">
-=======
-<<<<<<< HEAD
-				<form method="post" action="">
-=======
-				<form name="form_G" method="post" action="{{ route('create') }}">
->>>>>>> 438a00eb021c50b203b2af5dfd820b23e2ddfa6c
->>>>>>> 9fb14e4d5cb6cba1725bd6ff64c075b966a85e7f
+
+				<form name="form_G" method="post" action="{{ url('/group/store') }}">
 					{{ csrf_field() }}
 					<h1>What will you group be about?</h1>
 					<!-- <hr>
@@ -56,25 +49,14 @@
         		@endforeach
 				</div>
 
-<<<<<<< HEAD
-
-
-				
-
-				<h1>What will the Group's name be?</h1>
-=======
 				<h1>What will be Group's name be?</h1>
->>>>>>> 438a00eb021c50b203b2af5dfd820b23e2ddfa6c
 						<div class="form-group">
 							<input type="text" name="group_name" class="form-control" id="group_name" placeholder="Group name" required>
 						</div>
 						<h2>Describe who should join, and what your Meetup will do.</h2>
 						<div class="form-group">
-<<<<<<< HEAD
-							<textarea class="form-control resizeable" rows="5" id="description" name="description" required maxlength="300" placeholder="describe your group" required></textarea>
-=======
+
 							<textarea class="form-control resizeable" rows="5" name="description" id="description" required maxlength="300" placeholder="describe your group" required></textarea>
->>>>>>> 9fb14e4d5cb6cba1725bd6ff64c075b966a85e7f
 						</div>
 
 				 <div class="form-group">
@@ -89,9 +71,6 @@
 			</div>
 
 		</div>
-
-
-
 
 
 @endsection
