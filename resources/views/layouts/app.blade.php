@@ -168,7 +168,7 @@
                     <li><a href="{{ url('/') }}">Events</a></li>
                     <li><a href="{{ url('/createGroup/index') }}">Groups</a></li>
                 </ul>
-
+				@endif
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->
@@ -202,7 +202,7 @@
 
                             </ul>
                         </li>
-                        @endif
+                        
                     @endif
                 </ul>
             </div>
