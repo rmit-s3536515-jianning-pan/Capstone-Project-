@@ -66,7 +66,6 @@
 
             @foreach($e as $add)
             <div class="col-md-4 marginbottom">
-<<<<<<< HEAD
                 <div class="panel panel-primary text-center">
                     <div class="panel-heading">
                         <h3>{{ $add["title"] }}</h3>
