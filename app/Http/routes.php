@@ -34,20 +34,55 @@ Route::get('/event/{id}/join','EventController@join');
 Route::get('/event/{id}/leave','EventController@leave');
 Route::get('/event/{id}',['uses'=>'EventController@singleEvent']);
 
+
+// auth controller
 Route::auth();
 Route::post('/register/step2','Auth\AuthController@store');
 Route::get('/register/step2','Auth\AuthController@step2')->name('step2');
 Route::post('/step2','Auth\AuthController@store2')->name('poststep2');
 
+
+Route::get('/createGroup','GroupController@create')->name('creategroup');
+Route::post('/createGroup','GroupController@store');
+Route::get('/createGroup/index','GroupController@index');
+
+
+Route::get('/createGroup','GroupController@create')->name('creategroup');
+Route::post('/createGroup','GroupController@store');
+Route::get('/createGroup/index','GroupController@index');
+
 /*
 Route::get('/createGroup','GroupController@create')->name('creategroup');
 Route::post('/createGroup','GroupController@store');
 Route::get('/createGroup/index','GroupController@index');
-*/
+*/ 
+
+
 
 //Route for Group
 Route::get('/createGroup','GroupController@createGroup')->name('creategroup');
-Route::post('/storeGroup', 'GroupController@storeGroup')->name('store');
+Route::post('/storeGroup', 'GroupController@storeGroup')->name('create');
+
+
+//Route for Joined Event (My Event Page)
+Route::get('/myEvent', 'MyEventController@showEventList')->name('myEvent');
+Route::get('/leaveEvent/{event_id}', 'MyEventController@leaveEvent');
+
+//Route::get('/show', function(){
+//	return view('/group/show');
+//});
+
+
+
+
+// group controller
+
+
+Route::get('/createGroup','GroupController@create')->name('creategroup');
+Route::post('/group/store','GroupController@store');
+
+//Route::get('/login', 'LoginController@show');
+
 
 Route::get('/home', 'HomeController@index');
 //Route for Manage Account(Profile)
@@ -56,7 +91,25 @@ Route::get('/profile', 'ProfileController@profileView')->name('profile');
 Route::get('/updateDetail', 'ProfileController@formView')->name('updateView');
 Route::post('/insertDetail', 'ProfileController@update')->name('insert');
 
+
 //Route for Joined Event (My Event Page)
 Route::get('/myEvent', 'MyEventController@showEventList')->name('myEvent');
 Route::get('/leaveEvent/{event_id}', 'MyEventController@leaveEvent');
 Route::get('/{groupname}','HomeController@showGroups');
+
+
+//Route for Joined Event (My Event Page)
+Route::get('/myEvent', 'MyEventController@showEventList')->name('myEvent');
+Route::get('/leaveEvent/{event_id}', 'MyEventController@leaveEvent');
+
+Route::get('/{groupname}','HomeController@showGroups');
+
+
+
+//Route for Joined Event (My Event Page)
+Route::get('/myEvent', 'MyEventController@showEventList')->name('myEvent');
+Route::get('/leaveEvent/{event_id}', 'MyEventController@leaveEvent');
+Route::get('/{groupname}','HomeController@showGroups');
+
+
+

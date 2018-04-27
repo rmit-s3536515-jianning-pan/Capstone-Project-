@@ -12,7 +12,7 @@
 				<!-- <div class="col-md-8 col-md-offset-2"> -->
 				<div class="col-md-12">
 
-				<form name="form_G" method="post" action="{{ route('store') }}">
+				<form name="form_G" method="post" action="{{ url('/group/store') }}">
 					{{ csrf_field() }}
 					<h1>What will you group be about?</h1>
 					<!-- <hr>
