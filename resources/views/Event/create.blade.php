@@ -30,25 +30,25 @@
 
 				<div class="form-group col-md-6">
 					<label for="event_date">Event date</label>
-
+					
 					<input type="text"  class="datepicker form-control" name="event_date" placeholder="date" data-large-mode="true" data-lock="from" data-large-default="true" data-modal="true" required>
-
-
+					
+					
 				</div>
 
 				<div class="form-group col-md-6">
 					<label for="event_time">Event time</label>
 					<!-- <div class="timepicker"> -->
-
-
+					
+					
 						<!-- <input type="hidden" name="event_time" class="form-control"> -->
 						<input type="text" name="event_time" class="form-control" id="timepicker" placeholder="12:00" required>
 					<!-- </div> -->
-
+					
 				</div>
-
-
-
+				
+				
+				
 				<div class="col-md-12">
 					<!-- <div class="col-md-12">
 						<label>Choose Categories</label>
@@ -58,9 +58,8 @@
 						<div class="row">
 							@foreach($cate as $c)
 							<div class="col-md-4 margin-t-b">
-							<div class="form-group">
-								<select class="selectpicker form-control" name="pref[]" multiple="" title="{{$c['original']['cat_name']}}" data-selected-text-format="count" data-size="5" data-actions-box="true">
-
+							<div class="form-group">							<select class="selectpicker form-control" name="pref[]" multiple="" title="{{$c['original']['cat_name']}}" data-selected-text-format="count" data-size="5" data-actions-box="true">
+							
 							@foreach($subs as $sub)
 								@if($sub->cate_id==$c['original']['id'])
 								<option value="{{ $sub->id }}">{{ $sub->name }}</option>
@@ -71,16 +70,16 @@
 
 					</div>
 							@endforeach
-
+						
 						</div>
-
-
+					
+			
         		@endforeach
 				</div>
 				<div class="form-group col-md-12">
 					<label for="description">Description</label>
 					<textarea class="form-control resizeable" rows="5" name="description" min="30" max="1000" required></textarea>
-
+					
 				</div>
 
 
