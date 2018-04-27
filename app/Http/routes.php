@@ -79,7 +79,7 @@ Route::get('/leaveEvent/{event_id}', 'MyEventController@leaveEvent');
 
 
 Route::get('/createGroup','GroupController@create')->name('creategroup');
-Route::post('/group/store','GroupController@store');
+Route::post('/group/store','GroupController@storeGroup');
 
 //Route::get('/login', 'LoginController@show');
 

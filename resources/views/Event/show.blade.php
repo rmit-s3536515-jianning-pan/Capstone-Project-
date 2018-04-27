@@ -12,12 +12,12 @@
 				<div class="col-md-4 marginbottom">
 				<div class="panel panel-primary text-center">
 					<div class="panel-heading">
-						<h3>{{ $add['item']['item']["title"] }}</h3>
+						<h3>{{ $add['item']["title"] }}</h3>
 					</div>
 					<div class="panel-body">
-						<p>{{ $add['item']['item']["description"] }}</p>
+						<p>{{ $add['item']["description"] }}</p>
 						<hr>
-						<span>Max Attendee: {{ $add['item']['item']["max_attend"] }}</span>
+						<span>Max Attendee: {{ $add['item']["max_attend"] }}</span>
 					</div>
 					
 				</div>
