@@ -30,7 +30,7 @@ class GroupController extends Controller
             $name = $request->input('group_name');
             $desc = $request->input('description');
             $allpref = $request->input('pref');
-            dd($allpref);
+            // dd($allpref);
     }
  
     public function storeGroup(Request $data){
