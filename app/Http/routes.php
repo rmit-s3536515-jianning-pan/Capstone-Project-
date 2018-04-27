@@ -44,8 +44,8 @@ Route::post('/step2','Auth\AuthController@store2')->name('poststep2');
 
 Route::get('/createGroup','GroupController@create')->name('creategroup');
 Route::post('/createGroup','GroupController@store');
-Route::get('/createGroup/index','GroupController@index');
-
+Route::get('/Group/index','GroupController@index');
+Route::get('/group/{id}','GroupController@join')->where('id','[0-9]+');
 
 Route::get('/createGroup','GroupController@create')->name('creategroup');
 Route::post('/createGroup','GroupController@store');

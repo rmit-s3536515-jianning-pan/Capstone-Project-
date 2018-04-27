@@ -9,17 +9,19 @@
 	<div class="container">
 		<div class="row">
 			@foreach($tasks as $task)
-			<div class="col-md-6 marginbottom">
-				<div class="panel panel-primary text-center">
-					<div class="panel-heading">
-				    	<h3>{{ $task->title }}</h3>
-				    </div>
-				    <div class="panel-body">
-				    	<p>{{ $task->description}}</p>
-				    </div>
+			<a href="{{ url('group/'.$task->id) }}">
+				<div class="col-md-6 marginbottom">
+					<div class="panel panel-primary text-center">
+						<div class="panel-heading">
+					    	<h3>{{ $task->title }}</h3>
+					    </div>
+					    <div class="panel-body">
+					    	<p>{{ $task->description}}</p>
+					    </div>
+					</div>
+		    		<hr>
 				</div>
-	    		<hr>
-			</div>
+			</a>
 			@endforeach
 		</div>
 	</div>
