@@ -188,3 +188,4 @@ $( '.dropdown-menu a' ).on( 'click', function( event ) {
         });
         
     </script>
+    @endsection
