@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 // use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Response;
 
+
 use App\Http\Requests;
 use App\Events;
 use App\Category;
@@ -60,6 +61,7 @@ class EventController extends Controller
             //     $events_cate->category_id = $cate;
             //     $events_cate->save();
             // }
+
     	   $table = Events::all();
     $filename = "events.csv";
     $handle = fopen($filename, 'w+');
@@ -81,14 +83,21 @@ class EventController extends Controller
     		// echo $name.$max;
     }
 
-    // show event 
+    // show event
     public function show(){
         $records = Events::findRequested();
         // dd($records);
 
+
+        if(!$records->isEmpty()){
+             $records = $records->toArray();
+             // dd($records);
+             $records = $records["data"];
+        }
+        else{
+            $records = array();//empty array since no results
+        }
         // if(!$records->isEmpty()){
-        
-       
         // dd($records);
         return view('Event.show',['records' =>$records] );
     }
