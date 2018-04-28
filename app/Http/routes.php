@@ -16,7 +16,7 @@ Route::get('/', function () {
 */
 Route::get('/', 'HomeController@welcome');
 Route::get('/admin',['middleware'=> 'admin',function(){
-		 return view('admin.administration');
+		 return view('dashboard');
 }]);
 
 // Route::get('/admin','HomeController@admin');
