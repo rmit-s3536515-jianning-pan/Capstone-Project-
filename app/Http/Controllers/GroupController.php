@@ -8,6 +8,7 @@ use App\Groups;
 use App\groups_subs;
 use DB;
 use Auth;
+use App\groups_users;
 class GroupController extends Controller
 {
 
@@ -52,6 +53,36 @@ class GroupController extends Controller
     }
 
     public function join($groupid){
-        return view('group.join');
+
+       
+            $group = Groups::findOrFail($groupid)->toArray();
+            $attends = groups_users::where('group_id',$groupid)->where('user_id',auth()->user()->id)->get();
+            
+            $attend = 0;
+            if($attends->isEmpty()){
+                $attend = 0;
+            }
+            else{
+                $attend = 1;
+            }
+        
+        
+        return view('group.join',['group'=>$group, 'attend'=>$attend]);
+    }
+
+    public function joingroup($groupid){
+            $id = auth()->user()->id;
+        $attend = new groups_users();
+        $attend->user_id = $id;
+        $attend->group_id = $groupid;
+        $attend->save();
+        return redirect('group/'.$groupid);
+    }
+
+    public function leavegroup($groupid){
+         $id = auth()->user()->id;
+        $leave = groups_users::where('group_id',$groupid)->where('user_id',$id);
+        $leave->delete();
+        return redirect('group/'.$groupid);
     }
 }
