@@ -83,7 +83,9 @@
     </div>
     @endif
     <!--Explore by category-->
-    <div class="container">
+    <section>
+    <div class="container text-center">
+      <h5 class="lis-light">Find the best places</h5>
         <h3>Explore By Category</h3>
 
             @foreach($categories->chunk(3) as $category)
@@ -99,12 +101,10 @@
                            </a>
                     </div>
                     @endforeach
-
-            </div>
+                </div>
             @endforeach
-
-
-    </div>
+      </div>
+    </section>
 
     <!--Content-->
 <!--    <div class="container-fluid minfooter">

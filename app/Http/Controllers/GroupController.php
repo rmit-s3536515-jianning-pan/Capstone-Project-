@@ -13,7 +13,7 @@ class GroupController extends Controller
 
     public function index()
     {
-        $tasks = groups::all();
+        $tasks = DB::table('groups')->simplePaginate(9);
 
         return view('group.show')->withTasks($tasks);
     }

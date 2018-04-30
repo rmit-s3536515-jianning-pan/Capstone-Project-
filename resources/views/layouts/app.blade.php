@@ -150,11 +150,12 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
                 @if (Auth::guest())
+                    <li><a href="{{ url('/index') }}">Home</a></li>
                     <li><a href="{{ url('/') }}">Services</a></li>
                     <li><a href="{{ url('/') }}">About Us</a></li>
-                @else
+                    @else
                     <li><a href="{{ url('/') }}">Events</a></li>
-                    <li><a href="{{ url('/') }}">Groups</a></li>
+                    <li><a href="{{ url('/createGroup/index') }}">Groups</a></li>
                 @endif
                 </ul>
                 
