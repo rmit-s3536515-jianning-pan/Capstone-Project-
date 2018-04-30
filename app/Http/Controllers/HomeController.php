@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 use App\Category; // getting the data 
 use App\Events;
 use App\SubCategory;
-
+use App\groups_subs;
+use App\Groups;
 class HomeController extends Controller
 {
     /**
@@ -52,7 +53,9 @@ class HomeController extends Controller
     }
 
     public function showGroups($groupname){
-        
-        return view('grouplist');
+       $output = Groups::getGroupsWithEachCategory($groupname);
+       
+        // dd($output);
+        return view('grouplist',['items'=>$output , 'name'=>$groupname]);
     }
 }
