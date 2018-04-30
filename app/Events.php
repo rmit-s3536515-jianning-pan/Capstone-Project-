@@ -31,36 +31,38 @@ class Events extends Model
         // $query->findMany($unique_eid);
         $options=[
                'includeScore' =>true,
-                'threshold' =>0.5,
+                'threshold' =>0.2,
               'keys' =>[
                 "id"
             ]
         ];
-        // dd($options);
-        $re = Events::all()->toArray();
-        $fuse = new \Fuse\Fuse($re,$options);
-        $final = $fuse->search('1');
         
         $result = array();
-        foreach($unique_eid as $r){
-            $count =0;
-            foreach($e_ids as $i){
-                if($r==$i){
-                    $count = $count + 1;
-                }
-            }
-            $rounds = $fuse->search($r);
-            foreach($rounds as $round){
-                if($round['item']['id']==$r && $round['score']=='0'){
-                        
-                         $points = ($count / (float)count($u_subid))*100;
-                         $round['score'] = $points;
-                        array_push($result, $round);
-                        break;
-                }
-            }
-      
+        $re = Events::all()->toArray();
+        if(!empty($re)){
+              $fuse = new \Fuse\Fuse($re,$options);    
+              
+              foreach($unique_eid as $r){
+                  $count =0;
+                  foreach($e_ids as $i){
+                      if($r==$i){
+                          $count = $count + 1;
+                      }
+                  }
+                  $rounds = $fuse->search($r);
+                  foreach($rounds as $round){
+                      if($round['item']['id']==$r){
+                              
+                               $points = ($count / (float)count($u_subid))*100;
+                               $round['score'] = $points;
+                              array_push($result, $round);
+                              break;
+                      }
+                  }
+            
+              }
         }
+        
         
         return $result;
     }
@@ -74,19 +76,19 @@ class Events extends Model
 
     $options=[
           'includeScore' =>true,
-          'threshold' =>0.5,
+          'threshold' =>0.2,
           'keys' =>[
             "title","description"
         ]
     ];
-       
-      $fuse = new \Fuse\Fuse($re,$options);
-      $searchresult = $fuse->search(\Request::input('keywords'));//return the match with keywords
-      $result = array(); //to store the id that matches with sub category
+    $searchresult = array(); 
+    $result = array(); //to store the id that matches with sub category
        $last = array(); //return the final array without duplicate 
       // below code that remove duplicate event 
-
-      if(!empty($subs)){ //check if the search by sub category is selected or not, if selected , run below code
+      if(\Request::input('keywords')!=null){
+            $fuse = new \Fuse\Fuse($re,$options);
+            $searchresult = $fuse->search(\Request::input('keywords'));//return the match with keywords
+          if(!empty($subs)){ //check if the search by sub category is selected or not, if selected , run below code
           foreach($searchresult as $eid){
                 $id = $eid['item']['id'];
               foreach($events_cates as $eachevents){
@@ -117,11 +119,60 @@ class Events extends Model
                   }
                 }
             }
-            return $last;
-    	}
+            // return $last;
+      }
       else{ //if the sub category is not selected , run below code
         return $searchresult;
       }
-    	
+
+      }else{ //if no keywords is searched 
+
+            if(!empty($subs)){ //check if it has value selected
+              foreach($events_cates as $eachevents){
+                   $count = 0;
+                   $eventid = $eachevents['0']['event_id'];
+                  foreach($eachevents as $eventsub){
+                        if(in_array($eventsub['sub_id'], $subs)){
+                            $count = $count + 1;
+                        }
+                       
+                  }
+
+                  if($count == count($subs)){
+                        
+                        array_push($result, $eventid);
+                        
+                  }
+
+              }
+              $options=[
+                        'includeScore' =>true,
+                      'threshold' =>0.2,
+                      'keys' =>[
+                        "id"
+                    ]
+                ];
+
+                $fuse = new \Fuse\Fuse($re,$options);
+                foreach($result as $r){
+                    $searchresult = $fuse->search($r);
+                    array_push($last, $searchresult['0']);
+                }
+            
+              // return $last;
+            }
+            else{//no sub category is selected return whole event
+              for ($i=0; $i < count($re); $i++) { 
+               
+                $last[$i]['item'] = $re[$i];
+              
+              }
+            }
+           
+      }
+      return $last;
+      
     }
+  
+
 }
