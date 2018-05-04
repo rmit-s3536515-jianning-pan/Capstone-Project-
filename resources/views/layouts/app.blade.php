@@ -166,9 +166,9 @@
                     @if (Auth::guest())
 
                         <li><a href="{{ url('/login') }}">Login</a></li>
-                        <li><a href="{{ url('/register') }}">Register</a></li>
+                        <li><a href="{{ url('/register') }}">Sign Up</a></li>
                     @else
-                         <li><a class="br" href="{{ url('/myEvent') }}">Joined Event</a></li>
+                         
                          <li ><a class="br" href="{{ url('/event/create') }}">Create Event</a></li>
                          <li ><a class="br" href="{{ url('createGroup')}}">Create Group</a></li>
 
@@ -184,7 +184,7 @@
 
                                 <li><a href="{{ url('/profile') }}"><i class="glyphicon glyphicon-user one"></i> Profile</a></li>
 
-
+                                <li><a class="br" href="{{ url('/myEvent') }}">Joined Event</a></li>
                                 <li><a href="{{ url('logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
 
                             </ul>

@@ -5,7 +5,7 @@
     <div class="row container-login">
         <div class="col-md-8 col-md-offset-2 wrap-login reverse">
             <div class="panel panel-default p-container">
-                <div class="login100-form-title">Register</div>
+                <div class="login100-form-title">Sign Up</div>
                 <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/register/step2') }}">
                         {{ csrf_field() }}
@@ -69,7 +69,7 @@
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button class="m-btn blue btn-new">
-                                    <i class="fa fa-btn fa-user"></i> Register
+                                    <i class="fa fa-btn fa-user"></i> Sign Up
                                 </button>
                             </div>
                         </div>

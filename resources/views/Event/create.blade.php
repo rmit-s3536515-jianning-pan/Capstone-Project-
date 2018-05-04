@@ -3,8 +3,8 @@
 
 @section('content')
 
-	<div class="jumbotron welcome_header text-center">
-		<h1> Event</h1>
+	<div class="jumbotron welcome_header text-center" style="background: url(../../images/n.jpg) center center no-repeat;">
+		<h1>Create an Event</h1>
 		<p>Share the experience with other people</p>
 	</div>
 

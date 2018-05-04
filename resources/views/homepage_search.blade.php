@@ -1,18 +1,18 @@
 <!-- search box start -->
-    <div class="container-fluid bg-primary search">
+    <div class="container-fluid search search-bar">
         <form class="col-md-8 col-md-offset-2" method="get" action="{{ url('event/showall') }}">
             <div class="row">
                 <div class="col-md-5 margin-t-b">
                     <label for="keywords">Name</label>
                     <div class="input-group input-group-lg">
-                        <input type="text" name="keywords" class="form-control" placeholder="Enter keywords">
+                        <input type="text" name="keywords" class="form-control" placeholder="Keywords">
                     </div>
                 </div>
                 <div class="col-md-5 margin-t-b">
                     <label>Classification</label>
                     <div class="input-group input-group-lg">
                         <select class="selectpicker" multiple="multiple" name="subs[]"  data-selected-text-format="count" data-actions-box="true"
-                        data-size="8" title="Any Classification">
+                        data-size="8" title="All Categories">
                             @foreach ($categories as $cate)
                                 <optgroup label="{{ $cate->cat_name }}" title="{{ $cate->cat_name}}" > 
                                      @foreach ($subs as $sub)
@@ -42,7 +42,7 @@
                 <div class="col-md-2 margin-t-b">
                     <label class="invisible">hidden</label>
                     <div class="input-group input-group-lg">
-                        <button type="submit" class="btn btn-success btn-lg" style="width:100%">Search</button>
+                        <button type="submit" class="btn btn-success btn-lg start-btn" style="width:100%">Search</button>
                     </div>
                     
                 </div>

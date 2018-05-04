@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-		<div class="jumbotron welcome_header text-center">
-			<h1> Create a new Group</h1>
+		<div class="jumbotron welcome_header text-center" style="background: url(../../images/n.jpg) center center no-repeat;">
+			<h1> Create a New Group</h1>
 			<p>We will help you to find the right people</p>
 		</div>
 

@@ -2,6 +2,11 @@
 
 @section('content')
 
+        <div class="jumbotron welcome_header text-center" >
+<!--           style="background: url(../../images/s.jpg) center center no-repeat;"
+ -->            <h1> Join an Event</h1>
+            <p>Be Adventurous!</p>
+        </div>
     <!-- <div class="jumbotron text-center welcome_header">
             <h1>Encounter</h1>
     </div>  -->
@@ -49,6 +54,8 @@
     <!-- include search page -->
     @include('homepage_search')
 
+
+<section style="background-color: #f3f4f7;">
     @if (count($event)>0)
     <div class="container">
             <h3>Recommended Events</h3>
@@ -82,11 +89,12 @@
 
     </div>
     @endif
+</section>
     <!--Explore by category-->
-    <section>
+  <section">
     <div class="container text-center">
-      <h5 class="lis-light">Find the best places</h5>
-        <h3>Explore By Category</h3>
+      <h5 class="lis-light">Find the best events</h5>
+        <h3>Explore Categories</h3>
 
             @foreach($categories->chunk(3) as $category)
                 <div class="row">
@@ -104,7 +112,7 @@
                 </div>
             @endforeach
       </div>
-    </section>
+  </section>
 
     <!--Content-->
 <!--    <div class="container-fluid minfooter">
