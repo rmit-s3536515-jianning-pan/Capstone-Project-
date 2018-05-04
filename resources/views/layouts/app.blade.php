@@ -155,7 +155,7 @@
                     <li><a href="{{ url('/') }}">About Us</a></li>
                     @else
                     <li><a href="{{ url('/') }}">Events</a></li>
-                    <li><a href="{{ url('/createGroup/index') }}">Groups</a></li>
+                    <li><a href="{{ url('/Group/index') }}">Groups</a></li>
                 @endif
                 </ul>
                 
