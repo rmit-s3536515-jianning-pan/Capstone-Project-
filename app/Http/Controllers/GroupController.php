@@ -9,6 +9,8 @@ use App\groups_subs;
 use DB;
 use Auth;
 use App\groups_users;
+use App\groups_reports;
+use App\User;
 class GroupController extends Controller
 {
 
@@ -66,9 +68,11 @@ class GroupController extends Controller
             else{
                 $attend = 1;
             }
+            $ownerId = Groups::where('id',$groupid)->first()->owner_id;
+            // dd($ownerId);
+            $owner = User::where('id',$ownerId)->first();
         
-        
-        return view('group.join',['group'=>$group, 'attend'=>$attend]);
+        return view('group.join',['group'=>$group, 'attend'=>$attend,'owner'=>$owner]);
     }
 
     public function joingroup($groupid){
@@ -77,13 +81,28 @@ class GroupController extends Controller
         $attend->user_id = $id;
         $attend->group_id = $groupid;
         $attend->save();
-        return redirect('group/'.$groupid);
+        return redirect('group/'.$groupid)->with('message','You have joined this GROUP');
     }
 
     public function leavegroup($groupid){
          $id = auth()->user()->id;
         $leave = groups_users::where('group_id',$groupid)->where('user_id',$id);
         $leave->delete();
-        return redirect('group/'.$groupid);
+        return redirect('group/'.$groupid)->with('message','You have left this GROUP');
+    }
+
+     public function reportGroup($groupid,Request $request){
+        $text = $request->input('report');
+        // dd($text);
+        if($text!=null){
+             $report = new groups_reports();
+            $report->group_id = $groupid;
+            $report->user_id = auth()->user()->id;
+            $report->report = $text;
+            $report->save();
+        }
+       
+
+        return redirect('group/'.$groupid)->with('message','You have just reported this Group');
     }
 }

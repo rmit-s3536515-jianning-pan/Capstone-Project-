@@ -72,7 +72,7 @@ Route::post('/createGroup','GroupController@store');
 Route::get('/createGroup/index','GroupController@index');
 Route::get('/group/join/{groupid}','GroupController@joingroup')->where('groupid','[0-9]+');
 Route::get('group/leave/{groupid}','GroupController@leavegroup')->where('groupid','[0-9]+');
-
+Route::get('/group/report/{groupid}','GroupController@reportGroup')->where('groupid','[0-9]+');
 
 
 //Route for Group

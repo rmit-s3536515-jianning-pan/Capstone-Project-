@@ -9,6 +9,11 @@
 
 
 	<div class="container-fluid">
+		@if(Session::has('message'))
+		<div class="alert alert-success">
+			<h4><em>{{Session::get('message')}}</em><h4>
+		</div>
+	@endif
 		<div class="row" >
 			<div class="col-md-8">
 				<div class="rounded bg-success">
@@ -72,26 +77,28 @@
 					  </div>
 					</form>
 					</div>
-
+					@if($owner->id != Auth::user()->id)
 					<!-- report event button -->
 						<a class="form-control m-btn blue big" data-toggle="modal" data-target="#reportModal">Report Event</a>
-
+					@endif
 					<!-- report event popup  -->
 					<div class="modal fade" id="reportModal" role="dialog">
 						<form method="get" action="{{ url('event/'.$id.'/report') }}">
 						<div class="modal-dialog">
-							
+
 					      <!-- Modal content-->
 					      <div class="modal-content">
 					        <div class="modal-header">
 					          <button type="button" class="close" data-dismiss="modal">&times;</button>
-					          <h4 class="modal-title">Join this event</h4>
+					          <h4 class="modal-title">Report this event</h4>
 					        </div>
 					        <div class="modal-body">
-					          <p>Some text in the event.</p>
+					          <label class="control-label">Reason to report</label>
+					          <textarea class="form-control" placeholder="Reasons for reporting this event" name="report" required></textarea>
+					          
 					        </div>
 					        <div class="modal-footer">
-					          <button type="submit" class="form-control m-btn big red">Join</button>
+					          <button type="submit" class="form-control m-btn big red">Report</button>
 					        </div>
 					      </div>
 					  </div>

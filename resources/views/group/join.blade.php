@@ -4,9 +4,15 @@
 @section('content')
 	<div class="jumbotron welcome_header text-center">
 		<h1> Single group Page</h1>
+		<h4>Organizer: <em>{{ $owner->name }}</em></h4>
 	</div>
-
+	
 	<div class="container-fluid">
+		@if(Session::has('message'))
+			<div class="alert alert-success">
+				<h4><em>{{Session::get('message')}}</em><h4>
+			</div>
+		@endif
 		<div class="row" >
 			<div class="col-md-8">
 				<div class="rounded bg-success">
@@ -93,6 +99,37 @@
 					  </div>
 					
 					</div>
+
+					@if($owner->id != Auth::user()->id)
+					<!-- report group button -->
+						<a class="form-control m-btn blue big" data-toggle="modal" data-target="#reportGroupModal">Report Group</a>
+					@endif
+					<!-- report event popup  -->
+					<div class="modal fade" id="reportGroupModal" role="dialog">
+						<form method="get" action="{{ url('/group/report/'.$group['id']) }}">
+						<div class="modal-dialog">
+
+					      <!-- Modal content-->
+					      <div class="modal-content">
+					        <div class="modal-header">
+					          <button type="button" class="close" data-dismiss="modal">&times;</button>
+					          <h4 class="modal-title">Report this Group</h4>
+					        </div>
+					        <div class="modal-body">
+					          <label class="control-label">Reason to report</label>
+					          <textarea class="form-control" placeholder="Reasons for reporting this event" name="report" required></textarea>
+					          
+					        </div>
+					        <div class="modal-footer">
+					          <button type="submit" class="form-control m-btn big red">Report this Group</button>
+					        </div>
+					      </div>
+					  </div>
+					</form>
+					</div>
+					<!-- end of report event -->
+
+
 				</div>
 
 				<!-- <button href="#" class="m-btn big red">Join</a> -->

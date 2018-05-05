@@ -11,6 +11,7 @@ use App\SubCategory;
 use App\events_subs;
 use App\events_users;
 use App\User;
+use App\events_reports;
 class EventController extends Controller
 {
     // get method
@@ -78,12 +79,27 @@ class EventController extends Controller
         $attend->user_id = $id;
         $attend->event_id = $eventId;
         $attend->save();
-        return redirect('event/'.$eventId);
+        return redirect('event/'.$eventId)->with('message','You have joined this event');
     }
     public function leave($eventId){
         $id = auth()->user()->id;
         $leave = events_users::where('event_id',$eventId)->where('user_id',$id);
         $leave->delete();
-        return redirect('event/'.$eventId);
+        return redirect('event/'.$eventId)->with('message','You have left this event');
+    }
+
+    public function reportEvent($eventId,Request $request){
+        $text = $request->input('report');
+        
+        if($text!=null){
+             $report = new events_reports();
+            $report->event_id = $eventId;
+            $report->user_id = auth()->user()->id;
+            $report->report = $text;
+            $report->save();
+        }
+       
+
+        return redirect('event/'.$eventId)->with('message','You have just reported this event');
     }
 }
