@@ -10,6 +10,7 @@ use App\events_categories;
 use App\SubCategory;
 use App\events_subs;
 use App\events_users;
+use App\User;
 class EventController extends Controller
 {
     // get method
@@ -57,7 +58,10 @@ class EventController extends Controller
             $e = $e['original'];
             $id = auth()->user()->id;
             $attends = events_users::where('event_id',$eventId)->where('user_id',$id)->get();
-            
+            $ownerId = Events::where('id',$eventId)->first()->owner_id;
+            // dd($ownerId);
+            $owner = User::where('id',$ownerId)->first();
+            // dd($owner->name);
             $attend = 0;
             if($attends->isEmpty()){
                 $attend = 0;
@@ -66,7 +70,7 @@ class EventController extends Controller
                 $attend = 1;
             }
             
-            return view('Event.oneevent',['id'=>$eventId , 'event'=>$e,'attend'=>$attend]);
+            return view('Event.oneevent',['id'=>$eventId , 'event'=>$e,'attend'=>$attend,'owner'=>$owner]);
     }
     public function join($eventId){
         $id = auth()->user()->id;
