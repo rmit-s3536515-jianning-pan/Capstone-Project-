@@ -21,9 +21,11 @@ Route::group(['prefix'=>'admin'],function(){
 		 return view('dashboard');
 }]);
 	Route::get('preferences',function(){
+		return view('adminPreferences');
+	});
+	Route::get('reports',function(){
 		return view('dashboard');
 	});
-
 	Route::get('addParentName','HomeController@addParentName'
 	)->name('addParentName');
 

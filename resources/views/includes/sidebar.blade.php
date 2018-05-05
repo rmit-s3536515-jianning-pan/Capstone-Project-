@@ -35,8 +35,14 @@
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">HEADER</li>
         <!-- Optionally, you can add icons to the links -->
-        <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Report</span></a></li>
-        <li><a href="#"><i class="fa fa-link"></i> <span>Preferences</span></a></li>
+        @if(Request::is('admin')||Request::is('admin/reports'))
+        <li class="active"><a href="{{url('/admin/reports')}}"><i class="fa fa-link"></i> <span>Report</span></a></li>
+        <li><a href="{{url('admin/preferences')}}"><i class="fa fa-link"></i> <span>Preferences</span></a></li>
+        @endif
+        @if(Request::is('admin/preferences'))
+        <li><a href="{{url('/admin/reports')}}"><i class="fa fa-link"></i> <span>Report</span></a></li>
+        <li class="active"><a href="{{url('admin/preferences')}}"><i class="fa fa-link"></i> <span>Preferences</span></a></li>
+        @endif
        <!--  <li class="treeview">
           <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>
             <span class="pull-right-container">

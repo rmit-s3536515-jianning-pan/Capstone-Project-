@@ -24,7 +24,7 @@ class AdminServiceProvider extends ServiceProvider
             $id = auth()->user()->name;
             $view->with('admin',$id);
         });
-        View::composer('dashboard',function($view){
+        View::composer(['dashboard','adminPreferences'],function($view){
              $categories = Category::all();
         
              $subs = SubCategory::all();
