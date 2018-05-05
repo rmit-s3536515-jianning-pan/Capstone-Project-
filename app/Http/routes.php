@@ -15,9 +15,25 @@ Route::get('/', function () {
 });
 */
 Route::get('/', 'HomeController@welcome');
-Route::get('/admin',['middleware'=> 'admin',function(){
+
+Route::group(['prefix'=>'admin'],function(){
+	Route::get('',['middleware'=> 'admin',function(){
 		 return view('dashboard');
 }]);
+	Route::get('preferences',function(){
+		return view('dashboard');
+	});
+
+	Route::get('addParentName','HomeController@addParentName'
+	)->name('addParentName');
+
+	Route::get('addChildName','HomeController@addChildName')->name('addChildName');
+	Route::get('deleteParentName','HomeController@deleteParentName')->name('deleteParentName');
+	Route::get('deleteChildName','HomeController@deleteChildName')->name('deleteChildName');
+});
+// Route::get('/admin',['middleware'=> 'admin',function(){
+// 		 return view('dashboard');
+// }]);
 
 // Route::get('/admin','HomeController@admin');
 Route::get('/index', function(){

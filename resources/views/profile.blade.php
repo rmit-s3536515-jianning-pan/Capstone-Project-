@@ -8,7 +8,11 @@
 
       <div class="row">
       <div class="panel panel-default">
-      <div class="panel-heading">  <h4>User Profile</h4></div>
+      <div class="panel-heading">  <h4>User Profile</h4>@if(Session::has('message'))
+                    <div class="alert alert-success">
+                      <strong>{{Session::get('message')}}</strong>
+                    </div>
+                @endif</div>
       <div class="panel-body">
       <div class="col-md-4 col-xs-12 col-sm-6 col-lg-4">
 
