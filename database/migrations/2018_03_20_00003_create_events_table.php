@@ -12,19 +12,21 @@ class CreateEventsTable extends Migration
      */
     public function up()
     {
-        
+
         Schema::create('events', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('owner_id')->unsigned();
             $table->string('title');
             $table->string("description",1000);
             $table->integer('max_attend');
             $table->date("start_date")->nullable();
             $table->time("start_time")->nullable();
+            $table->foreign('owner_id')->references('id')->on('users');
             // $table->integer('group_id')->unsigned();
             // $table->foreign('group_id')->references('id')->on('groups');
 
         });
-    
+
     }
 
     /**

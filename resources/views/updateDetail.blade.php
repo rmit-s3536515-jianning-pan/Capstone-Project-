@@ -34,7 +34,7 @@
 
 
                 <div class="form-group">
-                     
+
                      <select class="js-example-basic-multiple  form-control" name="pref[]" multiple="multiple">
                   @foreach($categories as $cate)
                     <optgroup label="{{$cate->cat_name}}">
@@ -50,12 +50,12 @@
                     </optgroup>
                   @endforeach
                 </select>
-              
+
                 </div>
-              
-         
+
+
                 <div class="form-group">
-                     <button type="submit" value="Update" class="form-control m-btn red ">Update</button>
+                     <button type="submit" value="Update" class="form-control m-btn blue">Update</button>
                 </div>
                <br>
                <!--  <input type="submit" value="Update" class="form-control"><br> -->
@@ -72,5 +72,3 @@
 });
 </script>
 @endsection
-
-

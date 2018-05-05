@@ -10,6 +10,7 @@ use App\events_categories;
 use App\SubCategory;
 use App\events_subs;
 use App\events_users;
+use Auth;
 class EventController extends Controller
 {
     // get method
@@ -19,6 +20,7 @@ class EventController extends Controller
         // dd($categories);
     	return view('Event.create',['categories'=>$categories['0'], 'subs'=>$subs]);
     }
+
     // called by post method for creating event
     public function store(Request $request){
     		$name = $request->input('name');
@@ -26,11 +28,13 @@ class EventController extends Controller
     		$max = $request->input('max');
     		$startdate = $request->input('event_date');
     		$starttime = $request->input('event_time');
+        $userID = Auth::user()->id;
             // $cates = $request->input('cates');
             $allpref = $request->input('pref');
             // dd($allpref);
             $event = new Events();
             $event->title = $name;
+            $event->owner_id = $userID;
             $event->description = $desc;
             $event->max_attend = $max;
             $event->start_time = $starttime;
@@ -49,31 +53,33 @@ class EventController extends Controller
             //     $events_cate->category_id = $cate;
             //     $events_cate->save();
             // }
-    	   $table = Events::all();
-    $filename = "events.csv";
-    $handle = fopen($filename, 'w+');
-    fputcsv($handle, array('title', 'description', 'max_attend', 'start_date','start_time'));
-    foreach($table as $row) {
-        fputcsv($handle, array($row['title'], $row['description'], $row['max_attend'], $row['start_date'], $row['start_time']));
-    }
-    fclose($handle);
-    $headers = array(
-        'Content-Type' => 'text/csv',
-    );
-    Response::download($filename, 'events.csv', $headers);
-    		return redirect('/');
+    	  $table = Events::all();
+        $filename = "events.csv";
+        $handle = fopen($filename, 'w+');
+        fputcsv($handle, array('title', 'description', 'max_attend', 'start_date','start_time'));
+        foreach($table as $row) {
+            fputcsv($handle, array($row['title'], $row['description'], $row['max_attend'], $row['start_date'], $row['start_time']));
+        }
+        fclose($handle);
+        $headers = array(
+            'Content-Type' => 'text/csv',
+        );
+        Response::download($filename, 'events.csv', $headers);
+        		return redirect('/');
     		// echo $name.$max;
     }
-    // show event 
+
+    // show event
     public function show(){
         $records = Events::findRequested();
         // dd($records);
         // if(!$records->isEmpty()){
-        
-       
+
+
         // dd($records);
         return view('Event.show',['records' =>$records] );
     }
+
     public function singleEvent($eventId){
             $e = Events::findOrFail($eventId);
             $e = $e['original'];
