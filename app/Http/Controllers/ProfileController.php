@@ -91,7 +91,7 @@ class ProfileController extends Controller
 
           $inputs = $data['cates'];
 
-<<<<<<< HEAD
+
           foreach($inputs as $i){
               DB::table('users_subs')
               ->where('user_id', '=', Auth::user()->id)
@@ -102,9 +102,9 @@ class ProfileController extends Controller
           }
 */
         return redirect('/profile');
-=======
+
         return redirect('/profile')->with('message','You have changed your profile');
->>>>>>> master
+
     }
 
 }
