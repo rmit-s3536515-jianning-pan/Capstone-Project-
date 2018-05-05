@@ -10,11 +10,11 @@ use App\events_categories;
 use App\SubCategory;
 use App\events_subs;
 use App\events_users;
-<<<<<<< HEAD
+
 use Auth;
-=======
 use App\User;
->>>>>>> master
+use App\events_reports;
+
 class EventController extends Controller
 {
     // get method
@@ -32,12 +32,9 @@ class EventController extends Controller
     		$max = $request->input('max');
     		$startdate = $request->input('event_date');
     		$starttime = $request->input('event_time');
-<<<<<<< HEAD
+
         $userID = Auth::user()->id;
             // $cates = $request->input('cates');
-=======
-            
->>>>>>> master
             $allpref = $request->input('pref');
             
             $event = new Events();
@@ -56,7 +53,7 @@ class EventController extends Controller
                 $events_subs->sub_id = $pref;
                 $events_subs->save();
             }
-<<<<<<< HEAD
+
             // foreach($cates as $cate){
             //     $events_cate = new events_categories;
             //      $events_cate->event_id = $event_id;
@@ -77,23 +74,22 @@ class EventController extends Controller
         Response::download($filename, 'events.csv', $headers);
         		return redirect('/');
     		// echo $name.$max;
-=======
+
     		return redirect('/')->with('message','You have create new Event!!!');
     		
->>>>>>> master
+
     }
 
     // show event
     public function show(){
         $records = Events::findRequested();
-<<<<<<< HEAD
+
         // dd($records);
         // if(!$records->isEmpty()){
 
 
         // dd($records);
-=======
->>>>>>> master
+
         return view('Event.show',['records' =>$records] );
     }
 
@@ -122,12 +118,27 @@ class EventController extends Controller
         $attend->user_id = $id;
         $attend->event_id = $eventId;
         $attend->save();
-        return redirect('event/'.$eventId);
+        return redirect('event/'.$eventId)->with('message','You have joined this event');
     }
     public function leave($eventId){
         $id = auth()->user()->id;
         $leave = events_users::where('event_id',$eventId)->where('user_id',$id);
         $leave->delete();
-        return redirect('event/'.$eventId);
+        return redirect('event/'.$eventId)->with('message','You have left this event');
+    }
+
+    public function reportEvent($eventId,Request $request){
+        $text = $request->input('report');
+        
+        if($text!=null){
+             $report = new events_reports();
+            $report->event_id = $eventId;
+            $report->user_id = auth()->user()->id;
+            $report->report = $text;
+            $report->save();
+        }
+       
+
+        return redirect('event/'.$eventId)->with('message','You have just reported this event');
     }
 }

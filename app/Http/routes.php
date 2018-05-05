@@ -69,8 +69,7 @@ Route::get('/Group/index','GroupController@index');
 Route::get('/group/{id}','GroupController@join')->where('id','[0-9]+');
 Route::get('/group/join/{groupid}','GroupController@joingroup')->where('groupid','[0-9]+');
 Route::get('group/leave/{groupid}','GroupController@leavegroup')->where('groupid','[0-9]+');
-<<<<<<< HEAD
-=======
+Route::get('/group/report/{groupid}','GroupController@reportGroup')->where('groupid','[0-9]+');
 
 
 
@@ -90,7 +89,7 @@ Route::post('/group/store','GroupController@storeGroup');
 
 Route::get('/home', 'HomeController@index');
 //Route for Manage Account(Profile)
->>>>>>> master
+
 
 //Route for Profile
 Route::get('/profile', 'ProfileController@profileView')->name('profile');
