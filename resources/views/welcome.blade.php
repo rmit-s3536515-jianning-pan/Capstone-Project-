@@ -48,7 +48,13 @@
 
     <!-- include search page -->
     @include('homepage_search')
-
+    @if(Session::has('message'))
+    <div class="container">
+        <div class="alert alert-success popMessage">
+          <h3><strong>{{Session::get('message')}}</strong></h3>
+        </div>
+    </div>
+    @endif
     @if (count($event)>0)
     <div class="container">
             <h3>Recommended Events</h3>
@@ -131,22 +137,12 @@
             });
         });
     </script>
-@endsection
-<script type="text/javascript">
-        var options = [];
-$( '.dropdown-menu a' ).on( 'click', function( event ) {
-   var $target = $( event.currentTarget ),
-       val = $target.attr( 'data-value' ),
-       $inp = $target.find( 'input' ),
-       idx;
-   if ( ( idx = options.indexOf( val ) ) > -1 ) {
-      options.splice( idx, 1 );
-      setTimeout( function() { $inp.prop( 'checked', false ) }, 0);
-   } else {
-      options.push( val );
-      setTimeout( function() { $inp.prop( 'checked', true ) }, 0);
-   }
-   $( event.target ).blur();
-   return false;
-});
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.popMessage').slideUp(4000);
+        });
     </script>
+@endsection
+
+
+
