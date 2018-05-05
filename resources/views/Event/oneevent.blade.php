@@ -71,6 +71,7 @@
 					  </div>
 					</form>
 					</div>
+						<a class="form-control m-btn blue big">Report Event</a>
 				</div>
 
 				<!-- <button href="#" class="m-btn big red">Join</a> -->

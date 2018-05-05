@@ -41,6 +41,7 @@ class GroupController extends Controller
         $group = new Groups();
         $group->title = $name;
         $group->description = $desc;
+        $group->owner_id = auth()->user()->id;
         $group->save();
         $group_id = Groups::query()->where('title',$name)->first()->id;
                 foreach($allpref as $pref){
@@ -49,7 +50,7 @@ class GroupController extends Controller
                         $groups_subs->sub_id = $pref;
                         $groups_subs->save();
                 }
-        return redirect('/createGroup');
+        return redirect('/')->with('message','You have created new group!');
     }
 
     public function join($groupid){
