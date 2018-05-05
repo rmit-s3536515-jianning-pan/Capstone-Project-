@@ -25,7 +25,7 @@
 					<!-- <input type="number" name="max" class="form-control" placeholder="Max Attendee" min="5" max="30" required> -->
 					<input class="textField form-control" name="max" maxlength="2"
 					data-mask-as-number-min="5" data-mask-as-number-max="30"
-					placeholder="Minimum 5">
+					placeholder="Minimum 5" required>
 				</div>
 
 				<div class="form-group col-md-6">

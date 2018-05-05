@@ -10,7 +10,11 @@ use App\events_categories;
 use App\SubCategory;
 use App\events_subs;
 use App\events_users;
+<<<<<<< HEAD
 use Auth;
+=======
+use App\User;
+>>>>>>> master
 class EventController extends Controller
 {
     // get method
@@ -28,10 +32,14 @@ class EventController extends Controller
     		$max = $request->input('max');
     		$startdate = $request->input('event_date');
     		$starttime = $request->input('event_time');
+<<<<<<< HEAD
         $userID = Auth::user()->id;
             // $cates = $request->input('cates');
+=======
+            
+>>>>>>> master
             $allpref = $request->input('pref');
-            // dd($allpref);
+            
             $event = new Events();
             $event->title = $name;
             $event->owner_id = $userID;
@@ -39,6 +47,7 @@ class EventController extends Controller
             $event->max_attend = $max;
             $event->start_time = $starttime;
             $event->start_date = $startdate;
+            $event->owner_id = auth()->user()->id;
             $event->save();
             $event_id = Events::query()->where('title',$name)->first()->id;
             foreach($allpref as $pref){
@@ -47,6 +56,7 @@ class EventController extends Controller
                 $events_subs->sub_id = $pref;
                 $events_subs->save();
             }
+<<<<<<< HEAD
             // foreach($cates as $cate){
             //     $events_cate = new events_categories;
             //      $events_cate->event_id = $event_id;
@@ -67,16 +77,23 @@ class EventController extends Controller
         Response::download($filename, 'events.csv', $headers);
         		return redirect('/');
     		// echo $name.$max;
+=======
+    		return redirect('/')->with('message','You have create new Event!!!');
+    		
+>>>>>>> master
     }
 
     // show event
     public function show(){
         $records = Events::findRequested();
+<<<<<<< HEAD
         // dd($records);
         // if(!$records->isEmpty()){
 
 
         // dd($records);
+=======
+>>>>>>> master
         return view('Event.show',['records' =>$records] );
     }
 
@@ -85,7 +102,10 @@ class EventController extends Controller
             $e = $e['original'];
             $id = auth()->user()->id;
             $attends = events_users::where('event_id',$eventId)->where('user_id',$id)->get();
-            // dd($attends);
+            $ownerId = Events::where('id',$eventId)->first()->owner_id;
+            // dd($ownerId);
+            $owner = User::where('id',$ownerId)->first();
+            // dd($owner->name);
             $attend = 0;
             if($attends->isEmpty()){
                 $attend = 0;
@@ -93,8 +113,8 @@ class EventController extends Controller
             else{
                 $attend = 1;
             }
-            // dd($attend);
-            return view('Event.oneevent',['id'=>$eventId , 'event'=>$e,'attend'=>$attend]);
+            
+            return view('Event.oneevent',['id'=>$eventId , 'event'=>$e,'attend'=>$attend,'owner'=>$owner]);
     }
     public function join($eventId){
         $id = auth()->user()->id;

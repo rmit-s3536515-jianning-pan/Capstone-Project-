@@ -141,4 +141,14 @@ class AuthController extends Controller
         return redirect(property_exists($this, 'redirectAfterLogout') ? $this->redirectAfterLogout : '/');
     }
 
+    protected function authenticated($request, $user)
+    {
+
+        if($user->isAdmin) {
+            
+            return redirect()->intended('/admin');
+        }
+        return redirect()->intended('/');
+    }
+
 }

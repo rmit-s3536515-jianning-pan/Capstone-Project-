@@ -15,9 +15,9 @@
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div> -->
-      <div class="container">
-             <p class="text-warning" style="font-size:3rem; height:5rem; line-height:5rem">Fuad Amahoru</p>
-      </div>
+      <!-- <div class="container">
+             <p class="text-warning" style="font-size:3rem; height:5rem; line-height:5rem">{{$admin}}</p>
+      </div> -->
 
       <!-- search form (Optional) -->
       <form action="#" method="get" class="sidebar-form">
@@ -35,9 +35,15 @@
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">HEADER</li>
         <!-- Optionally, you can add icons to the links -->
-        <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
-        <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
-        <li class="treeview">
+        @if(Request::is('admin')||Request::is('admin/reports'))
+        <li class="active"><a href="{{url('/admin/reports')}}"><i class="fa fa-link"></i> <span>Report</span></a></li>
+        <li><a href="{{url('admin/preferences')}}"><i class="fa fa-link"></i> <span>Preferences</span></a></li>
+        @endif
+        @if(Request::is('admin/preferences'))
+        <li><a href="{{url('/admin/reports')}}"><i class="fa fa-link"></i> <span>Report</span></a></li>
+        <li class="active"><a href="{{url('admin/preferences')}}"><i class="fa fa-link"></i> <span>Preferences</span></a></li>
+        @endif
+       <!--  <li class="treeview">
           <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>
             <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
@@ -47,7 +53,7 @@
             <li><a href="#">Link in level 2</a></li>
             <li><a href="#">Link in level 2</a></li>
           </ul>
-        </li>
+        </li> -->
       </ul>
       <!-- /.sidebar-menu -->
     </section>

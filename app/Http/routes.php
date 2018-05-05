@@ -15,11 +15,27 @@ Route::get('/', function () {
 });
 */
 Route::get('/', 'HomeController@welcome');
-Route::get('/admin',['middleware'=> 'admin',function(){
+
+
+// admin routes 
+Route::group(['prefix'=>'admin'],function(){
+	Route::get('',['middleware'=> 'admin',function(){
 		 return view('dashboard');
 }]);
+	Route::get('preferences',function(){
+		return view('adminPreferences');
+	});
+	Route::get('reports',function(){
+		return view('dashboard');
+	});
+	Route::get('addParentName','HomeController@addParentName'
+	)->name('addParentName');
 
-// Route::get('/admin','HomeController@admin');
+	Route::get('addChildName','HomeController@addChildName')->name('addChildName');
+	Route::get('deleteParentName','HomeController@deleteParentName')->name('deleteParentName');
+	Route::get('deleteChildName','HomeController@deleteChildName')->name('deleteChildName');
+});
+
 Route::get('/index', function(){
 	return view('index');
 });
@@ -28,13 +44,17 @@ Route::get('/index', function(){
 Route::get('/home', 'HomeController@index');
 Route::post('/register/step2','Auth\AuthController@store');
 
-// Route::get('/auth/logout', 'Auth\AuthController@getLogout')->name('logout');
-Route::get('/event/create','EventController@create');
-Route::post('/event/create','EventController@store');
-Route::get('/event/showall','EventController@show');
-Route::get('/event/{id}/join','EventController@join');
-Route::get('/event/{id}/leave','EventController@leave');
-Route::get('/event/{id}',['uses'=>'EventController@singleEvent']);
+//event routes
+Route::group(['prefix'=>'event'],function(){
+	Route::get('create','EventController@create');
+	Route::post('create','EventController@store');
+	Route::get('showall','EventController@show');
+	Route::get('{id}/join','EventController@join')->where('id','[0-9]+');
+	Route::get('/{id}/leave','EventController@leave')->where('id','[0-9]+');
+	Route::get('/{id}',['uses'=>'EventController@singleEvent'])->where('id','[0-9]+');
+	Route::get('{id}/report', 'EventController@reportEvent')->where('id','[0-9]+');
+});
+
 
 // auth controller
 Route::auth();
@@ -49,6 +69,28 @@ Route::get('/Group/index','GroupController@index');
 Route::get('/group/{id}','GroupController@join')->where('id','[0-9]+');
 Route::get('/group/join/{groupid}','GroupController@joingroup')->where('groupid','[0-9]+');
 Route::get('group/leave/{groupid}','GroupController@leavegroup')->where('groupid','[0-9]+');
+<<<<<<< HEAD
+=======
+
+
+
+//Route for Group
+Route::get('/createGroup','GroupController@createGroup')->name('creategroup');
+Route::post('/storeGroup', 'GroupController@storeGroup')->name('create');
+
+
+// group controller
+
+
+Route::get('/createGroup','GroupController@create')->name('creategroup');
+Route::post('/group/store','GroupController@storeGroup');
+
+//Route::get('/login', 'LoginController@show');
+
+
+Route::get('/home', 'HomeController@index');
+//Route for Manage Account(Profile)
+>>>>>>> master
 
 //Route for Profile
 Route::get('/profile', 'ProfileController@profileView')->name('profile');

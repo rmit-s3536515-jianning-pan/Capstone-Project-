@@ -32,7 +32,11 @@
 
                 <p><h4><b>Preferences :</b></h4></p><hr>
 
-
+                @if(Session::has('minimumSelection'))
+                    <div class="alert alert-warning">
+                      <strong>{{Session::get('minimumSelection')}}</strong>
+                    </div>
+                @endif
                 <div class="form-group">
 
                      <select class="js-example-basic-multiple  form-control" name="pref[]" multiple="multiple">

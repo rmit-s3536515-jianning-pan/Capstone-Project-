@@ -4,6 +4,7 @@
 
 		<div class="jumbotron-fluid welcome_header bg-primary text-center" style="padding:50px 0">
 			<h1>Event Page</h1>
+			<h4>Organizer: <em>{{ $owner->name }}</em></h4>
 		</div>
 
 
@@ -71,6 +72,34 @@
 					  </div>
 					</form>
 					</div>
+
+					<!-- report event button -->
+						<a class="form-control m-btn blue big" data-toggle="modal" data-target="#reportModal">Report Event</a>
+
+					<!-- report event popup  -->
+					<div class="modal fade" id="reportModal" role="dialog">
+						<form method="get" action="{{ url('event/'.$id.'/report') }}">
+						<div class="modal-dialog">
+							
+					      <!-- Modal content-->
+					      <div class="modal-content">
+					        <div class="modal-header">
+					          <button type="button" class="close" data-dismiss="modal">&times;</button>
+					          <h4 class="modal-title">Join this event</h4>
+					        </div>
+					        <div class="modal-body">
+					          <p>Some text in the event.</p>
+					        </div>
+					        <div class="modal-footer">
+					          <button type="submit" class="form-control m-btn big red">Join</button>
+					        </div>
+					      </div>
+					  </div>
+					</form>
+					</div>
+					<!-- end of report event -->
+
+
 				</div>
 
 				<!-- <button href="#" class="m-btn big red">Join</a> -->

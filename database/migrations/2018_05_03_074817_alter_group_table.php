@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCategoriesTable extends Migration
+class AlterGroupTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateCategoriesTable extends Migration
     public function up()
     {
         //
-         Schema::create('categories', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('cat_name');
-            
+         Schema::table('groups',function($table){
+            $table->integer('owner_id')->unsigned()->nullable();
+
+            $table->foreign('owner_id')->references('id')->on('users');
         });
     }
 
