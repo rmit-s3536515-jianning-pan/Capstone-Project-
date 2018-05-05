@@ -21,29 +21,26 @@ class GroupController extends Controller
         return view('group.show')->withTasks($tasks);
     }
 
-    //
     public function create(){
-         $categories = array(Category::all());
+       $categories = array(Category::all());
        $subs = SubCategory::all();
        // dd($categories);
          return view('group.create',['categories'=>$categories['0'], 'subs'=>$subs]);
     }
-    // post for creating group
-    public function store(Request $request){
-            $name = $request->input('group_name');
-            $desc = $request->input('description');
-            $allpref = $request->input('pref');
-            // dd($allpref);
-    }
- 
+
     public function storeGroup(Request $data){
+        $userID = Auth::user()->id;
         $name = $data->input('group_name');
         $desc = $data->input('description');
                 $allpref = $data->input('pref');
         $group = new Groups();
         $group->title = $name;
         $group->description = $desc;
+
+        $group->owner_id = $userID;
+
         $group->owner_id = auth()->user()->id;
+
         $group->save();
         $group_id = Groups::query()->where('title',$name)->first()->id;
                 foreach($allpref as $pref){
@@ -52,15 +49,20 @@ class GroupController extends Controller
                         $groups_subs->sub_id = $pref;
                         $groups_subs->save();
                 }
+
+
+        return redirect('/createGroup');
+
         return redirect('/')->with('message','You have created new group!');
+
     }
 
     public function join($groupid){
 
-       
+
             $group = Groups::findOrFail($groupid)->toArray();
             $attends = groups_users::where('group_id',$groupid)->where('user_id',auth()->user()->id)->get();
-            
+
             $attend = 0;
             if($attends->isEmpty()){
                 $attend = 0;
@@ -68,11 +70,17 @@ class GroupController extends Controller
             else{
                 $attend = 1;
             }
+
             $ownerId = Groups::where('id',$groupid)->first()->owner_id;
             // dd($ownerId);
             $owner = User::where('id',$ownerId)->first();
         
         return view('group.join',['group'=>$group, 'attend'=>$attend,'owner'=>$owner]);
+
+
+
+        return view('group.join',['group'=>$group, 'attend'=>$attend]);
+
     }
 
     public function joingroup($groupid){

@@ -19,8 +19,8 @@
     <!-- select2 -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
-    
-    
+
+
 
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
@@ -157,7 +157,7 @@
                     <li><a href="{{ url('/Group/index') }}">Groups</a></li>
                 @endif
                 </ul>
-                
+
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->
@@ -167,9 +167,10 @@
                         <li><a href="{{ url('/login') }}">Login</a></li>
                         <li><a href="{{ url('/register') }}">Register</a></li>
                     @else
-                         <li><a class="br" href="{{ url('/myEvent') }}">Joined Event</a></li>
-                         <li ><a class="br" href="{{ url('/event/create') }}">Create Event</a></li>
-                         <li ><a class="br" href="{{ url('createGroup')}}">Create Group</a></li>
+                        <li><a class="br" href="{{ url('/myGroup') }}">My Group</a></li>
+                        <li><a class="br" href="{{ url('/myEvent') }}">My Event</a></li>
+                        <li ><a class="br" href="{{ url('/event/create') }}">Create Event</a></li>
+                        <li ><a class="br" href="{{ url('createGroup')}}">Create Group</a></li>
 
 
 
@@ -188,7 +189,7 @@
 
                             </ul>
                         </li>
-                        
+
                     @endif
                 </ul>
             </div>
