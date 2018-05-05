@@ -107,4 +107,4 @@ Route::get('/myGroup', 'MyGroupController@showGroupList')->name('myGroup');
 Route::get('/leaveGroup/{group_id}', 'MyGroupController@leaveGroup');
 Route::post('/updateGroup', 'MyGroupController@updateGroup')->name('updateGroup');
 Route::get('/deleteGroup/{id}', 'MyGroupController@deleteGroup');
-/*Route::get('/{groupname}','HomeController@showGroups');*/
+Route::get('/{groupname}','HomeController@showGroups');
