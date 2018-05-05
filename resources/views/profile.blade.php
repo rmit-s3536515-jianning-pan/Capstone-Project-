@@ -41,9 +41,9 @@
                     </ul>
 
                     <p><h3>Preferences :</h3></p><hr>
-                    <!--@foreach ($data as $cate)
-                      <li>{{ $cate->cat_name }}</li>
-                    @endforeach-->
+                    @foreach ($data as $sub)
+                      <li>{{ $sub->name }}</li>
+                    @endforeach
                     <br>
                   <button type="button" class="btn-block" onclick="location.href = '{{ route('updateView') }}'">Update</button>
 

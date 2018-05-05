@@ -40,6 +40,8 @@ Route::get('/index', function(){
 	return view('index');
 });
 
+
+Route::get('/home', 'HomeController@index');
 Route::post('/register/step2','Auth\AuthController@store');
 
 //event routes
@@ -54,24 +56,21 @@ Route::group(['prefix'=>'event'],function(){
 });
 
 
-
 // auth controller
 Route::auth();
 Route::post('/register/step2','Auth\AuthController@store');
 Route::get('/register/step2','Auth\AuthController@step2')->name('step2');
 Route::post('/step2','Auth\AuthController@store2')->name('poststep2');
 
-
+//Route for Group
 Route::get('/createGroup','GroupController@create')->name('creategroup');
-Route::post('/createGroup','GroupController@store');
+Route::post('/group/store','GroupController@storeGroup');
 Route::get('/Group/index','GroupController@index');
 Route::get('/group/{id}','GroupController@join')->where('id','[0-9]+');
-
-Route::get('/createGroup','GroupController@create')->name('creategroup');
-Route::post('/createGroup','GroupController@store');
-Route::get('/createGroup/index','GroupController@index');
 Route::get('/group/join/{groupid}','GroupController@joingroup')->where('groupid','[0-9]+');
 Route::get('group/leave/{groupid}','GroupController@leavegroup')->where('groupid','[0-9]+');
+<<<<<<< HEAD
+=======
 
 
 
@@ -91,16 +90,22 @@ Route::post('/group/store','GroupController@storeGroup');
 
 Route::get('/home', 'HomeController@index');
 //Route for Manage Account(Profile)
+>>>>>>> master
 
+//Route for Profile
 Route::get('/profile', 'ProfileController@profileView')->name('profile');
 Route::get('/updateDetail', 'ProfileController@formView')->name('updateView');
 Route::post('/insertDetail', 'ProfileController@update')->name('insert');
 
-
-//Route for Joined Event (My Event Page)
+//Route for My Event
 Route::get('/myEvent', 'MyEventController@showEventList')->name('myEvent');
 Route::get('/leaveEvent/{event_id}', 'MyEventController@leaveEvent');
-Route::get('/{groupname}','HomeController@showGroups');
+Route::post('/updateEvent', 'MyEventController@updateEvent')->name('updateEvent');
+Route::get('/deleteEvent/{id}', 'MyEventController@deleteEvent');
 
-
-
+//Route for My Group
+Route::get('/myGroup', 'MyGroupController@showGroupList')->name('myGroup');
+Route::get('/leaveGroup/{group_id}', 'MyGroupController@leaveGroup');
+Route::post('/updateGroup', 'MyGroupController@updateGroup')->name('updateGroup');
+Route::get('/deleteGroup/{id}', 'MyGroupController@deleteGroup');
+/*Route::get('/{groupname}','HomeController@showGroups');*/
