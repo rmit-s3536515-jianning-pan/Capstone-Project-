@@ -55,8 +55,16 @@ class HomeController extends Controller
     }
 
     public function addParentName(Request $request){
-            $id = Category::all()->last()->id;
-            $id +=1;
+
+            $id =Category::all()->last();
+            if($id==null){
+                $id = 1;
+            }
+            else{
+                $id = $id->id + 1;
+            }
+            
+            
 
             $name = $request->input('catname');
             $exist = Category::where('cat_name','ilike',$name)->first();
@@ -80,9 +88,14 @@ class HomeController extends Controller
             if($catid==null){
                  return redirect('/admin/preferences')->with('childErrorMessage','No parent category is selected or no parent name is in the databse!! Add the parent CATEGORY FIRST!!');
             }
-             $id = SubCategory::all()->last()->id;
-
-             $id +=1;
+   
+             $id = SubCategory::all()->last();
+            if($id==null){
+                $id = 1;
+            }
+            else{
+                 $id = $id->id + 1;
+            }
 
             $name = $request->input('childname');
             $exist = SubCategory::where('name','ilike',$name)->first();

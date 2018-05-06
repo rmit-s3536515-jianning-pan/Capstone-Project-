@@ -13,11 +13,14 @@ class AlterGroupTable extends Migration
     public function up()
     {
         //
-         Schema::table('groups',function($table){
-            $table->integer('owner_id')->unsigned()->nullable();
+        if(!Schema::hasColumn('groups','owner_id'))
+        {
+             Schema::table('groups',function($table){
+                $table->integer('owner_id')->unsigned()->nullable();
 
-            $table->foreign('owner_id')->references('id')->on('users');
-        });
+                $table->foreign('owner_id')->references('id')->on('users');
+            });
+         }
     }
 
     /**

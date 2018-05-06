@@ -13,9 +13,12 @@ class AlterUserTable extends Migration
     public function up()
     {
         //
-        Schema::table('users',function($table){
-            $table->boolean('isAdmin')->default(0);
-        });
+         if(!Schema::hasColumn('users','isAdmin'))
+        {
+                Schema::table('users',function($table){
+                    $table->boolean('isAdmin')->default(0);
+                });
+        }
     }
 
     /**

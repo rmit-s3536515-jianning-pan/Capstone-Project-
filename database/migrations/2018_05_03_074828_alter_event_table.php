@@ -13,11 +13,14 @@ class AlterEventTable extends Migration
     public function up()
     {
         //
-         Schema::table('events',function($table){
-            $table->integer('owner_id')->unsigned()->nullable();
-            
-            $table->foreign('owner_id')->references('id')->on('users');
-        });
+         if(!Schema::hasColumn('events','owner_id'))
+        {       
+                 Schema::table('events',function($table){
+                    $table->integer('owner_id')->unsigned()->nullable();
+                    
+                    $table->foreign('owner_id')->references('id')->on('users');
+                });
+         }
     }
 
     /**
