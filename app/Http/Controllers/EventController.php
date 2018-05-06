@@ -10,7 +10,6 @@ use App\events_categories;
 use App\SubCategory;
 use App\events_subs;
 use App\events_users;
-
 use Auth;
 use App\User;
 use App\events_reports;
@@ -53,27 +52,6 @@ class EventController extends Controller
                 $events_subs->sub_id = $pref;
                 $events_subs->save();
             }
-
-            // foreach($cates as $cate){
-            //     $events_cate = new events_categories;
-            //      $events_cate->event_id = $event_id;
-            //     $events_cate->category_id = $cate;
-            //     $events_cate->save();
-            // }
-    	  $table = Events::all();
-        $filename = "events.csv";
-        $handle = fopen($filename, 'w+');
-        fputcsv($handle, array('title', 'description', 'max_attend', 'start_date','start_time'));
-        foreach($table as $row) {
-            fputcsv($handle, array($row['title'], $row['description'], $row['max_attend'], $row['start_date'], $row['start_time']));
-        }
-        fclose($handle);
-        $headers = array(
-            'Content-Type' => 'text/csv',
-        );
-        Response::download($filename, 'events.csv', $headers);
-        		return redirect('/');
-    		// echo $name.$max;
 
     		return redirect('/')->with('message','You have create new Event!!!');
     		

@@ -50,9 +50,6 @@ class GroupController extends Controller
                         $groups_subs->save();
                 }
 
-
-        return redirect('/createGroup');
-
         return redirect('/')->with('message','You have created new group!');
 
     }
@@ -76,10 +73,6 @@ class GroupController extends Controller
             $owner = User::where('id',$ownerId)->first();
         
         return view('group.join',['group'=>$group, 'attend'=>$attend,'owner'=>$owner]);
-
-
-
-        return view('group.join',['group'=>$group, 'attend'=>$attend]);
 
     }
 

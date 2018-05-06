@@ -55,6 +55,19 @@ class MyEventController extends Controller
 
   public function deleteEvent($id)
   {
+
+    DB::table('events_users')
+        ->where('event_id','=',$id)
+        ->delete();
+
+    DB::table('events_subs')
+        ->where('event_id','=',$id)
+        ->delete();
+
+    DB::table('events_reports')
+        ->where('event_id','=',$id)
+        ->delete();
+
     DB::table('events')
       ->where('owner_id', '=', Auth::user()->id)
       ->where('id', '=', $id)

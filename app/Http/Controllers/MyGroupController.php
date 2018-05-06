@@ -59,6 +59,19 @@ class MyGroupController extends Controller
 
   public function deleteGroup($id)
   {
+    
+    DB::table('groups_users')
+        ->where('group_id','=',$id)
+        ->delete();
+
+    DB::table('groups_subs')
+        ->where('group_id','=',$id)
+        ->delete();
+
+    DB::table('groups_reports')
+        ->where('group_id','=',$id)
+        ->delete();
+
     DB::table('groups')
       ->where('owner_id', '=', Auth::user()->id)
       ->where('id', '=', $id)
