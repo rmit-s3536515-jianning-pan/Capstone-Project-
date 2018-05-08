@@ -12,7 +12,7 @@
 				<!-- <div class="col-md-8 col-md-offset-2"> -->
 				<div class="col-md-12">
 
-				<form name="form_G" method="post" action="{{ url('/group/store') }}">
+				<form id="create" name="form_G" method="post" action="{{ url('/group/store') }}">
 					{{ csrf_field() }}
 					<h1>What will you group be about?</h1>
 					<!-- <hr>
@@ -26,7 +26,7 @@
 					<!-- <div class="col-md-12">
 						<label>Choose Categories</label>
 					</div> -->
-					<h3>Choose Categories</h3>
+					<h3>Choose Categories &nbsp;&nbsp;&nbsp; <em><span id="prefError"></span></em></h3>
 					@foreach($categories->chunk(3) as $cate)
 						<div class="row">
 							@foreach($cate as $c)
@@ -56,21 +56,33 @@
 						<h2>Describe who should join, and what your Meetup will do.</h2>
 						<div class="form-group">
 
-							<textarea class="form-control resizeable" rows="5" name="description" id="description" required maxlength="300" placeholder="describe your group" required></textarea>
+							<textarea class="form-control" rows="5" name="description" id="description" minlength="10" maxlength="50" placeholder="describe your group" required></textarea>
 						</div>
 
-				 <div class="form-group">
-	          <div class="col-md-6 col-md-offset-4">
-	              <button class="m-btn blue">
-	                  Create Group
-	              </button>
-	          </div>
-	      </div>
+				 <div class="form-group text-center">
+	         
+		              <button class="m-btn blue">
+		                  Create Group
+		              </button>
+		          
+		      </div>
 				</form>
 			</div>
 			</div>
 
 		</div>
 
+<script type="text/javascript">
+	$('#create').submit(function(e){
+		var l = $('select option:selected').length;
+		if(l <4){
+			e.preventDefault();
+			$('#prefError').text('Please Select At least 4 preferences');
+			$('#prefError').addClass('text-danger');
+			window.scrollTo(0,0);
+		}
+	});
+	
+</script>
 
 @endsection

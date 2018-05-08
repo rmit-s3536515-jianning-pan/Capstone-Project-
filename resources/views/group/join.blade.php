@@ -22,7 +22,7 @@
 				</div>
 
 				<div>
-					<h4>Who's coming</h4>
+					<h4>Members</h4>
 
 
 						<div class="row">
@@ -49,18 +49,30 @@
 							</div>
 						</div>
 						
-
-
 				</div>
 
 			</div>
 
 				<div class="col-md-4">
-					@if($attend==0)
-					<a class="form-control m-btn red big" data-toggle="modal" data-target="#myModal">Join</a>
-					@elseif ($attend==1)
-						<a class="form-control m-btn red big" data-toggle="modal" data-target="#leave">Leave</a>
+					
+					
+
+					@if($owner->id != Auth::user()->id)
+						@if($attend==0)
+						<div class="form-group">
+							<a class="form-control m-btn red big" data-toggle="modal" data-target="#myModal">Join</a>
+						</div>
+						@elseif ($attend==1)
+						<div class="form-group">
+							<a class="form-control m-btn red big" data-toggle="modal" data-target="#leave">Leave</a>
+						</div>
+						@endif
+					<!-- report group button -->
+						<div class="form-group">
+							<a class="form-control m-btn blue big" data-toggle="modal" data-target="#reportGroupModal">Report Group</a>
+						</div>
 					@endif
+
 					<div class="modal fade" id="leave" role="dialog">
 						
 						<div class="modal-dialog">
@@ -100,10 +112,6 @@
 					
 					</div>
 
-					@if($owner->id != Auth::user()->id)
-					<!-- report group button -->
-						<a class="form-control m-btn blue big" data-toggle="modal" data-target="#reportGroupModal">Report Group</a>
-					@endif
 					<!-- report event popup  -->
 					<div class="modal fade" id="reportGroupModal" role="dialog">
 						<form method="get" action="{{ url('/group/report/'.$group['id']) }}">
