@@ -1,52 +1,95 @@
-<section>
-            <div class="container ">
-                <div class="row justify-content-center">
-                    <div class=" col-md-10 text-center">
-                        <div class="heading pb-4">
-                            <h5 class="lis-light">Find a range of events</h5>
-                            <h2 class="f-weight-500">Discover Our Featured Categories</h2> </div>
+<!--speaker section-->
+<section class="pb100">
+    <div class="container">
+        <div class="section_title mb50">
+            <h3 class="title">
+               our featured categories
+            </h3>
+        </div>
+    
+    <div class="row justify-content-center">
+        <div class="col-md-3 col-sm-6">
+            <div class="speaker_box">
+                <div class="speaker_img">
+                    <img src="images/p.jpg" alt="speaker name">
+                    <div class="info_box">
+                        <h5 class="name">Business</h5>
                     </div>
-                </div>
-                    <div class="col-lg-3 text-center wow "  >
-                        <div class="image-holder">
-                             <img src="images/b.jpg" />
-                             <div class="text"> Books</div>
-                        </div>
-
-                    </div>
-                    <div class="col-lg-3 text-center wow "  >
-                        <div class="image-holder">
-                             <img src="images/b.jpg" />
-                        </div>
-                    </div>
-                    <div class="col-lg-3 text-center wow "  >
-                        <div class="image-holder">
-                             <img src="images/b.jpg" />
-                        </div>
-                    </div>
-                    <div class="col-lg-3 text-center wow "  >
-                        <div class="image-holder">
-                             <img src="images/b.jpg" />
-                        </div>
-                    </div>
-                    <div class="col-lg-3 text-center wow "  >
-                        <div class="image-holder">
-                             <img src="images/b.jpg" />
-                        </div>
-                    </div>
-                    <div class="col-lg-3 text-center wow "  >
-                        <div class="image-holder">
-                             <img src="images/b.jpg" />
-                        </div>
-                    </div>
-                    <div class="col-lg-3 text-center wow "  >
-                        <div class="image-holder">
-                             <img src="images/b.jpg" />
-                        </div>
-                    </div>
-
-
-
                 </div>
             </div>
-        </section>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <div class="speaker_box">
+                <div class="speaker_img">
+                    <img src="images/p.jpg" alt="speaker name">
+                    <div class="info_box">
+                        <h5 class="name">Cultures</h5>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <div class="speaker_box">
+                <div class="speaker_img">
+                    <img src="images/p.jpg" alt="speaker name">
+                    <div class="info_box">
+                        <h5 class="name">Entertainment</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <div class="speaker_box">
+                <div class="speaker_img">
+                    <img src="images/p.jpg" alt="speaker name">
+                    <div class="info_box">
+                        <h5 class="name">Family</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <div class="speaker_box">
+                <div class="speaker_img">
+                    <img src="images/p.jpg" alt="speaker name">
+                    <div class="info_box">
+                        <h5 class="name">Health</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <div class="speaker_box">
+                <div class="speaker_img">
+                    <img src="images/p.jpg" alt="speaker name">
+                    <div class="info_box">
+                        <h5 class="name">Pets</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <div class="speaker_box">
+                <div class="speaker_img">
+                    <img src="images/p.jpg" alt="speaker name">
+                    <div class="info_box">
+                        <h5 class="name">Religion</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <div class="speaker_box">
+                <div class="speaker_img">
+                    <img src="images/p.jpg" alt="speaker name">
+                    <div class="info_box">
+                        <h5 class="name">Social</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+<!--speaker section end -->

@@ -3,13 +3,12 @@
 @section('content')
 
 
-
-<header class="bg-primary text-white banner size" style="background-image: url(../../images/k.jpg)">
+<header class="bg-primary text-white banner size" style="background-image: url(../../images/k.jpg); font-family: Dosis, arial, sans-serif; letter-spacing: 0.2em;">
   <div class="container text-center title">
     <h1>Welcome to Encounter</h1>
     <p class="lead"></p>
     <ul class="actions">
-      <li><a href="#event-index" class="start-btn btn-primary btn-xl js-scroll-trigger">Get Started</a></li>
+      <li><a href="#about-e" class="start-btn btn-primary btn-xl js-scroll-trigger">Get Started</a></li>
     </ul>
   </div>
 </header>
@@ -57,75 +56,144 @@
   </div>
 </section> -->
 
+<!--about the event -->
+<section id="about-e" class="pt100 pb100">
+    <div class="container ">
+        <div class="section_title ">
+            <h3 class="title col-sm-10 col-sm-offset-1">
+                About
+            </h3>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-sm-10 col-sm-offset-1">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing eli. Integer iaculis in lacus a sollicitudin. Ut hendrerit hendrerit nisl a accumsan. Pellentesque convallis consectetur tortor id placerat. Curabitur a pulvinar nunc. Maecenas laoreet finibus lectus, at volutpat ligula euismod.
+                </p>
+            </div>
 
-<section id="event-index" >
+        </div>
+
+
+        <!--event features-->
+       <!--  <div class="col-sm-10 col-sm-offset-1">
+          <div class="row justify-content-center">
+
+              <div class="col-sm-6 col-md-6 col-lg-3">
+                  <div class="icon_box_one">
+                      <div class="content">
+                          <h4>Encounter like minded people</h4>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="col-sm-6 col-md-6 col-lg-3">
+                  <div class="icon_box_one">
+                      <div class="speaker_img">
+                        <img src="images/p.jpg" alt="speaker name">
+                    </div>
+                  </div>
+              </div>
+
+              <div class="col-sm-6 col-md-6 col-lg-3">
+                  <div class="icon_box_one" >
+                    <div class="speaker_img">
+                        <img src="images/p.jpg" alt="speaker name">
+                    </div>
+                  </div>
+              </div>
+
+              <div class="col-sm-6 col-md-6 col-lg-3">
+                  <div class="icon_box_one">
+                      <div class="content">
+                          <h4>Encounter new experiences</h4>
+
+                      </div>
+                  </div>
+              </div>
+          </div>
+          </div> -->
+          <!--event features end-->
+      
+    </div>
+</section>
+<!--about the event end -->
+
+
+<section id="event-index" class="lis-bg-light" >
   <div class="container">
     <div class="row row-clear ">
-          <div class="col-lg-12 mx-auto text-center">
-            <h2 class="text-uppercase">Featured Events</h2>
-            <h4>Discover & connect with Events based on your interests</h4>
-            <hr class="my-4">
-            <p class="lead"></p>
-          </div>
+        <div class="section_title">
+            <h3 class="title col-sm-10 col-sm-offset-1">
+                Featured Events 
+            </h3>
+            <h4 class="section-description col-sm-10 col-sm-offset-1">Discover & connect with Events based on your interests</h4>
         </div>
+      </div>
   </div>
 
   <div class="container">
-    <div class="row">
+    <div class="row col-sm-10 col-sm-offset-1">
           @include('eventContainer')
     </div>
   </div>
-
 </section>
 
-<!-- <section class="banner ban-image" style="background-image: url(../../images/h.jpg)">
 
-</section> -->
-
-
-<section id="services" class="bg-light">
-  <div class="container">
-    <div class="row row-clear">
-      <div class="col-lg-12 mx-auto text-center">
-        <h1>How Encounter works?</h1>
-      </div>      
-    </div>
-
-    <div class="row process-content">
-      <div class="col-lg-4 steps">
-        <div class="item" data-item="1">
-          <h5>Sign Up</h5>
-          <p>Start by registering</p>
-        </div>
-
-        <div class="item" data-item="2">
-          <h5>Select Preferences</h5>
-          <p>Choose from a variety of topics that you are interested in</p>
-        </div>
-      </div> <!-- /left-side -->
-    
-<img class="img-fluid rounded-circle col-lg-4" src="images/q.jpg" alt="">
-
-
-      <div class="col-lg-4 steps">
-        <div class="item" data-item="3">
-          <h5>Join Event</h5>
-          <p>Be connected to events that are shown to you</p>
-        </div>
-
-        <div class="item" data-item="4">
-          <h5>Meet Up</h5>
-          <p>Last but not least, go to the event</p>
-        </div>
-      </div> <!-- /right-side -->  
-    </div> <!-- /process-content --> 
-   </section> <!-- /process--> 
+<section class="image-square left">
+  <div class="col-md-6 image">
+      <div class="background-image-holder fadeIn" style="background: url(../../images/t.jpg);">
+          <img alt="image" class="background-image" src="images/vent2.jpg" style="display: none;">
+      </div>
 
   </div>
+  <div class="clearfix"></div>
+  <div class="col-md-6 col-md-offset-1 content">
+      <h3 class="uppercase">Book Your Next
+          <br> Adventure Today.</h3>
+      <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+          <br> do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      </p>
+      <ul class="bullets mb40 mb-xs-24">
+          <li>All Inclusive Packages</li>
+          <li>Multi-Night Stays</li>
+          <li>Equipment Provided</li>
+      </ul>
+      <a class="btn btn-lg bg-dark mb0" href="#">Book A Tour</a>
+  </div>
+
 </section>
 
-<!-- @include('listCatergoriesIcon')
- -->
+<section class="banner ban-image" style="background-image: url(../../images/n.jpg)">
+
+</section>
+
+
+
+
+
+@include('listCatergoriesIcon')
+
+
+<!--     <section class="main-block light-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="add-listing-wrap">
+                        <h2>Reach millions of People</h2>
+                        <p>Add your Business infront of millions and earn 3x profits from our listing</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-4">
+                    <div class="featured-btn-wrap">
+                        <a href="#" class="btn btn-danger"><span class="ti-plus"></span> ADD LISTING</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
 
 <script type="text/javascript">
   $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {

@@ -2,14 +2,30 @@
 
 @section('content')
 
-        <div class="jumbotron welcome_header text-center" >
-<!--           style="background: url(../../images/s.jpg) center center no-repeat;"
- -->            <h1> Join an Event</h1>
-            <p>Be Adventurous!</p>
+ <section class="page-title page-title-2 image-bg overlay parallax">
+    <div class="background-image-holder fadeIn" style="transform: translate3d(0px, 0px, 0px); background: url(../../images/l.jpg); top: -100px;">
+        <img alt="Background Image" class="background-image" src="images/home7.jpg" style="display: none;">
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2 class="uppercase mb8">Suggested Events</h2>
+                <p class="lead mb0">...</p>
+            </div>
+            <div class="col-md-6 text-right">
+                <ol class="breadcrumb breadcrumb-2">
+                    <li>
+                        <a href="{{ url('/index') }}">Home</a>
+                    </li>
+                    
+                    <li class="active">Events</li>
+                </ol>
+            </div>
         </div>
-    <!-- <div class="jumbotron text-center welcome_header">
-            <h1>Encounter</h1>
-    </div>  -->
+        <!--end of row-->
+    </div>
+    <!--end of container-->
+</section>
 
 <!--    
 
@@ -52,8 +68,8 @@
   -->
 
     <!-- include search page -->
-    @include('homepage_search')
 
+@include('eventPercentage_show')
 
 <section style="background-color: #f3f4f7;">
     @if (count($event)>0)
@@ -91,22 +107,33 @@
     @endif
 </section>
     <!--Explore by category-->
-  <section">
-    <div class="container text-center">
-      <h5 class="lis-light">Find the best events</h5>
-        <h3>Explore Categories</h3>
+<section class="pb100">
+    <div class="container">
+        <div class="section_title mb50">
+            <h3 class="title">
+               Explore Categories
+            </h3>
+        </div>
 
             @foreach($categories->chunk(3) as $category)
-                <div class="row">
+                <div class="row justify-content-center">
                     @foreach($category as $c)
                     <div class="col-md-4 col-sm-12 marginbottom">
-                            <a href="{{ url('/'.$c['cat_name']) }}">
-                            <div class="panel panel-success text-center" >
-                                <div class="panel-heading" style="height: 100px; font-size: 40px" >{{ $c['cat_name'] }}</div>
 
-                                  
-                            </div>
-                           </a>
+                        <a href="{{ url('/'.$c['cat_name']) }}">
+
+                        <div class="speaker_box">
+                          <div class="speaker_img">
+                              <img src="images/p.jpg" alt="speaker name">
+                              <div class="info_box">
+                                  <h5 class="name">{{ $c['cat_name'] }}</h5>
+                              </div>
+                          </div>
+                      </div>
+
+                              
+                        
+                       </a>
                     </div>
                     @endforeach
                 </div>

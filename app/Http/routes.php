@@ -22,6 +22,15 @@ Route::get('/admin',['middleware'=> 'admin',function(){
 Route::get('/index', function(){
 	return view('index');
 });
+
+Route::get('/process', function(){
+	return view('howItWorks');
+});
+Route::get('/about', function(){
+	return view('about');
+});
+
+
 Route::post('/register/step2','Auth\AuthController@store');
 // Route::get('/auth/logout', 'Auth\AuthController@getLogout')->name('logout');
 Route::get('/event/create','EventController@create');
