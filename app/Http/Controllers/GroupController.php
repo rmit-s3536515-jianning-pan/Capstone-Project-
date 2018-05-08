@@ -16,7 +16,7 @@ class GroupController extends Controller
 
     public function index()
     {
-        $tasks = groups::all();
+        $tasks = Groups::getListedGroups();
 
         return view('group.show')->withTasks($tasks);
     }

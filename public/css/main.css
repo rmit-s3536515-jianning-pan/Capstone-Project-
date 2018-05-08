@@ -80,7 +80,9 @@
       width:100%;
     }
 
-   
+   textarea{
+    resize: none;
+   }
 /* Create Group */
 /*
 .form-group input[type="checkbox"] {

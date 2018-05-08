@@ -63,7 +63,19 @@ class Events extends Model
               }
         }
         
-        
+        for($i =0; $i < count($result)-1; $i++){
+          $min_idx = $i;
+          for ($j=$i+1; $j < count($result); $j++) { 
+              if($result[$j]['score'] > $result[$min_idx]['score']){
+                  $min_idx = $j;
+              }
+          }
+          $temp = $result[$min_idx];
+          $result[$min_idx] = $result[$i];
+          $result[$i] = $temp;
+        }
+
+        // dd($result);
         return $result;
     }
     // find the result based on the keywords and category
