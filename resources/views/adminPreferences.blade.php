@@ -16,7 +16,7 @@
       </div>
 
 
-      @if (Session::has('parentMessage'))
+@if (Session::has('parentMessage'))
    <div class="alert alert-success col-md-10">{{ Session::get('parentMessage') }}</div>
 @endif
        @if (Session::has('childMessage'))
@@ -34,7 +34,7 @@
 @if (Session::has('childDeleteMessage'))
    <div class="alert alert-success col-md-10">{{ Session::get('childDeleteMessage') }}</div>
 @endif
-  
+
     <!-- start of add parent name     -->
       <div class="row" style="margin-bottom: 20px">
           <div class="col-md-6 col-md-offset-2"  style="background-color: #fff; box-shadow: 3px 3px 1px #ccc">
@@ -42,7 +42,7 @@
                <form class="form-horizontal" action="{{ route('addParentName') }}">
                 {{ csrf_field() }}
                   <div class="form-group">
-               
+
                 <label class="control-label col-md-4"  style="text-align: left">Parent Category Name</label>
                 <div class="col-md-8">
                 <input type="text" name="catname" class="form-control" required>
@@ -50,11 +50,11 @@
               </div>
               <div class="form-group">
                 <div class="col-md-4 col-md-offset-4">
-          <button class="btn btn-primary" style="margin-bottom: 10px">Add the Parent Name</button>  
+          <button class="btn btn-primary" style="margin-bottom: 10px">Add the Parent Name</button>
         </div>
 
         </div>
-          
+
                </form>
           </div>
       </div>
@@ -62,10 +62,10 @@
 
       <!-- start of add child name -->
       <div class="row" style="margin-bottom: 20px">
-          
+
           <div class="col-md-6 col-md-offset-2"  style="background-color: #fff; box-shadow: 3px 3px 1px #ccc">
             <h3><strong>Add Child</strong></h3>
-           
+
             <form class="form-horizontal" action="{{  route('addChildName')}}">
 
             <div class="form-group">
@@ -78,16 +78,16 @@
                         @if($cates->id==1){
                         <option value="{{ $cates->id}}" selected>{{ $cates->cat_name }}</option>
                       }
-                      @else 
+                      @else
                          <option value="{{ $cates->id}}">{{ $cates->cat_name }}</option>
                       @endif
                       @endforeach
-                    </select>      
+                    </select>
                  </div>
               </div>
-            
+
             <!--   @foreach($categories as $cates)
-              
+
                <div class="form-group subcates" id="{{ $cates->id }}">
                    <label class="control-label col-md-4" style="text-align: left"> Sub Category</label>
                     <div class="col-md-8">
@@ -103,26 +103,26 @@
                   </div>
 
               @endforeach -->
-             
+
             <div class="form-group">
                 <label class="control-label col-md-4"  style="text-align: left">Child Category Name</label>
                 <div class="col-md-8">
                 <input type="text" name="childname" class="form-control" required>
               </div>
-              
-              
+
+
           </div>
 
           <div class="form-group">
              <div class="col-md-4 col-md-offset-4">
-          <button class="btn btn-primary" style="margin-bottom: 10px">Add the Sub Category Name</button>  
+          <button class="btn btn-primary" style="margin-bottom: 10px">Add the Sub Category Name</button>
         </div>
 
         </div>
           </form>
-          
-      </div> 
-          
+
+      </div>
+
     </div>
     <!-- endof add child name  -->
 
@@ -140,25 +140,25 @@
                         @if($cates->id==1){
                         <option value="{{ $cates->id}}" selected>{{ $cates->cat_name }}</option>
                       }
-                      @else 
+                      @else
                          <option value="{{ $cates->id}}">{{ $cates->cat_name }}</option>
                       @endif
                       @endforeach
-                      
-                    </select>      
+
+                    </select>
                  </div>
               </div>
                <div class="form-group">
                    <div class="col-md-4 col-md-offset-4">
-                        <button class="btn btn-primary" style="margin-bottom: 10px">Delete the Parent Name</button>  
+                        <button class="btn btn-primary" style="margin-bottom: 10px">Delete the Parent Name</button>
                   </div>
-           
+
             </div>
         </form>
               </div>
               </div>
              <!-- endof delete parent name -->
-          
+
 
           <!-- start of deleting child form -->
   <div class="row" style="margin-bottom: 20px">
@@ -182,22 +182,22 @@
                        </optgroup>
                        @endif
                       @endforeach
-                      
-                    </select>      
+
+                    </select>
                  </div>
               </div>
                <div class="form-group">
                  <div class="col-md-4 col-md-offset-4">
-                      <button class="btn btn-primary" style="margin-bottom: 10px">Delete the Child Name</button>  
+                      <button class="btn btn-primary" style="margin-bottom: 10px">Delete the Child Name</button>
                 </div>
-           
+
             </div>
         </form>
               </div>
               </div>
              <!-- endof delete child name -->
               </div>
-     
+
 <!-- </section> -->
 <script type="text/javascript">
     $(document).ready(function() {
@@ -210,7 +210,7 @@
     var id = $('#selectedCat').find('option:selected').val();
     $('#'+id).show();
     $('#selectedCat').change(function(){
-      
+
       var selected = $(this).find('option:selected').val();
         $('.subcates').hide();
         // console.log('#'+selected);
@@ -220,7 +220,7 @@
         //     $('#'+selected).hide();
         // }
         // else{
-          
+
         //   $('#'+selected).show();
 
         // }
