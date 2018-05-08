@@ -15,9 +15,21 @@ Route::get('/', function () {
 });
 */
 Route::get('/', 'HomeController@welcome');
+Route::get('/index', function(){
+	return view('index');
+});
+Route::get('/home', 'HomeController@index');
+Route::post('/register/step2','Auth\AuthController@store');
 
 
-// admin routes 
+// Auth Controller
+Route::auth();
+Route::post('/register/step2','Auth\AuthController@store');
+Route::get('/register/step2','Auth\AuthController@step2')->name('step2');
+Route::post('/step2','Auth\AuthController@store2')->name('poststep2');
+
+
+// Routes for Admin
 Route::group(['prefix'=>'admin'],function(){
 	Route::get('',['middleware'=> 'admin',function(){
 		 return view('dashboard');
@@ -25,26 +37,17 @@ Route::group(['prefix'=>'admin'],function(){
 	Route::get('preferences',function(){
 		return view('adminPreferences');
 	});
-	Route::get('reports',function(){
-		return view('dashboard');
-	});
-	Route::get('addParentName','HomeController@addParentName'
-	)->name('addParentName');
-
+	Route::get('ignoreReport/{id}', 'HomeController@ignoreReport');
+	Route::get('removeEvent/{id}', 'HomeController@removeEvent');
+	Route::get('adminReports','HomeController@reportedEvents')->name('adminReports');
+	Route::get('addParentName','HomeController@addParentName')->name('addParentName');
 	Route::get('addChildName','HomeController@addChildName')->name('addChildName');
 	Route::get('deleteParentName','HomeController@deleteParentName')->name('deleteParentName');
 	Route::get('deleteChildName','HomeController@deleteChildName')->name('deleteChildName');
 });
 
-Route::get('/index', function(){
-	return view('index');
-});
 
-
-Route::get('/home', 'HomeController@index');
-Route::post('/register/step2','Auth\AuthController@store');
-
-//event routes
+// Routes for Event
 Route::group(['prefix'=>'event'],function(){
 	Route::get('create','EventController@create');
 	Route::post('create','EventController@store');
@@ -56,13 +59,7 @@ Route::group(['prefix'=>'event'],function(){
 });
 
 
-// auth controller
-Route::auth();
-Route::post('/register/step2','Auth\AuthController@store');
-Route::get('/register/step2','Auth\AuthController@step2')->name('step2');
-Route::post('/step2','Auth\AuthController@store2')->name('poststep2');
-
-//Route for Group
+//Routes for Group
 Route::get('/createGroup','GroupController@create')->name('creategroup');
 Route::post('/group/store','GroupController@storeGroup');
 Route::get('/Group/index','GroupController@index');
@@ -72,37 +69,20 @@ Route::get('group/leave/{groupid}','GroupController@leavegroup')->where('groupid
 Route::get('/group/report/{groupid}','GroupController@reportGroup')->where('groupid','[0-9]+');
 
 
-
-//Route for Group
-Route::get('/createGroup','GroupController@createGroup')->name('creategroup');
-Route::post('/storeGroup', 'GroupController@storeGroup')->name('create');
-
-
-// group controller
-
-
-Route::get('/createGroup','GroupController@create')->name('creategroup');
-Route::post('/group/store','GroupController@storeGroup');
-
-//Route::get('/login', 'LoginController@show');
-
-
-Route::get('/home', 'HomeController@index');
-//Route for Manage Account(Profile)
-
-
-//Route for Profile
+//Routes for Profile
 Route::get('/profile', 'ProfileController@profileView')->name('profile');
 Route::get('/updateDetail', 'ProfileController@formView')->name('updateView');
 Route::post('/insertDetail', 'ProfileController@update')->name('insert');
 
-//Route for My Event
+
+//Routes for MyEvent
 Route::get('/myEvent', 'MyEventController@showEventList')->name('myEvent');
 Route::get('/leaveEvent/{event_id}', 'MyEventController@leaveEvent');
 Route::post('/updateEvent', 'MyEventController@updateEvent')->name('updateEvent');
 Route::get('/deleteEvent/{id}', 'MyEventController@deleteEvent');
 
-//Route for My Group
+
+//Routes for MyGroup
 Route::get('/myGroup', 'MyGroupController@showGroupList')->name('myGroup');
 Route::get('/leaveGroup/{group_id}', 'MyGroupController@leaveGroup');
 Route::post('/updateGroup', 'MyGroupController@updateGroup')->name('updateGroup');

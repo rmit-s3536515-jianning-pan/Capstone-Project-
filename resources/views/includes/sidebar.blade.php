@@ -11,7 +11,7 @@
         </div>
         <div class="pull-left info">
           <p>Fuad Amahoru</p>
-         
+
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div> -->
@@ -33,15 +33,15 @@
 
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu" data-widget="tree">
-        <li class="header">HEADER</li>
+        <li class="header">MENU :</li>
         <!-- Optionally, you can add icons to the links -->
-        @if(Request::is('admin')||Request::is('admin/reports'))
-        <li class="active"><a href="{{url('/admin/reports')}}"><i class="fa fa-link"></i> <span>Report</span></a></li>
-        <li><a href="{{url('admin/preferences')}}"><i class="fa fa-link"></i> <span>Preferences</span></a></li>
+        @if(Request::is('admin')||Request::is('admin/adminReports'))
+        <li class="active"><a href="{{url('/admin/adminReports')}}"><i class="fa fa-warning"></i> <span>Report</span></a></li>
+        <li><a href="{{url('admin/preferences')}}"><i class="fa fa-user-plus"></i> <span>Preferences</span></a></li>
         @endif
         @if(Request::is('admin/preferences'))
-        <li><a href="{{url('/admin/reports')}}"><i class="fa fa-link"></i> <span>Report</span></a></li>
-        <li class="active"><a href="{{url('admin/preferences')}}"><i class="fa fa-link"></i> <span>Preferences</span></a></li>
+        <li><a href="{{url('/admin/adminReports')}}"><i class="fa fa-warning"></i> <span>Report</span></a></li>
+        <li class="active"><a href="{{url('admin/preferences')}}"><i class="fa fa-user-plus"></i> <span>Preferences</span></a></li>
         @endif
        <!--  <li class="treeview">
           <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>
