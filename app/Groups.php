@@ -8,6 +8,7 @@ use App\groups_subs;
 use App\Groups;
 use App\Category; // getting the data
 use Illuminate\Support\Collection;
+use DB;
 class Groups extends Model
 {
 
@@ -61,5 +62,15 @@ class Groups extends Model
         }
         // dd($output);
         return $output;
+    }
+
+    //it shows group list without owner group and joined group
+    public static function getListedGroups(){
+         
+         $joinedGroup = DB::table('groups_users')->where('user_id','=',auth()->user()->id)->pluck('group_id');
+         
+         $tasks = DB::table('groups')->where('owner_id','!=',auth()->user()->id)->whereNotIn('id',$joinedGroup)->get();
+
+         return $tasks;
     }
 }

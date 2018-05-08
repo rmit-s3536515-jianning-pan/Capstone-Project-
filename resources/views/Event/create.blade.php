@@ -13,7 +13,7 @@
 <div class="container event-container">
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
-			<form role="form" method="POST" action="{{ url('/event/create') }}">
+			<form id="create" role="form" method="POST" action="{{ url('/event/create') }}">
 				{{ csrf_field() }}
 				<div class="form-group col-md-6">
 					<label for="name">Name</label>
@@ -53,7 +53,8 @@
 					<!-- <div class="col-md-12">
 						<label>Choose Categories</label>
 					</div> -->
-					<h5>Choose Categories</h5>
+					<h4>Choose Categories &nbsp;&nbsp;&nbsp; <em><span id="prefError"></span></em></h4>
+					
 					@foreach($categories->chunk(3) as $cate)
 						<div class="row">
 							@foreach($cate as $c)
@@ -78,21 +79,35 @@
 				</div>
 				<div class="form-group col-md-12">
 					<label for="description">Description</label>
-					<textarea class="form-control resizeable" rows="5" name="description" min="30" max="1000" required></textarea>
+					<textarea class="form-control resizeable" rows="5" name="description" minlength="10" maxlength="50" required></textarea>
 
 				</div>
 
 
 				<div class="form-group col-md-6">
-					<button class="m-btn blue ">
+					<button class="m-btn blue">
 						Submit<span class="glyphicon glyphicon-chevron-right"></span>
 					</button>
 				</div>
 
 			</form>
+			
 		</div>
 	</div>
 </div>
+
+<script type="text/javascript">
+	$('#create').submit(function(e){
+		var l = $('select option:selected').length;
+		if(l <4){
+			e.preventDefault();
+			$('#prefError').text('Please Select At least 4 preferences');
+			$('#prefError').addClass('text-danger');
+			window.scrollTo(0,0);
+		}
+	});
+	
+</script>
 
 <script type="text/javascript">
 	$('.datepicker').dateDropper();

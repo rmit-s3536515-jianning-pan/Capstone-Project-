@@ -27,7 +27,7 @@
 
 
 						<div class="circle bg-success block">
-								<p>sd</p>
+								<p></p>
 						</div>
 
 				</div>
@@ -35,11 +35,24 @@
 			</div>
 
 				<div class="col-md-4">
-					@if($attend==0)
-					<a class="form-control m-btn red big" data-toggle="modal" data-target="#myModal">Join</a>
-					@elseif ($attend==1)
-						<a class="form-control m-btn red big" data-toggle="modal" data-target="#leave">Leave</a>
+					
+					
+					@if($owner->id != Auth::user()->id)
+						@if($attend==0)
+						<div class="form-group">
+							<a class="form-control m-btn red big" data-toggle="modal" data-target="#myModal">Join</a>
+						</div>
+						@elseif ($attend==1)
+						<div class="form-group">
+							<a class="form-control m-btn red big" data-toggle="modal" data-target="#leave">Leave</a>
+						</div>
+						@endif
+					<!-- report event button -->
+						<div class="form-group">
+							<a class="form-control m-btn blue big" data-toggle="modal" data-target="#reportModal">Report Event</a>
+						</div>
 					@endif
+
 					<div class="modal fade" id="leave" role="dialog">
 						<form method="get" action="{{ url('event/'.$id.'/leave') }}">
 						<div class="modal-dialog">
@@ -77,10 +90,7 @@
 					  </div>
 					</form>
 					</div>
-					@if($owner->id != Auth::user()->id)
-					<!-- report event button -->
-						<a class="form-control m-btn blue big" data-toggle="modal" data-target="#reportModal">Report Event</a>
-					@endif
+
 					<!-- report event popup  -->
 					<div class="modal fade" id="reportModal" role="dialog">
 						<form method="get" action="{{ url('event/'.$id.'/report') }}">
