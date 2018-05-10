@@ -3,13 +3,15 @@
 
 @section('content')
 
+	@include('homepage_search')
 	<div class="container">
-		<h2>Events</h2>
+		<h2>Searched Result</h2>
 		@if (count($records)>0)
 			@foreach(array_chunk($records,3) as $record)
 			<div class="row">
 				@foreach($record as $add)
-				<div class="col-md-4 marginbottom">
+				 <a href="{{ url('event/'.$add['item']['id']) }}">
+				<div class="col-md-4">
 				<div class="panel panel-primary text-center">
 					<div class="panel-heading">
 						<h3>{{ $add['item']["title"] }}</h3>
@@ -22,6 +24,7 @@
 
 				</div>
 			</div>
+				</a>
 				@endforeach
 			</div>
 			@endforeach
@@ -32,7 +35,7 @@
 					<div class="row">
 
 						<div class="col-md-4 text-center">
-							<span class="glyphicon glyphicon-exclamation-sign" style="color: green; font-size: 70px"></span>
+							<span class="glyphicon glyphicon-exclamation-sign" style="color: red; font-size: 70px"></span>
 
 						</div>
 
