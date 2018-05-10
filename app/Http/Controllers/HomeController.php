@@ -13,6 +13,7 @@ use App\events_subs;
 use App\users_subs;
 use App\events_reports;
 use DB;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -43,7 +44,7 @@ class HomeController extends Controller
         // dd(gettype($categories));
         $subs = SubCategory::all();
         // dd($categories);
-
+        $id = Auth::user()->id;
         $relatedEvents = Events::findInterestedCategory();
         $allevents = Events::all();
         // dd(gettype($allevents));
@@ -204,4 +205,12 @@ class HomeController extends Controller
 
       return redirect(route('adminReports'));
     }
+
+    public function showPreferences() {
+        $parent = array(Category::all());
+        $child = SubCategory::all();
+
+        return view('dashboard', ['parents' => $parent['0'], 'children' => $child] );
+    }
+
 }

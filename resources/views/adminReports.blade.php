@@ -3,25 +3,27 @@
 @section('content')
 
  <!-- <section class="content-header"> -->
-<div class="container">
+  <section class="content-header">
     <h2><strong>Manage Report</strong></h2>
+
     <div class="row">
         <!-- <div class="col-md-12"> -->
-
         <ul class="breadcrumb" style="background-color: inherit; font-size: 15px">
               <li><a href="{{ url('/admin') }}">Home</a></li>
               <li>Reports</li>
         </ul>
       <!-- </div> -->
     </div>
-
+</section>
     <!-- Table content -->
+
+      <div class="col-xs-12">
         <div class="box">
           <div class="box-header">
             <h3 class="box-title">Report List</h3>
           </div>
           <!-- /.box-header -->
-          <div class="box-body">
+          <div class="box-body ">
               <table id="example2" class="table table-bordered table-hover">
                   <thead>
                   <tr>
@@ -47,6 +49,8 @@
           <!-- /.box-body -->
         </div>
         <!-- /.box -->
+      </div>
+
 
         @foreach($reports as $report)
         <div class="modal fade" id="{{ $report->id }}">
@@ -72,7 +76,7 @@
         </div>
         <!-- /.modal -->
         @endforeach
-</div>
+
 
 
 @endsection

@@ -2,7 +2,7 @@
 
 @section('content')
  <!-- <section class="content-header"> -->
-    <div class="container">
+    <section class="content-header">
        <h2><strong>Preferences</strong></h2>
       <div class="row">
 
@@ -13,7 +13,7 @@
                 <li>Preferences</li>
           </ul>
         <!-- </div> -->
-      </div>
+      </section>
 
 
 @if (Session::has('parentMessage'))

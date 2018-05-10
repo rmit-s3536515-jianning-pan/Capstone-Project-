@@ -30,10 +30,11 @@ Route::post('/step2','Auth\AuthController@store2')->name('poststep2');
 
 
 // Routes for Admin
-Route::group(['prefix'=>'admin'],function(){
+	Route::group(['prefix'=>'admin'],function(){
 	Route::get('',['middleware'=> 'admin',function(){
-		 return view('dashboard');
-}]);
+			 return view('dashboard');
+	}]);
+	Route::get('', 'HomeController@showPreferences')->name('dashboard');
 	Route::get('preferences',function(){
 		return view('adminPreferences');
 	});
