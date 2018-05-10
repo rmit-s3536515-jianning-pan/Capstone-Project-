@@ -196,8 +196,9 @@
         </div>
     </nav>
 
+<div style="min-height:100%;">
     @yield('content')
-
+</div>
 
     <!-- JavaScripts -->
 <!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
@@ -236,7 +237,7 @@
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
 
 <footer class="footer-main">
-     <div class="container">
+     <div class="container" >
        <div class="row">
 
                 <div class="col-md-4 col-sm-6 col-xs-12">
@@ -269,7 +270,7 @@
                           </li>
                      </ul>
                 </div>
-
+                <!-- Start of Footer -->
                 <div class="col-md-4 col-sm-6 col-xs-12">
                   <ul class="address">
                         <span>Contact</span>
@@ -284,6 +285,7 @@
                         </li>
                    </ul>
                </div>
+               <!-- .End of Page Footer -->
            </div>
         </div>
         <div class="col-md-12 text-center footer">

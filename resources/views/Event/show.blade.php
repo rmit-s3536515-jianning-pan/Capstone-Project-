@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-
+<!-- This page contains the search results of your search -->
 @section('content')
 
 	<div class="container">
