@@ -35,7 +35,7 @@ class EventController extends Controller
         $userID = Auth::user()->id;
             // $cates = $request->input('cates');
             $allpref = $request->input('pref');
-            
+
             $event = new Events();
             $event->title = $name;
             $event->owner_id = $userID;
@@ -54,7 +54,7 @@ class EventController extends Controller
             }
 
     		return redirect('/')->with('message','You have create new Event!!!');
-    		
+
 
     }
 
@@ -76,6 +76,7 @@ class EventController extends Controller
             $e = $e['original'];
             $id = auth()->user()->id;
             $attends = events_users::where('event_id',$eventId)->where('user_id',$id)->get();
+            $reports = events_reports::where('event_id',$eventId)->where('user_id',$id)->get();
             $ownerId = Events::where('id',$eventId)->first()->owner_id;
             // dd($ownerId);
             $owner = User::where('id',$ownerId)->first();
@@ -87,8 +88,16 @@ class EventController extends Controller
             else{
                 $attend = 1;
             }
-            
-            return view('Event.oneevent',['id'=>$eventId , 'event'=>$e,'attend'=>$attend,'owner'=>$owner]);
+
+            $reported = 0;
+            if($reports->isEmpty()){
+                $reported = 0;
+            }
+            else{
+                $reported = 1;
+            }
+
+            return view('Event.oneevent',['id'=>$eventId , 'event'=>$e,'attend'=>$attend,'owner'=>$owner, 'reported'=>$reported]);
     }
     public function join($eventId){
         $id = auth()->user()->id;
@@ -107,15 +116,14 @@ class EventController extends Controller
 
     public function reportEvent($eventId,Request $request){
         $text = $request->input('report');
-        
+
         if($text!=null){
-             $report = new events_reports();
+            $report = new events_reports();
             $report->event_id = $eventId;
             $report->user_id = auth()->user()->id;
             $report->report = $text;
             $report->save();
         }
-       
 
         return redirect('event/'.$eventId)->with('message','You have just reported this event');
     }

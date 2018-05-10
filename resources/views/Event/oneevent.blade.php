@@ -35,22 +35,28 @@
 			</div>
 
 				<div class="col-md-4">
-					
-					
+
+
 					@if($owner->id != Auth::user()->id)
-						@if($attend==0)
-						<div class="form-group">
-							<a class="form-control m-btn red big" data-toggle="modal" data-target="#myModal">Join</a>
-						</div>
-						@elseif ($attend==1)
-						<div class="form-group">
-							<a class="form-control m-btn red big" data-toggle="modal" data-target="#leave">Leave</a>
-						</div>
-						@endif
-					<!-- report event button -->
-						<div class="form-group">
-							<a class="form-control m-btn blue big" data-toggle="modal" data-target="#reportModal">Report Event</a>
-						</div>
+							@if($attend==0)
+									<div class="form-group">
+										<a class="form-control m-btn red big" data-toggle="modal" data-target="#myModal">Join</a>
+									</div>
+							@elseif ($attend==1)
+									<div class="form-group">
+										<a class="form-control m-btn red big" data-toggle="modal" data-target="#leave">Leave</a>
+									</div>
+							@endif
+						<!-- report event button -->
+							@if($reported==0)
+									<div class="form-group">
+										<a class="form-control m-btn blue big" data-toggle="modal" data-target="#reportModal">Report Event</a>
+									</div>
+							@elseif ($reported==1)
+									<div class="form-group">
+										<a class="form-control m-btn blue big" data-toggle="modal" data-target="#reportedModal">Report Event</a>
+									</div>
+							@endif
 					@endif
 
 					<div class="modal fade" id="leave" role="dialog">
@@ -96,7 +102,7 @@
 						<form method="get" action="{{ url('event/'.$id.'/report') }}">
 						<div class="modal-dialog">
 
-					      <!-- Modal content-->
+					      <!-- Modal for Reporting-->
 					      <div class="modal-content">
 					        <div class="modal-header">
 					          <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -105,7 +111,7 @@
 					        <div class="modal-body">
 					          <label class="control-label">Reason to report</label>
 					          <textarea class="form-control" placeholder="Reasons for reporting this event" name="report" required></textarea>
-					          
+
 					        </div>
 					        <div class="modal-footer">
 					          <button type="submit" class="form-control m-btn big red">Report</button>
@@ -115,6 +121,21 @@
 					</form>
 					</div>
 					<!-- end of report event -->
+
+					<div class="modal fade modal-danger" id="reportedModal" role="dialog">
+						<div class="modal-dialog">
+					      <!-- Modal for Reported-->
+					      <div class="modal-content">
+					        <div class="modal-header" style="text-align:center">
+					          <button type="button" class="close" data-dismiss="modal">&times;</button>
+					          <h4 class="modal-title">Error Submiting a Report</h4>
+					        </div>
+					        <div class="modal-body" style="text-align:center">
+					          <label class="control-label" >You've already submitted a report to this Event!</label>
+					        </div>
+					      </div>
+					  </div>
+					</div>
 
 
 				</div>

@@ -54,13 +54,13 @@
 						<label>Choose Categories</label>
 					</div> -->
 					<h4>Choose Categories &nbsp;&nbsp;&nbsp; <em><span id="prefError"></span></em></h4>
-					
+
 					@foreach($categories->chunk(3) as $cate)
 						<div class="row">
 							@foreach($cate as $c)
 							<div class="col-md-4 margin-t-b">
-							<div class="form-group">							<select class="selectpicker form-control" name="pref[]" multiple="" title="{{$c['original']['cat_name']}}" data-selected-text-format="count" data-size="5" data-actions-box="true">
-
+							<div class="form-group">
+							<select class="selectpicker form-control" name="pref[]" multiple="" title="{{$c['original']['cat_name']}}" data-selected-text-format="count" data-size="5" data-actions-box="true">
 							@foreach($subs as $sub)
 								@if($sub->cate_id==$c['original']['id'])
 								<option value="{{ $sub->id }}">{{ $sub->name }}</option>
@@ -79,8 +79,7 @@
 				</div>
 				<div class="form-group col-md-12">
 					<label for="description">Description</label>
-					<textarea class="form-control resizeable" rows="5" name="description" minlength="10" maxlength="50" required></textarea>
-
+					<textarea class="form-control resizeable" rows="5" name="description" minlength="10" maxlength="300" required></textarea>
 				</div>
 
 
@@ -91,7 +90,7 @@
 				</div>
 
 			</form>
-			
+
 		</div>
 	</div>
 </div>
@@ -99,14 +98,14 @@
 <script type="text/javascript">
 	$('#create').submit(function(e){
 		var l = $('select option:selected').length;
-		if(l <4){
+		if(l <1){
 			e.preventDefault();
-			$('#prefError').text('Please Select At least 4 preferences');
+			$('#prefError').text('Please Select At least 1 preference for the event!');
 			$('#prefError').addClass('text-danger');
 			window.scrollTo(0,0);
 		}
 	});
-	
+
 </script>
 
 <script type="text/javascript">
