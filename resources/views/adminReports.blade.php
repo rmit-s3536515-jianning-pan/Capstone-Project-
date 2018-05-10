@@ -34,11 +34,10 @@
                   @foreach($reports as $report)
                   <tr>
                       <td>{{ $report->title }}</td>
-                      <td>{{ $report->report }}</td><?php var_dump($report)?>
+                      <td>{{ $report->report }}</td>
                       <td>
                           <button type="button" class="btn btn-block btn-primary" data-toggle="modal" data-target="{{ '#'.$report->id }}">Remove Event</button>
                           <button type="button" class="btn btn-block btn-danger" onclick="location.href = 'ignoreReport/{{ $report->id }}';">Ignore Report</button>
-                          <?php var_dump($report->id)?>
                       </td>
                   </tr>
                   @endforeach
