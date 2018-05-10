@@ -38,6 +38,34 @@
         @endforeach
     </div>
     @endif
+
+    <div class="container">
+        <h3>All Events</h3>
+        @foreach($events->chunk(3) as $chunk)
+            <div class="row">
+              @foreach($chunk as $e)
+                 <div class="col-md-4">
+                        <a href="{{ url('event/'.$e['original']['id']) }}">
+                          <div class="panel panel-primary text-center">
+                              <div class="panel-heading">
+                                 
+                                  <h3>{{ $e["original"]["title"] }}</h3>
+                                  <!-- <h4>Matching Percentage: {{ round($score) }}%</h4> -->
+                              </div>
+                              <div class="panel-body">
+                                  <p>{{  $e['original']["description"] }}</p>
+                                  <div>{{ $e['original']["start_date"] }}</div>
+                                  <div>{{ $e['original']["start_time"] }}</div>
+                              </div>
+                          </div>
+                        </a>
+                    </div>
+              @endforeach
+
+            </div>
+        @endforeach
+
+    </div>
     <!--Explore by category-->
     <!--<div class="container">
         <h3>Explore By Category</h3>
