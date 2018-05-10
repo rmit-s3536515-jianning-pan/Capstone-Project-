@@ -29,7 +29,7 @@
                           <tbody>
                               @foreach($own as $ownedGroup)
                               <tr>
-                                  <td><h5>{{ $ownedGroup->title }}</h5></td>
+                                  <td><h5><a href="{{ url('group/'.$ownedGroup->id ) }}">{{ $ownedGroup->title }}</h5></td>
                                   <div class="row col-md-9">
                                     <td>
                                       <div class="col-md-6" style="padding-left:0px;padding-right:5px"><button type="submit" class="btn btn-outline btn-primary btn-block btn-primary" data-toggle="modal" data-target="{{ '#'.$ownedGroup->id }}">Edit</button></div>
@@ -67,7 +67,7 @@
                             <tbody>
                                 @foreach($joined as $joinedGroup)
                                 <tr>
-                                    <td><h5>{{ $joinedGroup->title }}</h5></td>
+                                    <td><h5><a href="{{ url('group/'.$joinedGroup->id ) }}">{{ $joinedGroup->title }}</h5></td>
                                     <td>
                                       <button type="submit" class="btn btn-outline btn-primary btn-block btn-danger" onclick="location.href = '/leaveGroup/{{ $joinedGroup->group_id }}';">Leave</button>
                                     </td>

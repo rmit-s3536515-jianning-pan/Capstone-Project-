@@ -19,17 +19,19 @@
 				<div class="row">
 					<div class="col-md-12">
 
-						<div class="rounded bg-success">
-					<h2 class="pt-b">Title:&nbsp;&nbsp;&nbsp; {{ $event['title'] }}&nbsp;&nbsp;{{$event['start_date']}}&nbsp;&nbsp;{{ $event['start_time'] }}</h2>
-					<h4 class="pt-b">Description</h4>
+					<div class="rounded bg-success">
+					<h2 class="pt-b">Title:&nbsp;&nbsp; {{ $event['title'] }}</h2>
+					<h4 class="pt-b" style="padding-top:0px;margin-top:0px;">Date: &nbsp; {{$event['start_date']}}</h4>
+					<h4 class="pt-b" style="padding-top:0px;margin-top:0px;">Time: &nbsp; {{ $event['start_time'] }}</h4>
+					<h4 class="pt-b" style="padding-bottom:0px;margin-bottom:0px;padding-top:40px;font-weight:bold;">Description: </h4>
 					<div class="pt-b" style="word-break:break-all">{{$event['description']}}</div>
 				</div>
 
 
 					</div>
-					
+
 				</div>
-				
+
 
 				<div>
 					<h4>Who's coming</h4>
@@ -37,21 +39,21 @@
 						@if(empty($coming))
 							<h4><em>No User is coming yet!!!</em></h4>
 						@else
- 
+
 							@foreach (array_chunk($coming,6) as $e)
 								<div class="row">
 									@foreach($e as $u)
 									<a href="#">
 									<div class="col-lg-2 margin-t-b" style="margin-right: 10px">
-								
+
 										<span class="img-circle text-center bg-primary" style="display:block; height: 12rem;width:12rem;line-height: 12rem;word-break:break-all">
 											@if(strlen($u->name)< 15)
 												{{ $u->name}}
 											@else
 												{{ substr($u->name,0,12) }}   <em>...</em>
 											@endif
-											
-											
+
+
 										</span>
 									</div>
 									</a>
@@ -62,7 +64,7 @@
 									</div> -->
 									@endforeach
 								</div>
-								
+
 							@endforeach
 						@endif
 
@@ -72,25 +74,24 @@
 
 				<div class="col-md-4">
 
-
 					@if($owner->id != Auth::user()->id)
 							@if($attend==0)
 									<div class="form-group">
-										<a class="form-control m-btn red big" data-toggle="modal" data-target="#myModal">Join</a>
+										<a class="form-control m-btn big" data-toggle="modal" data-target="#myModal">Join</a>
 									</div>
 							@elseif ($attend==1)
 									<div class="form-group">
-										<a class="form-control m-btn red big" data-toggle="modal" data-target="#leave">Leave</a>
+										<a class="form-control m-btn big" data-toggle="modal" data-target="#leave">Leave</a>
 									</div>
 							@endif
 						<!-- report event button -->
 							@if($reported==0)
 									<div class="form-group">
-										<a class="form-control m-btn blue big" data-toggle="modal" data-target="#reportModal">Report Event</a>
+										<a class="form-control m-btn big" data-toggle="modal" data-target="#reportModal">Report Event</a>
 									</div>
 							@elseif ($reported==1)
 									<div class="form-group">
-										<a class="form-control m-btn blue big" data-toggle="modal" data-target="#reportedModal">Report Event</a>
+										<a class="form-control m-btn big" data-toggle="modal" data-target="#reportedModal">Report Event</a>
 									</div>
 							@endif
 					@endif
@@ -123,10 +124,10 @@
 					          <h4 class="modal-title">Join this event</h4>
 					        </div>
 					        <div class="modal-body">
-					          <p>Some text in the event.</p>
+					          <p>Are you sure you want to join this event?</p>
 					        </div>
 					        <div class="modal-footer">
-					          <button type="submit" class="form-control m-btn big red">Join</button>
+					          <button type="submit" class="form-control m-btn big green">Join</button>
 					        </div>
 					      </div>
 					  </div>

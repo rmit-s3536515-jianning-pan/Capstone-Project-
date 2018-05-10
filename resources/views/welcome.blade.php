@@ -11,7 +11,7 @@
         </div>
     </div>
     @endif
-    @if (count($event)>0)
+    @if (!empty($event))
         <div class="container">
         <h3>Recommended Events</h3>
         @foreach (array_chunk($event,3) as $e)
@@ -37,18 +37,21 @@
             </div>
         @endforeach
     </div>
+    @else
+      <div id="extendHeight" style="height: 300px"></div>
     @endif
 
     <div class="container">
         <h3>All Events</h3>
+        @if (!empty($events))
         @foreach($events->chunk(3) as $chunk)
             <div class="row">
               @foreach($chunk as $e)
                  <div class="col-md-4">
                         <a href="{{ url('event/'.$e['original']['id']) }}">
                           <div class="panel panel-primary text-center">
-                              <div class="panel-heading">
-                                 
+                              <div class="panel-heading ">
+
                                   <h3>{{ $e["original"]["title"] }}</h3>
                                   <!-- <h4>Matching Percentage: {{ round($score) }}%</h4> -->
                               </div>
@@ -64,40 +67,10 @@
 
             </div>
         @endforeach
-
+        @else
+            <div id="extendHeight" style="height: 300px"></div>
+        @endif
     </div>
-    <!--Explore by category-->
-    <!--<div class="container">
-        <h3>Explore By Category</h3>
-
-            @foreach($categories->chunk(3) as $category)
-                <div class="row">
-                    @foreach($category as $c)
-                    <div class="col-md-4 col-sm-12 marginbottom">
-                            <a href="{{ url('/'.$c['cat_name']) }}">
-                            <div class="panel panel-success text-center" >
-                                <div class="panel-heading" style="height: 100px; font-size: 40px" >{{ $c['cat_name'] }}</div>
-
-
-                            </div>
-                           </a>
-                    </div>
-                    @endforeach
-
-            </div>
-            @endforeach
-    </div>-->
-
-    <!--Content-->
-<!--    <div class="container-fluid minfooter">
-        <div class="row ">
-            <div class="col-md-8 col-md-offset-2">
-              <div class="col-md-6 text-center"><h2>HELP</h2></div>
-              <div class="col-md-6 text-center"><h2>DISCOVER</h2></div>
-            </div>
-    </div>
-</div>
--->
 
 <script type="text/javascript">
     $(function(){

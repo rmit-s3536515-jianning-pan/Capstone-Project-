@@ -20,7 +20,7 @@
                   </div>
                   <!-- /.panel-heading -->
                   <div class="panel-body">
-                      <table width="100%" class="table table-striped table-bordered table-hover" >
+                      <table width="100%" class="table table-striped table-bordered " >
                           <thead>
                               <tr>
                                   <th class="col-md-6" style="text-align:center">Event Name</th>
@@ -30,7 +30,7 @@
                           <tbody>
                               @foreach($own as $ownedEvent)
                               <tr>
-                                  <td><h5>{{ $ownedEvent->title }}</h5></td>
+                                  <td><h5><a href="{{ url('event/'.$ownedEvent->id ) }}">{{ $ownedEvent->title }}</h5></td>
                                   <div class="row col-md-9">
                                     <td>
                                       <div class="col-md-6" style="padding-left:0px;padding-right:3px">
@@ -72,7 +72,7 @@
                             <tbody>
                                 @foreach($joined as $joinedEvent)
                                 <tr>
-                                    <td><h5>{{ $joinedEvent->title }}</h5></td>
+                                    <td><h5><a href="{{ url('event/'.$joinedEvent->id ) }}">{{ $joinedEvent->title }}</h5></td>
                                     <td>
                                       <button type="submit" class="btn btn-outline btn-primary btn-block btn-danger" onclick="location.href = '/leaveEvent/{{ $joinedEvent->event_id }}';">Leave</button>
                                     </td>
