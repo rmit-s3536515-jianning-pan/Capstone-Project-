@@ -45,11 +45,13 @@ class HomeController extends Controller
         // dd($categories);
 
         $relatedEvents = Events::findInterestedCategory();
-        // dd($relatedEvents);
+        $allevents = Events::all();
+        // dd(gettype($allevents));
+        // dd($allevents);
         // $relatedEvents = $relatedEvents->toArray();
         // $relatedEvents = $relatedEvents['data'];
 
-        return view('welcome',['categories' =>$categories['0'],'event'=>$relatedEvents,'subs'=>$subs]);
+        return view('welcome',['categories' =>$categories['0'],'event'=>$relatedEvents,'subs'=>$subs, 'events'=>$allevents]);
     }
 
     public function admin() {

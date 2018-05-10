@@ -8,6 +8,7 @@
 	</div>
 	<div class="container">
 		<div class="row">
+			@if(!empty($tasks))
 			@foreach($tasks as $task)
 			<a href="{{ url('group/'.$task->id) }}">
 				<div class="col-md-6 marginbottom">
@@ -23,6 +24,10 @@
 				</div>
 			</a>
 			@endforeach
+			@else
+				<div id="extendHeight" style="height: 300px"></div>
+			@endif
+
 		</div>
 	</div>
 

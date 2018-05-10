@@ -13,7 +13,7 @@ use App\events_users;
 use Auth;
 use App\User;
 use App\events_reports;
-
+use DB;
 class EventController extends Controller
 {
     // get method
@@ -96,8 +96,12 @@ class EventController extends Controller
             else{
                 $reported = 1;
             }
+            $checkusers = events_users::where('event_id',$eventId)->pluck('user_id')->toArray();
 
-            return view('Event.oneevent',['id'=>$eventId , 'event'=>$e,'attend'=>$attend,'owner'=>$owner, 'reported'=>$reported]);
+            // dd($checkusers);
+            $allusers = DB::table('users')->whereIn('id',$checkusers)->get();
+            // dd(gettype($allusers));
+            return view('Event.oneevent',['id'=>$eventId , 'event'=>$e,'attend'=>$attend,'owner'=>$owner, 'reported'=>$reported,'coming'=>$allusers]);
     }
     public function join($eventId){
         $id = auth()->user()->id;

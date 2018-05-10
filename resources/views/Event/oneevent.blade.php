@@ -16,19 +16,55 @@
 	@endif
 		<div class="row" >
 			<div class="col-md-8">
-				<div class="rounded bg-success">
+				<div class="row">
+					<div class="col-md-12">
+
+						<div class="rounded bg-success">
 					<h2 class="pt-b">Title:&nbsp;&nbsp;&nbsp; {{ $event['title'] }}&nbsp;&nbsp;{{$event['start_date']}}&nbsp;&nbsp;{{ $event['start_time'] }}</h2>
 					<h4 class="pt-b">Description</h4>
-					<div class="pt-b">{{$event['description']}}</div>
+					<div class="pt-b" style="word-break:break-all">{{$event['description']}}</div>
 				</div>
+
+
+					</div>
+					
+				</div>
+				
 
 				<div>
 					<h4>Who's coming</h4>
 
-
-						<div class="circle bg-success block">
-								<p></p>
-						</div>
+						@if(empty($coming))
+							<h4><em>No User is coming yet!!!</em></h4>
+						@else
+ 
+							@foreach (array_chunk($coming,6) as $e)
+								<div class="row">
+									@foreach($e as $u)
+									<a href="#">
+									<div class="col-lg-2 margin-t-b" style="margin-right: 10px">
+								
+										<span class="img-circle text-center bg-primary" style="display:block; height: 12rem;width:12rem;line-height: 12rem;word-break:break-all">
+											@if(strlen($u->name)< 15)
+												{{ $u->name}}
+											@else
+												{{ substr($u->name,0,12) }}   <em>...</em>
+											@endif
+											
+											
+										</span>
+									</div>
+									</a>
+									<!-- <div class="col-md-4">
+										<div class="circle bg-success block">
+											<p style="line-height: inherit; text-align: center">{{$u->name}}</p>
+										</div>
+									</div> -->
+									@endforeach
+								</div>
+								
+							@endforeach
+						@endif
 
 				</div>
 

@@ -69,7 +69,7 @@
                                 <tr>
                                     <td><h5>{{ $joinedGroup->title }}</h5></td>
                                     <td>
-                                      <button type="submit" class="btn btn-outline btn-primary btn-block btn-danger" onclick="location.href = '/leaveEvent/{{ $joinedGroup->group_id }}';">Leave</button>
+                                      <button type="submit" class="btn btn-outline btn-primary btn-block btn-danger" onclick="location.href = '/leaveGroup/{{ $joinedGroup->group_id }}';">Leave</button>
                                     </td>
                                 </tr>
                                 @endforeach
