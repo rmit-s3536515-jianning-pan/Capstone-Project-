@@ -263,6 +263,10 @@
                           <li>
                              <a href="#">Gallery</a>
                           </li>
+
+                          <li>
+                             <a href="{{ url('admin') }}">Admin</a>
+                          </li>
                      </ul>
                 </div>
 
