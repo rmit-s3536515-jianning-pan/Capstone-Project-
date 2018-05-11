@@ -23,7 +23,7 @@
                 </div>
                 <div class="form-group col-md-6">
                     <label>Date of Birth : </label>
-                    <input type="date" name="dob" class="form-control col-md-offset-" value="{{ Auth::user()->dob }}">
+                    <input type="date" name="dob" class="form-control col-md-offset-" value="{{ Auth::user()->dob }}" required>
                 </div>
                 <div class="form-group col-md-6">
                 <label>Gender :</label>
