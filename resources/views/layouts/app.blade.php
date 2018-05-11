@@ -143,10 +143,16 @@
                     <span class="icon-bar"></span>
                 </button>
 
+                @if (Auth::guest())
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/index') }}">
                     Encounter
                 </a>
+                @else
+                <a class="navbar-brand" href="{{ url('/index') }}">
+                    Encounter
+                </a>
+                @endif
             </div>
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
@@ -161,14 +167,15 @@
                         <li><a href="{{ url('/login') }}">Login</a></li>
                         <li><a href="{{ url('/register') }}">Sign Up</a></li>
                     @else
-                        <li><a href="{{ url('/index') }}">Home</a></li>
-                        <li class="dropdown">
+                        <li><a href="{{ url('/') }}">Home</a></li>
+                        <li ><a class="br" href="{{ url('/event/create') }}">Create Event</a></li>
+                        <!-- <li class="dropdown">
                             <a href="{{ url('/') }}"  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Events<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                 <li ><a class="br" href="{{ url('/event/create') }}">Create Event</a></li>
                                 <li ><a class="br" href="{{ url('/') }}">My Suggested Events</a></li>
                             </ul>
-                        </li>
+                        </li> -->
                         <li>
                             <a href="{{ url('/Group/index') }}"  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Groups<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">

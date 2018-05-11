@@ -2,4 +2,4 @@
 
 
 
-@include('groupProfile')
+@include('_groupProfile')

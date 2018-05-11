@@ -9,7 +9,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <h2 class="uppercase mb8">Suggested Events</h2>
+                <h2 class="uppercase mb8">Events</h2>
                 <p class="lead mb0">...</p>
             </div>
             <div class="col-md-6 text-right">
@@ -68,10 +68,12 @@
   -->
 
     <!-- include search page -->
+@include('_homepage_search')
 
-@include('eventPercentage_show')
 
-<section style="background-color: #f3f4f7;">
+@include('_eventPercentage_show')
+
+<!-- <section style="background-color: #f3f4f7;">
     @if (count($event)>0)
     <div class="container">
             <h3>Recommended Events</h3>
@@ -105,9 +107,9 @@
 
     </div>
     @endif
-</section>
+</section> -->
     <!--Explore by category-->
-<section class="pb100">
+<!-- <section class="pb100">
     <div class="container">
         <div class="section_title mb50">
             <h3 class="title">
@@ -139,7 +141,7 @@
                 </div>
             @endforeach
       </div>
-  </section>
+  </section> -->
 
     <!--Content-->
 <!--    <div class="container-fluid minfooter">

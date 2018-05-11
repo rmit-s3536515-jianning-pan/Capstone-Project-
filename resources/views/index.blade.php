@@ -72,48 +72,6 @@
             </div>
 
         </div>
-
-
-        <!--event features-->
-       <!--  <div class="col-sm-10 col-sm-offset-1">
-          <div class="row justify-content-center">
-
-              <div class="col-sm-6 col-md-6 col-lg-3">
-                  <div class="icon_box_one">
-                      <div class="content">
-                          <h4>Encounter like minded people</h4>
-                      </div>
-                  </div>
-              </div>
-
-              <div class="col-sm-6 col-md-6 col-lg-3">
-                  <div class="icon_box_one">
-                      <div class="speaker_img">
-                        <img src="images/p.jpg" alt="speaker name">
-                    </div>
-                  </div>
-              </div>
-
-              <div class="col-sm-6 col-md-6 col-lg-3">
-                  <div class="icon_box_one" >
-                    <div class="speaker_img">
-                        <img src="images/p.jpg" alt="speaker name">
-                    </div>
-                  </div>
-              </div>
-
-              <div class="col-sm-6 col-md-6 col-lg-3">
-                  <div class="icon_box_one">
-                      <div class="content">
-                          <h4>Encounter new experiences</h4>
-
-                      </div>
-                  </div>
-              </div>
-          </div>
-          </div> -->
-          <!--event features end-->
-      
     </div>
 </section>
 <!--about the event end -->
@@ -133,7 +91,7 @@
 
   <div class="container">
     <div class="row col-sm-10 col-sm-offset-1">
-          @include('eventContainer')
+          @include('_eventContainer')
     </div>
   </div>
 </section>
@@ -148,7 +106,7 @@
   </div>
   <div class="clearfix"></div>
   <div class="col-md-6 col-md-offset-1 content">
-      <h3 class="uppercase">Book Your Next
+      <h3 class="uppercase">Experience you next
           <br> Adventure Today.</h3>
       <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
@@ -172,7 +130,7 @@
 
 
 
-@include('listCatergoriesIcon')
+@include('_listCatergoriesIcon')
 
 
 <!--     <section class="main-block light-bg">

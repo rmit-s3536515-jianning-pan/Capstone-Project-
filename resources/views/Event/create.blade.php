@@ -18,9 +18,6 @@
                     <li>
                         <a href="{{ url('/index') }}">Home</a>
                     </li>
-                    <li>
-                        <a href="{{ url('/') }}">Event</a>
-                    </li>
                     <li class="active">Create an Event</li>
                 </ol>
             </div>
