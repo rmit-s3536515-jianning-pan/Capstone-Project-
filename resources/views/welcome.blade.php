@@ -53,7 +53,7 @@
                               <div class="panel-heading ">
 
                                   <h3>{{ $e["original"]["title"] }}</h3>
-                                  <!-- <h4>Matching Percentage: {{ round($score) }}%</h4> -->
+                                 
                               </div>
                               <div class="panel-body">
                                   <p>{{  $e['original']["description"] }}</p>
