@@ -102,7 +102,9 @@
     width:100%;
 }
 
-   
+   textarea{
+    resize: none;
+   }
 /* Create Group */
 /*
 .form-group input[type="checkbox"] {
@@ -147,10 +149,10 @@ hr.noresult{
     overflow: visible; /* For IE */
     height: 30px;
     border-style: solid;
-    border-color: green;
+    border-color: red;
     border-width: 1px 0 0 0;
     border-radius: 20px;
-    color:green;
+    color:red;
 }
 hr.noresult:before { /* Not really supposed to work, but does */
     display: block;
@@ -158,7 +160,7 @@ hr.noresult:before { /* Not really supposed to work, but does */
     height: 30px;
     margin-top: -31px;
     border-style: solid;
-    border-color: green;
+    border-color: red;
     border-width: 0 0 1px 0;
     border-radius: 20px;
 

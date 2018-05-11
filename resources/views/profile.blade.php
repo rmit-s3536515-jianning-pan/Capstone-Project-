@@ -8,7 +8,11 @@
 
       <div class="row">
       <div class="panel panel-default">
-      <div class="panel-heading">  <h4>User Profile</h4></div>
+      <div class="panel-heading">  <h4>User Profile</h4>@if(Session::has('message'))
+                    <div class="alert alert-success">
+                      <strong>{{Session::get('message')}}</strong>
+                    </div>
+                @endif</div>
       <div class="panel-body">
       <div class="col-md-4 col-xs-12 col-sm-6 col-lg-4">
 
@@ -37,9 +41,9 @@
                     </ul>
 
                     <p><h3>Preferences :</h3></p><hr>
-                    <!--@foreach ($data as $cate)
-                      <li>{{ $cate->cat_name }}</li>
-                    @endforeach-->
+                    @foreach ($data as $sub)
+                      <li>{{ $sub->name }}</li>
+                    @endforeach
                     <br>
                   <button type="button" class="btn-block" onclick="location.href = '{{ route('updateView') }}'">Update</button>
 

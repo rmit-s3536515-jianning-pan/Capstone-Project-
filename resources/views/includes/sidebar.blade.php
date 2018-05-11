@@ -11,13 +11,13 @@
         </div>
         <div class="pull-left info">
           <p>Fuad Amahoru</p>
-         
+
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div> -->
-      <div class="container">
-             <p class="text-warning" style="font-size:3rem; height:5rem; line-height:5rem">Fuad Amahoru</p>
-      </div>
+      <!-- <div class="container">
+             <p class="text-warning" style="font-size:3rem; height:5rem; line-height:5rem">{{$admin}}</p>
+      </div> -->
 
       <!-- search form (Optional) -->
       <form action="#" method="get" class="sidebar-form">
@@ -33,11 +33,17 @@
 
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu" data-widget="tree">
-        <li class="header">HEADER</li>
+        <li class="header">MENU :</li>
         <!-- Optionally, you can add icons to the links -->
-        <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
-        <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
-        <li class="treeview">
+        @if(Request::is('admin')||Request::is('admin/adminReports'))
+        <li class="active"><a href="{{url('/admin/adminReports')}}"><i class="fa fa-warning"></i> <span>Report</span></a></li>
+        <li><a href="{{url('admin/preferences')}}"><i class="fa fa-user-plus"></i> <span>Preferences</span></a></li>
+        @endif
+        @if(Request::is('admin/preferences'))
+        <li><a href="{{url('/admin/adminReports')}}"><i class="fa fa-warning"></i> <span>Report</span></a></li>
+        <li class="active"><a href="{{url('admin/preferences')}}"><i class="fa fa-user-plus"></i> <span>Preferences</span></a></li>
+        @endif
+       <!--  <li class="treeview">
           <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>
             <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
@@ -47,7 +53,7 @@
             <li><a href="#">Link in level 2</a></li>
             <li><a href="#">Link in level 2</a></li>
           </ul>
-        </li>
+        </li> -->
       </ul>
       <!-- /.sidebar-menu -->
     </section>

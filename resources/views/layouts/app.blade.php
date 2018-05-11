@@ -19,8 +19,8 @@
     <!-- select2 -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
-    
-    
+
+
 
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
@@ -156,6 +156,20 @@
             </div>
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
+<<<<<<< HEAD
+=======
+                <!-- Left Side Of Navbar -->
+                <ul class="nav navbar-nav">
+                @if (Auth::guest())
+                    <li><a href="{{ url('/') }}">Services</a></li>
+                    <li><a href="{{ url('/') }}">About Us</a></li>
+                @else
+                    <li><a href="{{ url('/') }}">Events</a></li>
+                    <li><a href="{{ url('/Group/index') }}">Groups</a></li>
+                @endif
+                </ul>
+
+>>>>>>> 358437bc6ef94a0c671654800c7568ec622340f7
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->
@@ -167,6 +181,7 @@
                         <li><a href="{{ url('/login') }}">Login</a></li>
                         <li><a href="{{ url('/register') }}">Sign Up</a></li>
                     @else
+<<<<<<< HEAD
                         <li><a href="{{ url('/') }}">Home</a></li>
                         <li ><a class="br" href="{{ url('/event/create') }}">Create Event</a></li>
                         <!-- <li class="dropdown">
@@ -185,6 +200,12 @@
                         </li>
                         
                         
+=======
+                        <li><a class="br" href="{{ url('/myGroup') }}">My Group</a></li>
+                        <li><a class="br" href="{{ url('/myEvent') }}">My Event</a></li>
+                        <li ><a class="br" href="{{ url('/event/create') }}">Create Event</a></li>
+                        <li ><a class="br" href="{{ url('createGroup')}}">Create Group</a></li>
+>>>>>>> 358437bc6ef94a0c671654800c7568ec622340f7
 
 
 
@@ -203,15 +224,16 @@
 
                             </ul>
                         </li>
-                        
+
                     @endif
                 </ul>
             </div>
         </div>
     </nav>
 
+<div style="min-height:100%;">
     @yield('content')
-
+</div>
 
     <!-- JavaScripts -->
 <!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
@@ -249,6 +271,7 @@
 
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
 
+<<<<<<< HEAD
 <footer class="footer-basic-centered">
 
     <p class="footer-company-motto text-white">Encounter</p>
@@ -268,6 +291,64 @@
     <p class="footer-company-name">@2018 COPYRIGHT ENCOUNTER</p>
 
 </footer>
+=======
+<footer class="footer-main">
+     <div class="container" >
+       <div class="row">
+
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                  <span><a class="text-white navbar-brand" href="{{ url('/index') }}">
+                    Encounter
+                </a></span>
+                </div>
+
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <ul class="menu">
+                         <span>Menu</span>
+                         <li>
+                            <a href="#">Home</a>
+                          </li>
+
+                          <li>
+                             <a href="#">About</a>
+                          </li>
+
+                          <li>
+                            <a href="#">Services</a>
+                          </li>
+
+                          <li>
+                             <a href="#">Gallery</a>
+                          </li>
+
+                          <li>
+                             <a href="{{ url('admin') }}">Admin</a>
+                          </li>
+                     </ul>
+                </div>
+                <!-- Start of Footer -->
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                  <ul class="address">
+                        <span>Contact</span>
+                        <li>
+                           <i class="fa fa-phone" aria-hidden="true"></i> <a href="#">Phone</a>
+                        </li>
+                        <li>
+                           <i class="fa fa-map-marker" aria-hidden="true"></i> <a href="#">Adress</a>
+                        </li>
+                        <li>
+                           <i class="fa fa-envelope" aria-hidden="true"></i> <a href="#">Email</a>
+                        </li>
+                   </ul>
+               </div>
+               <!-- .End of Page Footer -->
+           </div>
+        </div>
+        <div class="col-md-12 text-center footer">
+            <p>@2018 COPYRIGHT ENCOUNTER</p>
+        </div>
+    </footer>
+>>>>>>> 358437bc6ef94a0c671654800c7568ec622340f7
 
 </body>
 </html>

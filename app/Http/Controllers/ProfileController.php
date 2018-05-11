@@ -20,8 +20,8 @@ class ProfileController extends Controller
     */
     public function profileView()
     {
-        $data = DB::table('categories')
-          ->join('users_categories', 'categories.id', '=', 'category_id')
+        $data = DB::table('sub_categories')
+          ->join('users_subs', 'sub_categories.id', '=', 'sub_id')
           ->where('user_id', '=', Auth::user()->id)
           ->get();
 
@@ -51,6 +51,29 @@ class ProfileController extends Controller
 
     public function update(Request $data)
     {
+        $count = $data->input('pref');
+        $uid = auth()->user()->id;
+        if(count($count)<3){
+            return redirect('/updateDetail')->with('minimumSelection','You have to select at least 2 preferences');
+        }
+        else{
+            $test = DB::table('users_subs')->where('user_id','=',$uid)->pluck('id');
+            // dd($test);
+            foreach($test as $t){
+                $result = users_subs::find($t);
+                $result->delete();
+            }
+
+            // users_subs::destory($test);
+
+            foreach($count as $c){
+                $result = new users_subs();
+                $result->user_id = $uid;
+                $result ->sub_id = $c;
+                $result->save();
+            }
+        }
+        
         DB::table('users')
           ->where('id', '=', Auth::user()->id)
           ->update([
@@ -61,10 +84,27 @@ class ProfileController extends Controller
             'address' => $data['address'],
             'bio' => $data['bio'],
           ]);
+          /*
+          DB::table('users_subs')
+            ->where('user_id', '=', Auth::user()->id)
+            ->delete();
 
-       
+          $inputs = $data['cates'];
 
+
+          foreach($inputs as $i){
+              DB::table('users_subs')
+              ->where('user_id', '=', Auth::user()->id)
+              ->where('sub_id', '=', $i)
+              ->insert([
+                ['user_id' => Auth::user()->id, 'sub_id' => $i]
+              ]);
+          }
+*/
         return redirect('/profile');
+
+        return redirect('/profile')->with('message','You have changed your profile');
+
     }
 
 }

@@ -12,30 +12,40 @@
 
             <form method="post" action="{{ route('insert') }}">
               {{ csrf_field() }}
-
                 <p><h4><b>Profile :</b></h4></p><hr>
-                Name : <br>
-                <input type="text" name="name" value="{{ Auth::user()->name }}"><br><br>
-                Email : <br>
-                <input type="email" name="email" value="{{ Auth::user()->email }}"><br><br>
-                Date of Birth : <br>
-                <input type="date" name="dob" value="{{ Auth::user()->dob }}"><br><br>
-                Gender : <br>
-                <Select name="gender" value="{{ Auth::user()->gender }}">
-                            <option value="Male">Male</option>
-                            <option value"Female">Female</option>
-                        </select>
-                        <br><br>
-
-                Address : <br>
-                <input type="text" name="address" style="width:400px;" value="{{ Auth::user()->address }}"><br><br>
-
+                <div class="form-group col-md-6">
+                    <label>Name :</label>
+                    <input type="text" name="name" class="form-control col-md-offset-" value="{{ Auth::user()->name }}">
+                </div>
+                <div class="form-group col-md-6">
+                    <label>Email : </label>
+                    <input type="email" name="email" class="form-control col-md-offset-" value="{{ Auth::user()->email }}">
+                </div>
+                <div class="form-group col-md-6">
+                    <label>Date of Birth : </label>
+                    <input type="date" name="dob" class="form-control col-md-offset-" value="{{ Auth::user()->dob }}" required>
+                </div>
+                <div class="form-group col-md-6">
+                <label>Gender :</label>
+                <Select name="gender" class="form-control col-md-offset-" value="{{ Auth::user()->gender }}">
+                    <option value="Male">Male</option>
+                    <option value"Female">Female</option>
+                </select>
+                </div>
+                <div class="form-group col-md-12">
+                    <label>Address : </label>
+                    <textarea type="text" name="address" class="form-control" value="{{ Auth::user()->address }}"></textarea>
+                </div>
                 <p><h4><b>Preferences :</b></h4></p><hr>
 
-
+                @if(Session::has('minimumSelection'))
+                    <div class="alert alert-warning">
+                      <strong>{{Session::get('minimumSelection')}}</strong>
+                    </div>
+                @endif
                 <div class="form-group">
-                     
-                     <select class="js-example-basic-multiple  form-control" name="pref[]" multiple="multiple">
+
+                     <select class="js-example-basic-multiple form-control" name="pref[]" multiple="multiple">
                   @foreach($categories as $cate)
                     <optgroup label="{{$cate->cat_name}}">
                       @foreach($subs as $sub)
@@ -50,12 +60,12 @@
                     </optgroup>
                   @endforeach
                 </select>
-              
+
                 </div>
-              
-         
+
+
                 <div class="form-group">
-                     <button type="submit" value="Update" class="form-control m-btn red ">Update</button>
+                     <button type="submit" value="Update" class="form-control m-btn blue">Update</button>
                 </div>
                <br>
                <!--  <input type="submit" value="Update" class="form-control"><br> -->
@@ -72,5 +82,3 @@
 });
 </script>
 @endsection
-
-

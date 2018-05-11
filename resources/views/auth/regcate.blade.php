@@ -8,27 +8,10 @@
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2">
 
-		<form role="form" method="POST" action="{{ route('poststep2') }}">
+		<form id="create" role="form" method="POST" action="{{ route('poststep2') }}">
 			 {{ csrf_field() }}
 
-
-			<!-- @foreach($categories as $cate)
-				<div class="form-group col-md-4">
-					<input type="checkbox" name="cates[]" id="{{ $cate->id}}" autocomplete="off" value="{{ $cate->id}}" />
-            		<div class="btn-group">
-               			 <label  class="btn btn-default">
-                    		<span class="glyphicon glyphicon-ok"></span>
-                   			 <span> </span>
-                		</label>
-               		 <label for="{{ $cate->id }}" class="btn btn-default active">
-                    	{{ $cate->cat_name}}
-               		 </label>
-          		  </div>
-
-				</div>
-			@endforeach -->
-
-
+			<h3 class="text-center"><em><span id="prefError"></span></em></h3>
 			
 			@foreach($categories->chunk(3) as $cate)
 						<div class="row">
@@ -64,12 +47,18 @@
 		</div>
 	</div>
 	</div>
-	<!-- @if (session('name'))
-		<p>{{ session('name')}}</p>
-
-	@else
-		<p>not session</p>
-
-	@endif -->
+	
+<script type="text/javascript">
+	$('#create').submit(function(e){
+		var l = $('select option:selected').length;
+		if(l <4){
+			e.preventDefault();
+			$('#prefError').text('Please Select At least 4 preferences');
+			$('#prefError').addClass('text-danger');
+			window.scrollTo(0,0);
+		}
+	});
+	
+</script>
 
 @endsection

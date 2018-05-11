@@ -2,6 +2,7 @@
 
 @section('content')
 
+<<<<<<< HEAD
  <section class="page-title page-title-2 image-bg overlay parallax">
     <div class="background-image-holder fadeIn" style="transform: translate3d(0px, 0px, 0px); background: url(../../images/l.jpg); top: -100px;">
         <img alt="Background Image" class="background-image" src="images/home7.jpg" style="display: none;">
@@ -75,38 +76,47 @@
 
 <!-- <section style="background-color: #f3f4f7;">
     @if (count($event)>0)
+=======
+    <!-- include search page -->
+    @include('homepage_search')
+    @if(Session::has('message'))
+>>>>>>> 358437bc6ef94a0c671654800c7568ec622340f7
     <div class="container">
-            <h3>Recommended Events</h3>
-
-        @foreach (array_chunk($event,3) as $e)
-        <div class="row">
-
-            @foreach($e as $add)
-            <div class="col-md-4 marginbottom">
-                <a href="{{ url('event/'.$add['item']['id']) }}">
-                  <div class="panel panel-primary text-center">
-                      <div class="panel-heading">
-
-                          <h3>{{ $add["item"]["title"] }}</h3>
-                          <h4>Matching Percentage: {{ $add['score'] }}%</h4>    
-
-                      </div>
-                      <div class="panel-body">
-                          <p>{{  $add['item']["description"] }}</p>
-                          <div>{{ $add['item']["start_date"] }}</div>
-                          <div>{{ $add['item']["start_time"] }}</div>
-                      </div>
-                  </div>
-                </a>
-            </div>
-            @endforeach
-
-
+        <div class="alert alert-success popMessage">
+          <h3><strong>{{Session::get('message')}}</strong></h3>
         </div>
-        @endforeach
-
     </div>
     @endif
+    @if (!empty($event))
+        <div class="container">
+        <h3>Recommended Events</h3>
+        @foreach (array_chunk($event,3) as $e)
+            <div class="row">
+                @foreach($e as $add)
+                    <div class="col-md-4 marginbottom">
+                        <a href="{{ url('event/'.$add['item']['id']) }}">
+                          <div class="panel panel-primary text-center">
+                              <div class="panel-heading">
+                                  <?php $score = $add['score']; ?>
+                                  <h3>{{ $add["item"]["title"] }}</h3>
+                                  <h4>Matching Percentage: {{ round($score) }}%</h4>
+                              </div>
+                              <div class="panel-body">
+                                  <p>{{  $add['item']["description"] }}</p>
+                                  <div>{{ $add['item']["start_date"] }}</div>
+                                  <div>{{ $add['item']["start_time"] }}</div>
+                              </div>
+                          </div>
+                        </a>
+                    </div>
+                @endforeach
+            </div>
+        @endforeach
+    </div>
+    @else
+      <div id="extendHeight" style="height: 300px"></div>
+    @endif
+<<<<<<< HEAD
 </section> -->
     <!--Explore by category-->
 <!-- <section class="pb100">
@@ -149,10 +159,39 @@
             <div class="col-md-8 col-md-offset-2">
               <div class="col-md-6 text-center"><h2>HELP</h2></div>
               <div class="col-md-6 text-center"><h2>DISCOVER</h2></div>
+=======
+
+    <div class="container">
+        <h3>All Events</h3>
+        @if (!empty($events))
+        @foreach($events->chunk(3) as $chunk)
+            <div class="row">
+              @foreach($chunk as $e)
+                 <div class="col-md-4">
+                        <a href="{{ url('event/'.$e['original']['id']) }}">
+                          <div class="panel panel-primary text-center">
+                              <div class="panel-heading ">
+
+                                  <h3>{{ $e["original"]["title"] }}</h3>
+                                 
+                              </div>
+                              <div class="panel-body">
+                                  <p>{{  $e['original']["description"] }}</p>
+                                  <div>{{ $e['original']["start_date"] }}</div>
+                                  <div>{{ $e['original']["start_time"] }}</div>
+                              </div>
+                          </div>
+                        </a>
+                    </div>
+              @endforeach
+
+>>>>>>> 358437bc6ef94a0c671654800c7568ec622340f7
             </div>
+        @endforeach
+        @else
+            <div id="extendHeight" style="height: 300px"></div>
+        @endif
     </div>
-</div>
--->
 
 <script type="text/javascript">
     $(function(){
@@ -168,22 +207,10 @@
             });
         });
     </script>
-@endsection
-<script type="text/javascript">
-        var options = [];
-$( '.dropdown-menu a' ).on( 'click', function( event ) {
-   var $target = $( event.currentTarget ),
-       val = $target.attr( 'data-value' ),
-       $inp = $target.find( 'input' ),
-       idx;
-   if ( ( idx = options.indexOf( val ) ) > -1 ) {
-      options.splice( idx, 1 );
-      setTimeout( function() { $inp.prop( 'checked', false ) }, 0);
-   } else {
-      options.push( val );
-      setTimeout( function() { $inp.prop( 'checked', true ) }, 0);
-   }
-   $( event.target ).blur();
-   return false;
-});
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.popMessage').slideUp(4000);
+        });
     </script>
+
+@endsection

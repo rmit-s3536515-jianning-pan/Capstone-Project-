@@ -10,6 +10,10 @@ use App\events_categories;
 use App\SubCategory;
 use App\events_subs;
 use App\events_users;
+use Auth;
+use App\User;
+use App\events_reports;
+use DB;
 class EventController extends Controller
 {
     // get method
@@ -19,6 +23,7 @@ class EventController extends Controller
         // dd($categories);
     	return view('Event.create',['categories'=>$categories['0'], 'subs'=>$subs]);
     }
+
     // called by post method for creating event
     public function store(Request $request){
     		$name = $request->input('name');
@@ -26,15 +31,19 @@ class EventController extends Controller
     		$max = $request->input('max');
     		$startdate = $request->input('event_date');
     		$starttime = $request->input('event_time');
+
+        $userID = Auth::user()->id;
             // $cates = $request->input('cates');
             $allpref = $request->input('pref');
-            // dd($allpref);
+
             $event = new Events();
             $event->title = $name;
+            $event->owner_id = $userID;
             $event->description = $desc;
             $event->max_attend = $max;
             $event->start_time = $starttime;
             $event->start_date = $startdate;
+            $event->owner_id = auth()->user()->id;
             $event->save();
             $event_id = Events::query()->where('title',$name)->first()->id;
             foreach($allpref as $pref){
@@ -43,43 +52,28 @@ class EventController extends Controller
                 $events_subs->sub_id = $pref;
                 $events_subs->save();
             }
-            // foreach($cates as $cate){
-            //     $events_cate = new events_categories;
-            //      $events_cate->event_id = $event_id;
-            //     $events_cate->category_id = $cate;
-            //     $events_cate->save();
-            // }
-    	   $table = Events::all();
-    $filename = "events.csv";
-    $handle = fopen($filename, 'w+');
-    fputcsv($handle, array('title', 'description', 'max_attend', 'start_date','start_time'));
-    foreach($table as $row) {
-        fputcsv($handle, array($row['title'], $row['description'], $row['max_attend'], $row['start_date'], $row['start_time']));
+
+    		return redirect('/')->with('message','You have create new Event!!!');
+
+
     }
-    fclose($handle);
-    $headers = array(
-        'Content-Type' => 'text/csv',
-    );
-    Response::download($filename, 'events.csv', $headers);
-    		return redirect('/');
-    		// echo $name.$max;
-    }
-    // show event 
+
+    // show event
     public function show(){
         $records = Events::findRequested();
-        // dd($records);
-        // if(!$records->isEmpty()){
-        
-       
-        // dd($records);
         return view('Event.show',['records' =>$records] );
     }
+
     public function singleEvent($eventId){
             $e = Events::findOrFail($eventId);
             $e = $e['original'];
             $id = auth()->user()->id;
             $attends = events_users::where('event_id',$eventId)->where('user_id',$id)->get();
-            // dd($attends);
+            $reports = events_reports::where('event_id',$eventId)->where('user_id',$id)->get();
+            $ownerId = Events::where('id',$eventId)->first()->owner_id;
+            // dd($ownerId);
+            $owner = User::where('id',$ownerId)->first();
+            // dd($owner->name);
             $attend = 0;
             if($attends->isEmpty()){
                 $attend = 0;
@@ -87,8 +81,20 @@ class EventController extends Controller
             else{
                 $attend = 1;
             }
-            // dd($attend);
-            return view('Event.oneevent',['id'=>$eventId , 'event'=>$e,'attend'=>$attend]);
+
+            $reported = 0;
+            if($reports->isEmpty()){
+                $reported = 0;
+            }
+            else{
+                $reported = 1;
+            }
+            $checkusers = events_users::where('event_id',$eventId)->pluck('user_id')->toArray();
+
+            // dd($checkusers);
+            $allusers = DB::table('users')->whereIn('id',$checkusers)->get();
+            // dd(gettype($allusers));
+            return view('Event.oneevent',['id'=>$eventId , 'event'=>$e,'attend'=>$attend,'owner'=>$owner, 'reported'=>$reported,'coming'=>$allusers]);
     }
     public function join($eventId){
         $id = auth()->user()->id;
@@ -96,12 +102,26 @@ class EventController extends Controller
         $attend->user_id = $id;
         $attend->event_id = $eventId;
         $attend->save();
-        return redirect('event/'.$eventId);
+        return redirect('event/'.$eventId)->with('message','You have joined this event');
     }
     public function leave($eventId){
         $id = auth()->user()->id;
         $leave = events_users::where('event_id',$eventId)->where('user_id',$id);
         $leave->delete();
-        return redirect('event/'.$eventId);
+        return redirect('event/'.$eventId)->with('message','You have left this event');
+    }
+
+    public function reportEvent($eventId,Request $request){
+        $text = $request->input('report');
+
+        if($text!=null){
+            $report = new events_reports();
+            $report->event_id = $eventId;
+            $report->user_id = auth()->user()->id;
+            $report->report = $text;
+            $report->save();
+        }
+
+        return redirect('event/'.$eventId)->with('message','You have just reported this event');
     }
 }

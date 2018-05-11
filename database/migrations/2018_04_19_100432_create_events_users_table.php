@@ -17,7 +17,7 @@ class CreateEventsUsersTable extends Migration
             $table->increments('id');
             $table->integer('event_id')->unsigned();
             $table->integer('user_id')->unsigned();
-            $table->boolean('isOrganiser')->default(0);
+            // $table->boolean('isOrganiser')->default(0);
 
             $table->foreign('event_id')->references('id')->on('events');
             $table->foreign('user_id')->references('id')->on('users');
