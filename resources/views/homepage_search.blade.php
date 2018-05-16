@@ -19,7 +19,7 @@
                                                 @if ($sub->cate_id==$cate->id)   
                                             <option value="{{ $sub->id}}">
                                                 {{ $sub->name}}
-                                            </option>>
+                                            </option>
                                                
                                                 @endif
                                     @endforeach
@@ -32,8 +32,6 @@
                             @endforeach
                         </select>   
 
-                       
-                            
                         
                     </div>
                 </div>

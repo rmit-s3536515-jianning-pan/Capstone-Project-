@@ -83,7 +83,6 @@
     <style>
         body {
             font-family: 'Lato';
-            color: black !important;
         }
         .fa-btn {
             margin-right: 6px;
@@ -93,9 +92,8 @@
             -moz-box-shadow: 0px 3px 21px 3px rgba(0,0,0,0.67);
             box-shadow: 0px .5px 10px .5px rgba(0,0,0,0.67);*/
             /*background:rgba(201,101,103,0.85) !important;*/
-            background-color: rgba(255,255,255, .97) !important;
-            -webkit-box-shadow: 0 1px 0 rgba(0,0,0,.05);
-            box-shadow: 0 1px 0 rgba(0,0,0,.05);
+            /*background-color: #C96567 !important;*/
+
         }
         a{
             text-decoration: none !important;
@@ -105,7 +103,7 @@
         display: block;
         padding: 30px 20px;
         color: #222;
-        font-size: 11px;
+        font-size: 12px;
         letter-spacing: 1px;
         text-decoration: none;
         text-transform: uppercase;
@@ -128,10 +126,17 @@
             font-weight: bold;
             font-size: 25px;
         }
+        .navbar {
+            border-bottom: 1px solid #ccc;
+            width: 100%;
+        }
+        .navbar-color {
+            background-color: white !important;
+        }
     </style>
 </head>
 <body id="app-layout">
-    <nav class="navbar navbar-default navbar-fixed-top home_nav " >
+    <nav class="navbar navbar-default navbar-fixed-top home_nav navbar-color">
         <div class="container">
             <div class="navbar-header">
 
@@ -143,23 +148,16 @@
                     <span class="icon-bar"></span>
                 </button>
 
-                @if (Auth::guest())
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/index') }}">
                     Encounter
                 </a>
-                @else
-                <a class="navbar-brand" href="{{ url('/index') }}">
-                    Encounter
-                </a>
-                @endif
+                
             </div>
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
-<<<<<<< HEAD
-=======
                 <!-- Left Side Of Navbar -->
-                <ul class="nav navbar-nav">
+<!--                 <ul class="nav navbar-nav">
                 @if (Auth::guest())
                     <li><a href="{{ url('/') }}">Services</a></li>
                     <li><a href="{{ url('/') }}">About Us</a></li>
@@ -167,9 +165,8 @@
                     <li><a href="{{ url('/') }}">Events</a></li>
                     <li><a href="{{ url('/Group/index') }}">Groups</a></li>
                 @endif
-                </ul>
+                </ul> -->
 
->>>>>>> 358437bc6ef94a0c671654800c7568ec622340f7
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->
@@ -181,34 +178,24 @@
                         <li><a href="{{ url('/login') }}">Login</a></li>
                         <li><a href="{{ url('/register') }}">Sign Up</a></li>
                     @else
-<<<<<<< HEAD
-                        <li><a href="{{ url('/') }}">Home</a></li>
-                        <li ><a class="br" href="{{ url('/event/create') }}">Create Event</a></li>
-                        <!-- <li class="dropdown">
+                        <li><a href="{{ url('event/showall') }}">Search</a></li>
+   
+                        <li class="dropdown">
                             <a href="{{ url('/') }}"  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Events<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                 <li ><a class="br" href="{{ url('/event/create') }}">Create Event</a></li>
-                                <li ><a class="br" href="{{ url('/') }}">My Suggested Events</a></li>
+                                <li ><a class="br" href="{{ url('/') }}">Your Matched Events</a></li>
+                                
                             </ul>
-                        </li> -->
+                        </li>
                         <li>
                             <a href="{{ url('/Group/index') }}"  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Groups<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                 <li ><a class="br" href="{{ url('createGroup')}}">Create Group</a></li>
-                                <li ><a class="br" href="{{ url('/Group/index')}}">Display Groups</a></li>
+                                <li ><a class="br" href="{{ url('/Group/index')}}">Display All Groups</a></li>
                             </ul>
                         </li>
-                        
-                        
-=======
-                        <li><a class="br" href="{{ url('/myGroup') }}">My Group</a></li>
-                        <li><a class="br" href="{{ url('/myEvent') }}">My Event</a></li>
-                        <li ><a class="br" href="{{ url('/event/create') }}">Create Event</a></li>
-                        <li ><a class="br" href="{{ url('createGroup')}}">Create Group</a></li>
->>>>>>> 358437bc6ef94a0c671654800c7568ec622340f7
-
-
-
+ 
                         <!-- <li><a class="br" href="{{ url('logout') }}">Logout</a></li> -->
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -219,7 +206,10 @@
 
                                 <li><a href="{{ url('/profile') }}"><i class="glyphicon glyphicon-user one"></i> Profile</a></li>
 
-                                <li><a class="br" href="{{ url('/myEvent') }}">Joined Event</a></li>
+                                <li><a class="br" href="{{ url('/myGroup') }}">My Groups</a></li>
+                                
+                                <li><a class="br" href="{{ url('/myEvent') }}">My Events</a></li>
+
                                 <li><a href="{{ url('logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
 
                             </ul>
@@ -228,7 +218,7 @@
                     @endif
                 </ul>
             </div>
-        </div>
+        </div> 
     </nav>
 
 <div style="min-height:100%;">
@@ -271,7 +261,6 @@
 
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
 
-<<<<<<< HEAD
 <footer class="footer-basic-centered">
 
     <p class="footer-company-motto text-white">Encounter</p>
@@ -281,9 +270,10 @@
         ·
         <a class="text-white" href="{{ url('/process') }}">How it works</a>
         ·
-        <a class="text-white" href="{{ url('/about') }}">About</a>
+        <a class="text-white" href="{{ url('/services') }}">Services</a>
         ·
-        <a class="text-white" href="#">Faq</a>
+        <a class="text-white" href="{{ url('/about') }}">About</a>
+        
 <!--         ·
         <a class="text-white" href="#">Contact</a> -->
     </p>
@@ -291,64 +281,6 @@
     <p class="footer-company-name">@2018 COPYRIGHT ENCOUNTER</p>
 
 </footer>
-=======
-<footer class="footer-main">
-     <div class="container" >
-       <div class="row">
-
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                  <span><a class="text-white navbar-brand" href="{{ url('/index') }}">
-                    Encounter
-                </a></span>
-                </div>
-
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <ul class="menu">
-                         <span>Menu</span>
-                         <li>
-                            <a href="#">Home</a>
-                          </li>
-
-                          <li>
-                             <a href="#">About</a>
-                          </li>
-
-                          <li>
-                            <a href="#">Services</a>
-                          </li>
-
-                          <li>
-                             <a href="#">Gallery</a>
-                          </li>
-
-                          <li>
-                             <a href="{{ url('admin') }}">Admin</a>
-                          </li>
-                     </ul>
-                </div>
-                <!-- Start of Footer -->
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                  <ul class="address">
-                        <span>Contact</span>
-                        <li>
-                           <i class="fa fa-phone" aria-hidden="true"></i> <a href="#">Phone</a>
-                        </li>
-                        <li>
-                           <i class="fa fa-map-marker" aria-hidden="true"></i> <a href="#">Adress</a>
-                        </li>
-                        <li>
-                           <i class="fa fa-envelope" aria-hidden="true"></i> <a href="#">Email</a>
-                        </li>
-                   </ul>
-               </div>
-               <!-- .End of Page Footer -->
-           </div>
-        </div>
-        <div class="col-md-12 text-center footer">
-            <p>@2018 COPYRIGHT ENCOUNTER</p>
-        </div>
-    </footer>
->>>>>>> 358437bc6ef94a0c671654800c7568ec622340f7
 
 </body>
 </html>

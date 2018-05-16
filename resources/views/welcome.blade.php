@@ -2,7 +2,6 @@
 
 @section('content')
 
-<<<<<<< HEAD
  <section class="page-title page-title-2 image-bg overlay parallax">
     <div class="background-image-holder fadeIn" style="transform: translate3d(0px, 0px, 0px); background: url(../../images/l.jpg); top: -100px;">
         <img alt="Background Image" class="background-image" src="images/home7.jpg" style="display: none;">
@@ -10,16 +9,15 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <h2 class="uppercase mb8">Events</h2>
-                <p class="lead mb0">...</p>
+                <h2 class="uppercase mb8">Events For You</h2>
             </div>
             <div class="col-md-6 text-right">
                 <ol class="breadcrumb breadcrumb-2">
                     <li>
-                        <a href="{{ url('/index') }}">Home</a>
+                        <a href="{{ url('event/showall') }}">Home</a>
                     </li>
                     
-                    <li class="active">Events</li>
+                    <li class="active">Events Matched</li>
                 </ol>
             </div>
         </div>
@@ -28,59 +26,10 @@
     <!--end of container-->
 </section>
 
-<!--    
-
-    <div class="container-fluid welcome_header" >
-        <div class="row">
-        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-          <ol class="carousel-indicators">
-            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-          </ol>
-          <div class="carousel-inner" role="listbox">
-            <div class="item active">
-              <img src="images/2.jpg" alt="">
-              <div class="carousel-caption">
-              </div>
-            </div>
-            <div class="item">
-              <img src="images/1.jpg" alt="">
-              <div class="carousel-caption">
-              </div>
-            </div>
-            <div class="item">
-              <img src="images/3.jpg" alt="">
-              <div class="carousel-caption">
-              </div>
-            </div>
-          </div>
-          <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a >
-          <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a >
-        </div>
-        </div>
-    </div>
-  -->
-
     <!-- include search page -->
-@include('_homepage_search')
 
-
-@include('_eventPercentage_show')
-
-<!-- <section style="background-color: #f3f4f7;">
-    @if (count($event)>0)
-=======
-    <!-- include search page -->
-    @include('homepage_search')
+<section>
     @if(Session::has('message'))
->>>>>>> 358437bc6ef94a0c671654800c7568ec622340f7
     <div class="container">
         <div class="alert alert-success popMessage">
           <h3><strong>{{Session::get('message')}}</strong></h3>
@@ -89,23 +38,38 @@
     @endif
     @if (!empty($event))
         <div class="container">
-        <h3>Recommended Events</h3>
+        <h3></h3>
+        <h2 class="uppercase mb40 mb-xs-24 text-center">Check these events out!</h2>
+        <h3 class="section-description text-center">~ Based on your preferences, these are the best events for you ~</h3>
+        <hr class="mb40 mb-xs-24 fade-half">
+
         @foreach (array_chunk($event,3) as $e)
             <div class="row">
                 @foreach($e as $add)
-                    <div class="col-md-4 marginbottom">
+                    <div class="col-md-4 my-2">
+
                         <a href="{{ url('event/'.$add['item']['id']) }}">
-                          <div class="panel panel-primary text-center">
-                              <div class="panel-heading">
+                          <div class="listing-item bg-white shadow-1 blue-hover p-relative text-center panel-primary item-height2">
+                              <!-- <div class="panel-heading" style="background-color: #EB586F">
+                                
+                              </div> -->
+
+                              <div class="panel-heading green-colour" style=" height: 50%; padding-bottom: 15px; background-image: url(images/bg1.png);">
+                                  
                                   <?php $score = $add['score']; ?>
-                                  <h3>{{ $add["item"]["title"] }}</h3>
-                                  <h4>Matching Percentage: {{ round($score) }}%</h4>
+                                <h4>Matching Percentage: {{ round($score) }}%</h4>
+
+                                <h3>{{ $add["item"]["title"] }}</h3>
                               </div>
-                              <div class="panel-body">
+                              <div class="panel-body" style="height: 70px;">
                                   <p>{{  $add['item']["description"] }}</p>
-                                  <div>{{ $add['item']["start_date"] }}</div>
-                                  <div>{{ $add['item']["start_time"] }}</div>
+                                  
                               </div>
+                              <div class="panel-body px-2 text-uppercase d-inline-block font-weight-medium lts-2px" style="width: 100%">
+                                <span class="text-right">{{ $add['item']["start_date"] }}</span> |
+                                  <span class="text-left">{{ $add['item']["start_time"] }}</span>
+                              </div>
+
                           </div>
                         </a>
                     </div>
@@ -116,82 +80,41 @@
     @else
       <div id="extendHeight" style="height: 300px"></div>
     @endif
-<<<<<<< HEAD
-</section> -->
-    <!--Explore by category-->
-<!-- <section class="pb100">
-    <div class="container">
-        <div class="section_title mb50">
-            <h3 class="title">
-               Explore Categories
-            </h3>
-        </div>
+</section>
 
-            @foreach($categories->chunk(3) as $category)
-                <div class="row justify-content-center">
-                    @foreach($category as $c)
-                    <div class="col-md-4 col-sm-12 marginbottom">
-
-                        <a href="{{ url('/'.$c['cat_name']) }}">
-
-                        <div class="speaker_box">
-                          <div class="speaker_img">
-                              <img src="images/p.jpg" alt="speaker name">
-                              <div class="info_box">
-                                  <h5 class="name">{{ $c['cat_name'] }}</h5>
-                              </div>
-                          </div>
-                      </div>
-
-                              
-                        
-                       </a>
-                    </div>
-                    @endforeach
-                </div>
-            @endforeach
-      </div>
-  </section> -->
-
-    <!--Content-->
-<!--    <div class="container-fluid minfooter">
-        <div class="row ">
-            <div class="col-md-8 col-md-offset-2">
-              <div class="col-md-6 text-center"><h2>HELP</h2></div>
-              <div class="col-md-6 text-center"><h2>DISCOVER</h2></div>
-=======
-
+<!-- <section>
     <div class="container">
         <h3>All Events</h3>
+        <hr class="mb40 mb-xs-24 fade-half">
         @if (!empty($events))
         @foreach($events->chunk(3) as $chunk)
             <div class="row">
               @foreach($chunk as $e)
-                 <div class="col-md-4">
+                <div class="col-md-4 my-2">
                         <a href="{{ url('event/'.$e['original']['id']) }}">
-                          <div class="panel panel-primary text-center">
-                              <div class="panel-heading ">
+                          <div class="listing-item bg-white shadow-1 blue-hover p-relative text-center panel-primary">
+                            <div class="panel-heading panel-height">
 
-                                  <h3>{{ $e["original"]["title"] }}</h3>
-                                 
-                              </div>
-                              <div class="panel-body">
-                                  <p>{{  $e['original']["description"] }}</p>
-                                  <div>{{ $e['original']["start_date"] }}</div>
-                                  <div>{{ $e['original']["start_time"] }}</div>
-                              </div>
+                              <h3>{{ $e["original"]["title"] }}</h3>
+                             
                           </div>
-                        </a>
-                    </div>
+                          <div class="panel-body">
+                              <p>{{  $e['original']["description"] }}</p>
+                              <div>{{ $e['original']["start_date"] }}</div>
+                              <div>{{ $e['original']["start_time"] }}</div>
+                          </div>
+                      </div>
+                    </a>
+                </div>
               @endforeach
 
->>>>>>> 358437bc6ef94a0c671654800c7568ec622340f7
             </div>
         @endforeach
         @else
             <div id="extendHeight" style="height: 300px"></div>
         @endif
     </div>
+</section> -->
 
 <script type="text/javascript">
     $(function(){

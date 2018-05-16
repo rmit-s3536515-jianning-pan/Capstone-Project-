@@ -10,13 +10,10 @@
         <div class="row">
             <div class="col-md-6">
                 <h2 class="uppercase mb8">How Encounter Works</h2>
-                <p class="lead mb0">...</p>
             </div>
             <div class="col-md-6 text-right">
                 <ol class="breadcrumb breadcrumb-2">
-                    <li>
-                        <a href="{{ url('/index') }}">Home</a>
-                    </li>
+                    
                     
                     <li class="active">How it works</li>
                 </ol>
@@ -35,7 +32,7 @@
 			<div class="col-md-12">
 				<div class="introduce-header">
 					<p>
-						Dailist offers a simple way to connect with potential customers in your neighborhood, allowing you to take a step back from marketing your business so you can focus on your service or products. Elegent, simple and easy to use, Dailist is a fun and friendly place to hook up with your customers.
+						Description
 					</p>
 				</div>
 			</div>

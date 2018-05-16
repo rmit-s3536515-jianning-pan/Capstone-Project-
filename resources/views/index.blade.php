@@ -8,7 +8,7 @@
     <h1>Welcome to Encounter</h1>
     <p class="lead"></p>
     <ul class="actions">
-      <li><a href="#about-e" class="start-btn btn-primary btn-xl js-scroll-trigger">Get Started</a></li>
+      <li><a href="#event-index" class="start-btn btn-xl js-scroll-trigger">Get Started</a></li>
     </ul>
   </div>
 </header>
@@ -57,7 +57,7 @@
 </section> -->
 
 <!--about the event -->
-<section id="about-e" class="pt100 pb100">
+<!-- <section id="about-e" class="pt100 pb100">
     <div class="container ">
         <div class="section_title ">
             <h3 class="title col-sm-10 col-sm-offset-1">
@@ -73,7 +73,7 @@
 
         </div>
     </div>
-</section>
+</section> -->
 <!--about the event end -->
 
 
@@ -97,7 +97,7 @@
 </section>
 
 
-<section class="image-square left">
+<!-- <section class="image-square left">
   <div class="col-md-6 image">
       <div class="background-image-holder fadeIn" style="background: url(../../images/t.jpg);">
           <img alt="image" class="background-image" src="images/vent2.jpg" style="display: none;">
@@ -106,7 +106,7 @@
   </div>
   <div class="clearfix"></div>
   <div class="col-md-6 col-md-offset-1 content">
-      <h3 class="uppercase">Experience you next
+      <h3 class="uppercase">Experience your next
           <br> Adventure Today.</h3>
       <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
@@ -122,10 +122,10 @@
 
 </section>
 
+ -->
 <section class="banner ban-image" style="background-image: url(../../images/n.jpg)">
 
 </section>
-
 
 
 
@@ -152,6 +152,18 @@
             </div>
         </div>
     </section> -->
+
+<div class="get-it">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 text-center p-3">
+          <h3>Experience your next adventure today!</h3>
+        </div>
+        <div class="col-lg-4 text-center p-3">   <a href="#" class="btn-2 btn-template-outlined-white-2 btn-xl">Sign Up</a></div>
+      </div>
+    </div>
+  </div>
+
 
 <script type="text/javascript">
   $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {

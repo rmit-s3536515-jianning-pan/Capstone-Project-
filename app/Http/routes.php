@@ -15,14 +15,11 @@ Route::get('/', function () {
 });
 */
 Route::get('/', 'HomeController@welcome');
-<<<<<<< HEAD
+
 Route::get('/admin',['middleware'=> 'admin',function(){
 		 return view('dashboard');
 }]);
 // Route::get('/admin','HomeController@admin');
-Route::get('/index', function(){
-	return view('index');
-});
 
 Route::get('/process', function(){
 	return view('howItWorks');
@@ -30,7 +27,9 @@ Route::get('/process', function(){
 Route::get('/about', function(){
 	return view('about');
 });
-
+Route::get('/services', function(){
+	return view('services');
+});
 
 Route::post('/register/step2','Auth\AuthController@store');
 // Route::get('/auth/logout', 'Auth\AuthController@getLogout')->name('logout');
@@ -41,7 +40,7 @@ Route::get('/event/{id}/join','EventController@join');
 Route::get('/event/{id}/leave','EventController@leave');
 Route::get('/event/{id}',['uses'=>'EventController@singleEvent']);
 // auth controller
-=======
+
 Route::get('/index', function(){
 	return view('index');
 });
@@ -50,12 +49,12 @@ Route::post('/register/step2','Auth\AuthController@store');
 
 
 // Auth Controller
->>>>>>> 358437bc6ef94a0c671654800c7568ec622340f7
+
 Route::auth();
 Route::post('/register/step2','Auth\AuthController@store');
 Route::get('/register/step2','Auth\AuthController@step2')->name('step2');
 Route::post('/step2','Auth\AuthController@store2')->name('poststep2');
-<<<<<<< HEAD
+
 Route::get('/createGroup','GroupController@create')->name('creategroup');
 Route::post('/createGroup','GroupController@store');
 Route::get('/Group/index','GroupController@index');
@@ -85,7 +84,7 @@ Route::post('/insertDetail', 'ProfileController@update')->name('insert');
 //Route for Joined Event (My Event Page)
 Route::get('/myEvent', 'MyEventController@showEventList')->name('myEvent');
 Route::get('/leaveEvent/{event_id}', 'MyEventController@leaveEvent');
-=======
+
 
 
 // Routes for Admin
@@ -145,5 +144,4 @@ Route::get('/myGroup', 'MyGroupController@showGroupList')->name('myGroup');
 Route::get('/leaveGroup/{group_id}', 'MyGroupController@leaveGroup');
 Route::post('/updateGroup', 'MyGroupController@updateGroup')->name('updateGroup');
 Route::get('/deleteGroup/{id}', 'MyGroupController@deleteGroup');
->>>>>>> 358437bc6ef94a0c671654800c7568ec622340f7
 Route::get('/{groupname}','HomeController@showGroups');

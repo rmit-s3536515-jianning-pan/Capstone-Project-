@@ -15,7 +15,8 @@
         </div>
             
         <div class="post__entry">
-            <p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla sagittis sollicitudin nisl consectetur posuere...</p>
+          <h2>Adventure into Nature</h2>
+            <p>Love the smell of forest trees and clean air? Well join us to...</p>
         </div>
       </div>
     </div>
@@ -37,7 +38,8 @@
         </div>
             
         <div class="post__entry">
-            <p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla sagittis sollicitudin nisl consectetur posuere...</p>
+          <h2>Learn Photography</h2>
+            <p>Ever wanted to learn how to take pictures? Join us to...</p>
         </div>
       </div>
     </div>
@@ -59,7 +61,8 @@
         </div>
             
         <div class="post__entry">
-            <p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla sagittis sollicitudin nisl consectetur posuere...</p>
+          <h2>Coffee and Brunch</h2>
+            <p>Meet others who also love eatin brunch...</p>
         </div>
       </div>
     </div>
