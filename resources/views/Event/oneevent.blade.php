@@ -203,11 +203,11 @@
                                     <a href="#">
                                     <div class="col-lg-2 margin-t-b" style="margin-right: 10px">
 
-                                        <span class="img-circle text-center bg-primary" style="display:block; height: 12rem;width:12rem;line-height: 12rem;word-break:break-all">
-                                            @if(strlen($u->name)< 15)
+                                        <span class="img-circle text-center members">
+                                            @if(strlen($u->name)< 9)
                                                 {{ $u->name}}
                                             @else
-                                                {{ substr($u->name,0,12) }}   <em>...</em>
+                                                {{ substr($u->name,0,9) }}   <em>...</em>
                                             @endif
 
 

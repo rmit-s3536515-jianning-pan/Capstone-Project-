@@ -157,21 +157,21 @@
                     <div class="row">
                       <div class="col-lg-2" style="margin-right: 10px">
 
-                        <span class="img-circle text-center bg-primary" style="display:block; height: 12rem;width:12rem;line-height: 12rem">
+                        <span class="img-circle text-center members">
                           Test
 
                         </span>
                       </div>
                       <div class="col-lg-2" style="margin-right: 10px">
 
-                        <span class="img-circle text-center bg-primary" style="display:block; height: 12rem;width:12rem;line-height: 12rem">
+                        <span class="img-circle text-center members">
                           Test
 
                         </span>
                       </div>
                       <div class="col-lg-2" style="margin-right: 10px">
 
-                        <span class="img-circle text-center bg-primary" style="display:block; height: 12rem;width:12rem;line-height: 12rem">
+                        <span class="img-circle text-center members">
                           Test
 
                         </span>

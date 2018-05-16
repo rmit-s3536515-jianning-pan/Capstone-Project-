@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -79,7 +79,7 @@
   <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
     <!-- import our own css -->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/main.css') }}" />
-
+<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
     <style>
         body {
             font-family: 'Lato';
@@ -178,6 +178,7 @@
                         <li><a href="{{ url('/login') }}">Login</a></li>
                         <li><a href="{{ url('/register') }}">Sign Up</a></li>
                     @else
+                        <li><a href="{{ url('history') }}">Past Events</a></li>
                         <li><a href="{{ url('event/showall') }}">Search</a></li>
    
                         <li class="dropdown">
@@ -282,5 +283,9 @@
 
 </footer>
 
+<script>
+    window.sr = ScrollReveal();
+    sr.reveal('h1,h2,h3,p',{duration:1000});
+</script>
 </body>
 </html>

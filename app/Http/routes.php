@@ -115,6 +115,9 @@ Route::group(['prefix'=>'event'],function(){
 	Route::get('{id}/report', 'EventController@reportEvent')->where('id','[0-9]+');
 });
 
+//history Event
+Route::get('/history','EventController@showHistoryEvent');
+
 
 //Routes for Group
 Route::get('/createGroup','GroupController@create')->name('creategroup');

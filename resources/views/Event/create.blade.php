@@ -103,7 +103,7 @@
                         <h6 class="uppercase">
                             4. Describe who should join, and what you will do.
                         </h6>
-                        <textarea class="desc-box form-control resizeable" rows="5" name="description" min="30" max="1000" placeholder="Description of your event" required></textarea>
+                        <textarea class="desc-box form-control resizeable" rows="5" name="description" minlength="10" maxlength="300" placeholder="Description of your event" required></textarea>
             
                     </div>
                     <div class="form-group col-md-6">

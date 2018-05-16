@@ -8,6 +8,10 @@ use App\users_categories;
 use App\events_categories;
 use App\events_subs;
 use Illuminate\Support\Collection;
+use Carbon\Carbon;
+use DB;
+use App\Events;
+use App\events_users;
 class Events extends Model
 {
     //
@@ -184,6 +188,50 @@ class Events extends Model
       }
       return $last;
       
+    }
+
+    public static function showPastEvents(){
+
+        $pastEvents = array();
+       
+        $now = Carbon::now('Australia/Melbourne');
+    
+        $owner = DB::table('events')->where('owner_id',auth()->user()->id)->get();
+        
+        $pastEvents = Events::addPastEvent($pastEvents,$owner,$now);  
+
+        $joined = events_users::where('user_id',auth()->user()->id)->pluck('event_id')->toArray();
+        $joinedEvent = DB::table('events')->whereIn('id',$joined)->get();
+        
+        $pastEvents = Events::addPastEvent($pastEvents,$joinedEvent,$now);
+        
+        return $pastEvents;
+    }
+
+    /*
+      * $pastevents : the array for storing all past events
+      * $arrays : the array that includes events
+      * $now : the current date and time 
+      
+      return : it return all the pasted events
+    */
+    public static function addPastEvent($pastevents ,$arrays,$now){
+          foreach ($arrays as $e) {
+                 $date = $e->start_date; //
+                 $time = $e->start_time;
+                $datestring = explode('-', $date);
+               
+                 $timestring = explode(':',$time);
+                  $eventtime = Carbon::create($datestring[0],$datestring[1],$datestring[2],$timestring[0],$timestring[1],$timestring[2],'Australia/Melbourne');
+                 $diff = $eventtime->diffForHumans($now);
+                 if(( strpos($diff,"ago")!=false )|| ( strpos($diff,"before")!=false) ){
+                          $e->pasttime = $diff;
+                          array_push($pastevents, $e);
+                   }
+          }
+
+          return $pastevents;
+
     }
   
 
