@@ -40,7 +40,7 @@
                 <div class="col-md-2 margin-t-b">
                     <label class="invisible">hidden</label>
                     <div class="input-group input-group-lg">
-                        <button type="submit" class="btn btn-success btn-lg start-btn" style="width:100%">Search</button>
+                        <button type="submit" class="btn btn-success btn-lg start-btn search-button"><span class="glyphicon glyphicon-search"></span>Search</button>
                     </div>
                     
                 </div>
