@@ -16,8 +16,8 @@ class GroupController extends Controller
 
     public function index()
     {
+        $tasks = DB::table('groups')->simplePaginate(9);
         $tasks = Groups::getListedGroups();
-
         return view('group.show')->withTasks($tasks);
     }
 
