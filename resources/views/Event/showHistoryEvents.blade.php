@@ -29,6 +29,7 @@
 
 
 	<div class="container">
+    @if(!empty($records))
 		@foreach(array_chunk($records,3) as $record)
 			<div class="row">
 				@foreach($record as $add)
@@ -67,6 +68,9 @@
 				@endforeach
 			</div>
 			@endforeach
+      @else
+         <div style="height: 300px"></div>
+      @endif
 	</div>
 
 @endsection

@@ -116,7 +116,7 @@
             /*padding: 5px;*/
         }
         .navbar-nav li a{
-            font-size:1.5rem;
+            font-size:1.3rem;
         }
         .navbar-nav li a:hover, .navbar-nav li.active a{
             background-color: #e7e7e7 !important;

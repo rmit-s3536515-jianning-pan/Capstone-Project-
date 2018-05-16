@@ -53,7 +53,7 @@
             </div>
             @endforeach
             @else
-                <div id="extendHeight" style="height: 300px"></div>
+                <div style="height: 300px"></div>
             @endif
 
         </div>
