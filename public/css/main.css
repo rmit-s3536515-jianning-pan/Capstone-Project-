@@ -177,6 +177,24 @@ hr.noresult:before { /* Not really supposed to work, but does */
     }
 }
 
+/*style for showing memebers*/
+.members{
+  display:block; height: 12rem;
+  width:12rem;
+  line-height: 12rem;
+  word-break:break-all; 
+  background-color:transparent;
+  border:3px solid green;
+  color:#000;
+  font-size:2rem;
+  transition:all 0.5s ease-out;
+}
+.members:hover{
+  border:0;
+  background-color: rgba(0,0,0,0.2);
+  
+}
+
 
 /*---------- Login Page + Register Page ----------*/
 [ FONT ]*/

@@ -40,7 +40,13 @@
                             <h3>{{ $add["item"]["title"] }}</h3>
                           </div>
                           <div class="panel-body" style="height: 70px;">
-                              <p>{{  $add['item']["description"] }}</p>
+                              <p>
+									@if(strlen($add['item']["description"])< 200)
+                                         {{ $add['item']["description"]}}
+                                    @else
+                                         {{ substr($add['item']["description"],0,130) }} <em>...</em>
+                                    @endif
+                              </p>
                               
                           </div>
                           <div class="panel-body px-2 text-uppercase d-inline-block font-weight-medium lts-2px" style="width: 100%">

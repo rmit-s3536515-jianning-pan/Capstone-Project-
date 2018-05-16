@@ -14,6 +14,7 @@ use Auth;
 use App\User;
 use App\events_reports;
 use DB;
+use Carbon\Carbon;
 class EventController extends Controller
 {
     // get method
@@ -123,5 +124,13 @@ class EventController extends Controller
         }
 
         return redirect('event/'.$eventId)->with('message','You have just reported this event');
+    }
+
+    public function showHistoryEvent(){
+       
+       
+      $pastEvents = Events::showPastEvents();
+        
+        return view('Event.showHistoryEvents',['records'=>$pastEvents]);
     }
 }

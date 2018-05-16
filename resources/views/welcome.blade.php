@@ -50,9 +50,7 @@
 
                         <a href="{{ url('event/'.$add['item']['id']) }}">
                           <div class="listing-item bg-white shadow-1 blue-hover p-relative text-center panel-primary item-height2">
-                              <!-- <div class="panel-heading" style="background-color: #EB586F">
-                                
-                              </div> -->
+                             
 
                               <div class="panel-heading green-colour" style=" height: 50%; padding-bottom: 15px; background-image: url(images/bg1.png);">
                                   
@@ -62,7 +60,14 @@
                                 <h3>{{ $add["item"]["title"] }}</h3>
                               </div>
                               <div class="panel-body" style="height: 70px;">
-                                  <p>{{  $add['item']["description"] }}</p>
+                                  <p>
+                                    @if(strlen($add['item']["description"])< 200)
+                                         {{ $add['item']["description"]}}
+                                    @else
+                                         {{ substr($add['item']["description"],0,130) }} <em>...</em>
+                                    @endif
+
+                                  </p>
                                   
                               </div>
                               <div class="panel-body px-2 text-uppercase d-inline-block font-weight-medium lts-2px" style="width: 100%">
@@ -78,43 +83,10 @@
         @endforeach
     </div>
     @else
-      <div id="extendHeight" style="height: 300px"></div>
+      <div style="height: 300px"></div>
     @endif
 </section>
 
-<!-- <section>
-    <div class="container">
-        <h3>All Events</h3>
-        <hr class="mb40 mb-xs-24 fade-half">
-        @if (!empty($events))
-        @foreach($events->chunk(3) as $chunk)
-            <div class="row">
-              @foreach($chunk as $e)
-                <div class="col-md-4 my-2">
-                        <a href="{{ url('event/'.$e['original']['id']) }}">
-                          <div class="listing-item bg-white shadow-1 blue-hover p-relative text-center panel-primary">
-                            <div class="panel-heading panel-height">
-
-                              <h3>{{ $e["original"]["title"] }}</h3>
-                             
-                          </div>
-                          <div class="panel-body">
-                              <p>{{  $e['original']["description"] }}</p>
-                              <div>{{ $e['original']["start_date"] }}</div>
-                              <div>{{ $e['original']["start_time"] }}</div>
-                          </div>
-                      </div>
-                    </a>
-                </div>
-              @endforeach
-
-            </div>
-        @endforeach
-        @else
-            <div id="extendHeight" style="height: 300px"></div>
-        @endif
-    </div>
-</section> -->
 
 <script type="text/javascript">
     $(function(){
@@ -122,14 +94,6 @@
     });
 </script>
 
-    <script>
-        $(document).ready(function() {
-            $('#main-menu .subcatmenu').hide();
-            $('#main-menu >li a').click(function(){
-                $('#main-menu >li .subcatmenu').show();
-            });
-        });
-    </script>
     <script type="text/javascript">
         $(document).ready(function(){
             $('.popMessage').slideUp(4000);
