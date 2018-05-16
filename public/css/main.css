@@ -192,7 +192,20 @@ hr.noresult:before { /* Not really supposed to work, but does */
 .members:hover{
   border:0;
   background-color: rgba(0,0,0,0.2);
-  
+}
+.glyphicon-chevron-down{
+    margin-left: 1.2rem;
+    color:gray;
+}
+.search-button{
+  width:100% !important;
+  color:white !important;
+  font-size: 1.5rem !important;
+}
+.glyphicon-search{
+  line-height: inherit;
+  margin-right:1.5rem;
+  font-size: 1.5rem;
 }
 
 

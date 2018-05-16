@@ -115,8 +115,11 @@
             border: 0;
             /*padding: 5px;*/
         }
+        .navbar-nav li a{
+            font-size:1.5rem;
+        }
         .navbar-nav li a:hover, .navbar-nav li.active a{
-            background-color: #fff !important;
+            background-color: #e7e7e7 !important;
         }
         #app-layout {
          margin-top: 50px;
@@ -182,15 +185,15 @@
                         <li><a href="{{ url('event/showall') }}">Search</a></li>
    
                         <li class="dropdown">
-                            <a href="{{ url('/') }}"  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Events<span class="caret"></span></a>
+                            <a href="{{ url('/') }}"  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Events<span class="glyphicon glyphicon-chevron-down"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                 <li ><a class="br" href="{{ url('/event/create') }}">Create Event</a></li>
                                 <li ><a class="br" href="{{ url('/') }}">Your Matched Events</a></li>
                                 
                             </ul>
                         </li>
-                        <li>
-                            <a href="{{ url('/Group/index') }}"  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Groups<span class="caret"></span></a>
+                        <li class="dropdown">
+                            <a href="{{ url('/Group/index') }}"  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Groups<span class="glyphicon glyphicon-chevron-down"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                 <li ><a class="br" href="{{ url('createGroup')}}">Create Group</a></li>
                                 <li ><a class="br" href="{{ url('/Group/index')}}">Display All Groups</a></li>
@@ -200,7 +203,7 @@
                         <!-- <li><a class="br" href="{{ url('logout') }}">Logout</a></li> -->
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                {{ Auth::user()->name }} <span class="caret"></span>
+                                {{ Auth::user()->name }} <span class="glyphicon glyphicon-chevron-down"></span>
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
