@@ -27,10 +27,10 @@
     <!--end of container-->
 </section>
 
-
+  @if(!empty($created))
 	<div class="container">
-    @if(!empty($records))
-		@foreach(array_chunk($records,3) as $record)
+    <h1>Created Past Events</h1>
+		@foreach(array_chunk($created,3) as $record)
 			<div class="row">
 				@foreach($record as $add)
 				<div class="col-md-4 my-2">
@@ -72,5 +72,56 @@
          <div style="height: 300px"></div>
       @endif
 	</div>
+  @endif
+
+  @if(!empty($joined))
+  <div class="container">
+    <h1>Joined Past Events</h1>
+    @foreach(array_chunk($joined,3) as $record)
+      <div class="row">
+        @foreach($record as $add)
+        <div class="col-md-4 my-2">
+                    <a href="{{ url('event/'.$add->id) }}">
+                      <div class="listing-item bg-white shadow-1 blue-hover p-relative text-center panel-primary item-height2">
+                          <!-- <div class="panel-heading" style="background-color: #EB586F">
+                            
+                          </div> -->
+
+                          <div class="panel-heading bg" style=" height: 50%; padding-bottom: 15px;">
+
+                            <h3>{{ $add->title }}</h3>
+                            <h3 class="text-danger" style="font-weight: 400%">{{ $add->pasttime }}</h3>
+                          </div>
+                          <div class="panel-body" style="height: 70px;">
+                              <p>
+                                    @if(strlen($add->description)< 200)
+                                         {{ $add->description}}
+                                    @else
+                                         {{ substr($add->description,0,130) }} <em>...</em>
+                                    @endif
+                              </p>
+                              
+                          </div>
+                          <div class="panel-body px-2 text-uppercase d-inline-block font-weight-medium lts-2px" style="width: 100%">
+                            <span class="text-right">{{ $add->start_date }}</span> |
+                              <span class="text-left">{{ $add->start_time }}</span> 
+                              <hr>
+                              <span>Max Attendee: {{ $add->max_attend }}</span>
+                          </div>
+
+                      </div>
+                    </a>
+                </div>
+        @endforeach
+      </div>
+      @endforeach
+  </div>
+  @endif
+
+  @if(empty($joined) && empty($created))
+    <div class="container" style="height: 300px">
+       <h1>No History Events</h1>
+    </div>
+  @endif
 
 @endsection
