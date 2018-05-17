@@ -68,6 +68,9 @@
 				@endforeach
 			</div>
 			@endforeach
+      @else
+         <div style="height: 300px"></div>
+      @endif
 	</div>
   @endif
 
