@@ -129,8 +129,8 @@ class EventController extends Controller
     public function showHistoryEvent(){
        
        
-      $pastEvents = Events::showPastEvents();
-        
-        return view('Event.showHistoryEvents',['records'=>$pastEvents]);
+      $createdpastEvents = Events::showCreatedPastEvents();
+      $joinedpastEvents = Events::showJoinedPastEvents();        
+        return view('Event.showHistoryEvents',['created'=>$createdpastEvents,'joined'=>$joinedpastEvents]);
     }
 }

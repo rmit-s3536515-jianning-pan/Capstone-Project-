@@ -190,7 +190,7 @@ class Events extends Model
       
     }
 
-    public static function showPastEvents(){
+    public static function showCreatedPastEvents(){
 
         $pastEvents = array();
        
@@ -199,6 +199,14 @@ class Events extends Model
         $owner = DB::table('events')->where('owner_id',auth()->user()->id)->get();
         
         $pastEvents = Events::addPastEvent($pastEvents,$owner,$now);  
+        
+        return $pastEvents;
+    }
+
+    public static function showJoinedPastEvents(){
+         $pastEvents = array();
+       
+        $now = Carbon::now('Australia/Melbourne');
 
         $joined = events_users::where('user_id',auth()->user()->id)->pluck('event_id')->toArray();
         $joinedEvent = DB::table('events')->whereIn('id',$joined)->get();
@@ -207,7 +215,6 @@ class Events extends Model
         
         return $pastEvents;
     }
-
     /*
       * $pastevents : the array for storing all past events
       * $arrays : the array that includes events
