@@ -47,7 +47,7 @@
                     <hr>
                 </div>
 
-                <div class="overflow-hidden">
+                <!-- <div class="overflow-hidden"> -->
                     <h6 class="uppercase">
                         2. What will your group be about??
                     </h6>
@@ -73,7 +73,7 @@
                 
                     @endforeach
                     <hr>
-                </div>
+                <!-- </div> -->
                 <div class="overflow-hidden">
                     <div class="col-md-12 inner-box form-">
                         <h6 class="uppercase">

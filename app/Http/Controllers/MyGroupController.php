@@ -22,7 +22,7 @@ class MyGroupController extends Controller
     $data = DB::table('groups')
       ->join('groups_users', 'groups.id', '=', 'group_id')
       ->where('groups_users.user_id', '=', Auth::user()->id)
-      ->select('groups_users.*','groups.title')
+      ->select('groups_users.*','groups.*')
       ->get();
 
     return view('myGroup', ['own'=>$own ,'joined'=>$data]);

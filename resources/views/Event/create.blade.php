@@ -71,7 +71,7 @@
                     </div>
                     <hr>
                 </div>
-                <div class="overflow-hidden">
+                <!-- <div class="overflow-hidden"> -->
                     <h6 class="uppercase">
                         4. What will your group be about?
                     </h6>
@@ -97,11 +97,11 @@
                 
                     @endforeach
                     <hr>
-                </div>
+                <!-- </div> -->
                 <div class="overflow-hidden">
-                    <div class="col-md-12 inner-box form-">
+                    <div class="col-md-12 inner-box form-box">
                         <h6 class="uppercase">
-                            4. Describe who should join, and what you will do.
+                            5. Describe who should join, and what you will do.
                         </h6>
                         <textarea class="desc-box form-control resizeable" rows="5" name="description" minlength="10" maxlength="300" placeholder="Description of your event" required></textarea>
             

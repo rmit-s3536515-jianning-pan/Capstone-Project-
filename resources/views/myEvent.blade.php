@@ -72,7 +72,7 @@
                             <tbody>
                                 @foreach($joined as $joinedEvent)
                                 <tr>
-                                    <td><h5><a href="{{ url('event/'.$joinedEvent->id ) }}">{{ $joinedEvent->title }}</h5></td>
+                                    <td><h5><a href="{{ url('event/'.$joinedEvent->id ) }}">{{ $joinedEvent->title }}</a></h5></td>
                                     <td>
                                       <button type="submit" class="btn btn-outline btn-primary btn-block btn-danger" onclick="location.href = '/leaveEvent/{{ $joinedEvent->event_id }}';">Leave</button>
                                     </td>
