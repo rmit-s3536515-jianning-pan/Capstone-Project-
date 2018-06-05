@@ -1774,8 +1774,9 @@ h2.uppercase {
 .percent-b {
   border-width: 5px;
   border-color: red;
+  background-color: red;
   border-style: solid;
-  padding-left: 8px;
+/*  padding-left: 8px;*/
 }
 .p-unset {
   padding-left: unset;
@@ -1855,12 +1856,12 @@ h2.uppercase {
   color: #fff;
   border-color: #fff;
 }
-.butn-white:hover,
+/*.butn-white:hover,
 .image-bg .butn:hover,
 .image-bg .butn:visited:hover {
   background: #fff;
   color: #222;
-}
+}*/
 .image-bg .butn.butn-filled,
 .image-bg .butn-filled:visited {
   border-color: #13181d;

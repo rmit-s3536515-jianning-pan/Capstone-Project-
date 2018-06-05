@@ -106,14 +106,13 @@
                         <textarea class="desc-box form-control resizeable" rows="5" name="description" minlength="10" maxlength="300" placeholder="Description of your event" required></textarea>
             
                     </div>
-                    <div class="form-group col-md-6">
-            <button class="start-btn">
-                Submit<span class="glyphicon glyphicon-chevron-right"></span>
-            </button>
-                </div>
 
+                    <div class="form-group col-md-6">
+                        <button class="start-btn" type="submit" value="Submit">Submit<span class="glyphicon glyphicon-chevron-right"></span>
+                        </button>
+                    </div>
                 
-        </div>
+                </div>
 
             </form>
         </div>
@@ -135,7 +134,7 @@
 		</div>
 	</div>
 </div>
-
+</script>
 <script type="text/javascript">
 	$('#create').submit(function(e){
 		var l = $('select option:selected').length;

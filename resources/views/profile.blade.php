@@ -45,7 +45,7 @@
                       <li>{{ $sub->name }}</li>
                     @endforeach
                     <br>
-                  <button type="button" class="btn-block" onclick="location.href = '{{ route('updateView') }}'">Update</button>
+                  <button id="Update" type="button" class="btn-block" onclick="location.href = '{{ route('updateView') }}'">Update</button>
 
             </div>
           </div>

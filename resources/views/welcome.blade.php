@@ -27,7 +27,7 @@
 </section>
 
     <!-- include search page -->
-
+@include('_eventPercentage_show')
 <section>
     @if(Session::has('message'))
     <div class="container">
