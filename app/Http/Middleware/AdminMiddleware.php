@@ -8,6 +8,15 @@ use Illuminate\Http\Response;
 
 class AdminMiddleware
 {
+//     class AdminMiddleware{
+//     public function handle($request, Closure $next){
+//         if (!\Auth::user()->is_admin) {
+//             return redirect('/');
+//         }
+
+//         return $next($request);
+//     }
+// }
     /**
      * Handle an incoming request.
      *
@@ -20,6 +29,7 @@ class AdminMiddleware
         if ($request->user() && $request->user()->isAdmin == TRUE)
         {
             return $next($request);
+            // return redirect('/');
             
         }
         return response()->view('admin.adminonly');
