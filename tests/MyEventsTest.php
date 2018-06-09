@@ -31,6 +31,4 @@ class MyEventsTest extends TestCase
 	}
 
 
-
-
 }
