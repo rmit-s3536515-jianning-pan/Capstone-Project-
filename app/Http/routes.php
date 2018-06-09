@@ -122,7 +122,7 @@ Route::get('/history','EventController@showHistoryEvent');
 //Routes for Group
 Route::get('/createGroup','GroupController@create')->name('creategroup');
 Route::post('/group/store','GroupController@storeGroup');
-Route::get('/Group/index','GroupController@index');
+Route::get('/Group/index','GroupController@index')->name('showG');
 Route::get('/group/{id}','GroupController@join')->where('id','[0-9]+');
 Route::get('/group/join/{groupid}','GroupController@joingroup')->where('groupid','[0-9]+');
 Route::get('group/leave/{groupid}','GroupController@leavegroup')->where('groupid','[0-9]+');
