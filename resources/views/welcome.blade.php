@@ -28,7 +28,7 @@
 
     <!-- include search page -->
 @include('_eventPercentage_show')
-<section>
+<!-- <section>
     @if(Session::has('message'))
     <div class="container">
         <div class="alert alert-success popMessage">
@@ -85,7 +85,7 @@
     @else
       <div style="height: 300px"></div>
     @endif
-</section>
+</section> -->
 
 
 <script type="text/javascript">

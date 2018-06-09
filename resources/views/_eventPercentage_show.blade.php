@@ -1,5 +1,5 @@
 <!--event calender-->
-<section class="pb100 bg-prime mt-30">
+<section class="pb100 bg-prime mt-30" style="margin-bottom: -80px;">
         @if(Session::has('message'))
     <div class="container">
         <div class="alert alert-success popMessage">
