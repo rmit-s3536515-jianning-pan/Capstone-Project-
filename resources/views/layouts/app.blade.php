@@ -176,8 +176,8 @@
 
                     @if (Auth::guest())
                         <li><a href="{{ url('/index') }}">Home</a></li>
-                        <li><a href="{{ url('/') }}">Services</a></li>
-                        <li><a href="{{ url('/') }}">About Us</a></li>
+                        <!-- <li><a href="{{ url('/services') }}">Services</a></li> -->
+                        <li><a href="{{ url('/about') }}">About Us</a></li>
                         <li><a href="{{ url('/login') }}">Login</a></li>
                         <li><a href="{{ url('/register') }}">Sign Up</a></li>
                     @else
@@ -272,10 +272,12 @@
     <p class="footer-links">
         <a class="text-white" href="{{ url('/index') }}">Home</a>
         ·
+        <a class="text-white" href="{{ url('/admin') }}">Admin</a>
+        ·
         <a class="text-white" href="{{ url('/process') }}">How it works</a>
         ·
-        <a class="text-white" href="{{ url('/services') }}">Services</a>
-        ·
+        <!-- <a class="text-white" href="{{ url('/services') }}">Services</a>
+        · -->
         <a class="text-white" href="{{ url('/about') }}">About</a>
         
 <!--         ·
@@ -289,6 +291,18 @@
 <script>
     window.sr = ScrollReveal();
     sr.reveal('h1,h2,h3,p',{duration:1000});
+</script>
+<script type="text/javascript">
+    $(function() {
+    // Set idle time
+    $( document ).idleTimer( 600000 );
+});
+
+$(function() {
+    $( document ).on( "idle.idleTimer", function(event, elem, obj){
+        window.location.href = "http://localhost:8000/login"
+    });  
+});
 </script>
 </body>
 </html>
