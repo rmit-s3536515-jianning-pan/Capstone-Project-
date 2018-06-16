@@ -45,6 +45,30 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $e)
     {
-        return parent::render($request, $e);
+
+        if($this->isHttpException($e)){
+            switch ($e->getStatusCode()) {
+                case '404':
+                    # code...
+                    return redirect()->route('notfound');
+                    break;
+                // case '500':
+                //     return redirect()->route('notfound');
+                //     break;
+                case '401':
+                    \Session::flash('flash_message_important', 'Sorry, your session seems to have expired. Please try again.');
+                    return redirect('login');
+                    break;
+                default:
+                    # code.
+                    return $this->renderHttpException($e);
+                    break;
+            }
+        }
+        else
+        {
+            return redirect('login');
+            // return parent::render($request, $e);
+        }
     }
 }

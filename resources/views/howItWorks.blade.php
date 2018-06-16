@@ -45,27 +45,27 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
-						<div class="how-it-works">
+						<div class="how-it-works" style="padding-top: 10px">
 							<div class="work-icon"> <img src="images/icon1.png" alt=""> </div>
 							<div class="work-detail">
 								<h3>Register an Account</h3>
-								<p>Ut nec vulputate enim. Nulla faucibus convallis dui. Donec arcu enim, scelerisque gravida lacus vel, dignissim cursus lectus.</p>
+								<p>Fill up a piece of information with username and email and password. It goes to next process after this.</p>
 								<span class="number">01</span>
 							</div>
 						</div><!-- How it Works -->
-						<div class="how-it-works">
+						<div class="how-it-works" style="padding-top: 10px">
 							<div class="work-icon"> <img src="images/icon2.png" alt=""> </div>
 							<div class="work-detail">
 								<h3>Choose your preferences</h3>
-								<p>Ut nec vulputate enim. Nulla faucibus convallis dui. Donec arcu enim, scelerisque gravida lacus vel, dignissim cursus lectus.</p>
+								<p>Choose your preferred interest in this part. You have to choose at least 4 preferred interest. It will successfully register for user after this.</p>
 								<span class="number">02</span>
 							</div>
 						</div><!-- How it Works -->
-						<div class="how-it-works">
+						<div class="how-it-works" style="padding-top: 10px">
 							<div class="work-icon"> <img src="images/icon3.png" alt=""> </div>
 							<div class="work-detail">
 								<h3>Be matched to an event for you</h3>
-								<p>Ut nec vulputate enim. Nulla faucibus convallis dui. Donec arcu enim, scelerisque gravida lacus vel, dignissim cursus lectus.</p>
+								<p>After registration, it goes to home page. It will show matched events with users' preferences.</p>
 								<span class="number">03</span>
 							</div>
 						</div><!-- How it Works -->

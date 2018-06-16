@@ -8,7 +8,7 @@
     <h1>Welcome to Encounter</h1>
     <p class="lead"></p>
     <ul class="actions">
-      <li><a href="#event-index" class="start-btn btn-xl js-scroll-trigger">Get Started</a></li>
+      <li><a href="#event-index" class="start-btn btn-xl js-scroll-trigger" style="color:white !important">Get Started</a></li>
     </ul>
   </div>
 </header>
