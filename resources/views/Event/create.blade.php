@@ -3,7 +3,7 @@
 
 @section('content')
 
- <section class="page-title page-title-2 image-bg overlay parallax">
+ <section class="page-title page-title-2 image-bg overlay parallax" >
     <div class="background-image-holder fadeIn" style="transform: translate3d(0px, 0px, 0px); background: url(../../images/home7.jpg); top: -100px;">
         <img alt="Background Image" class="background-image" src="images/home7.jpg" style="display: none;">
     </div>
@@ -27,7 +27,7 @@
 </section>
 
 
-<section>
+<section style="background: url(../../images/grad5.jpg);">
     <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
         <div class="feature boxed bg-secondary">
             <form class="form-listing text-center" role="form" method="POST" action="{{ url('/event/create') }}">

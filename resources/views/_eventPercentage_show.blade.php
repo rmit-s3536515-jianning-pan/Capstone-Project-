@@ -1,5 +1,5 @@
 <!--event calender-->
-<section class="pb100 bg-prime mt-30" style="margin-bottom: -80px;">
+<section class="pb100 bg-prime mt-30" >
         @if(Session::has('message'))
     <div class="container">
         <div class="alert alert-success popMessage">
@@ -31,7 +31,7 @@
                                     <span><h6 class="mb0 uppercase">When</h6>{{ $add['item']["start_time"] }}</span>
                                     <span><h6 class="mb0 uppercase pt8">Time</h6>{{ $add['item']["start_date"] }}</span>
 <!--                                     <span>Adventure | Sports </span>
- -->                                </div>
+ -->                            </div>
                                 <div class="col-sm-4">
                                     <span><h6 class="uppercase pt8">Description:</h6>@if(strlen($add['item']["description"])< 200)
                                          {{ $add['item']["description"]}}

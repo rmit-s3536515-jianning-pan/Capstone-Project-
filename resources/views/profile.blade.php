@@ -2,27 +2,41 @@
 @extends('layouts.app')
 
 @section('content')
-
-    <!--Explore by catory-->
+ <section class="page-title page-title-2 image-bg overlay parallax">
+    <div class="background-image-holder fadeIn" style="transform: translate3d(0px, 0px, 0px); background: url(../../images/grad19.jpg); top: -100px;">
+        <img alt="Background Image" class="background-image" src="images/home7.jpg" style="display: none;">
+    </div>
     <div class="container">
+        <div class="row">
+            <div class="col-md-6" style="float: right;">
+                <h2 class="uppercase mb8">{{ Auth::user()->name }}</h2>
+            </div>
+
+        </div>
+        <!--end of row-->
+    </div>
+    <!--end of container-->
+</section>
+    <!--Explore by catory-->
+    <div class="container" >
 
       <div class="row">
-      <div class="panel panel-default">
-      <div class="panel-heading">  <h4>User Profile</h4>@if(Session::has('message'))
+      <div class="panel">
+      <div class="panel-heading">  <!-- <h4>User Profile</h4> -->@if(Session::has('message'))
                     <div class="alert alert-success">
                       <strong>{{Session::get('message')}}</strong>
                     </div>
                 @endif</div>
-      <div class="panel-body">
-      <div class="col-md-4 col-xs-12 col-sm-6 col-lg-4">
+      <div class="panel-body user_background">
+      <div class="user_picture col-md-4 col-xs-12 col-sm-6 col-lg-4" style="padding:inherit;">
 
           <img alt="Profile Picture" src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" id="profile-image1" class="img-circle img-responsive">
 
           </div>
-            <div class="col-md-8 col-xs-12 col-sm-6 col-lg-8" >
+            <div class="col-md-8 col-xs-12 col-sm-6 col-lg-8 user-details" >
 
                 <div class="container" >
-                  <h2>{{ Auth::user()->name }}</h2>
+                  <h3>General</h3>
                 </div>
                    <hr>
                     <ul class="container details" >

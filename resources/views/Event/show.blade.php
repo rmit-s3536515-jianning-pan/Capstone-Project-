@@ -4,7 +4,7 @@
 @section('content')
 
  <section class="page-title page-title-2 image-bg overlay parallax">
-    <div class="background-image-holder fadeIn" style="transform: translate3d(0px, 0px, 0px); background: url(../../images/s.jpg); top: -100px;">
+    <div class="background-image-holder fadeIn" style="transform: translate3d(0px, 0px, 0px); background: url(../../images/grad4.jpg); top: -100px;">
         <img alt="Background Image" class="background-image" src="images/home7.jpg" style="display: none;">
     </div>
     <div class="container">
@@ -29,28 +29,28 @@
 			@foreach(array_chunk($records,3) as $record)
 			<div class="row">
 				@foreach($record as $add)
-				<div class="col-md-6 my-2 col-xs-12">
-        <a href="{{ url('event/'.$add['item']['id']) }}">
-          <div class="content">
-            <div class="card">
-              <div class="firstinfo">
-                  <div>
-                    
-                  </div>
-                <div class="profileinfo">
-                  <h2>{{ $add["item"]["title"] }}</h2>
-                  <h4> {{ $add['item']['start_date'] }} | {{ $add['item']["start_time"] }} | People: {{ $add['item']["max_attend"] }}</h4>
-                  <p class="bio"> 
-                    @if(strlen($add['item']["description"])< 200)
-                           {{ $add['item']["description"]}}
-                      @else
-                           {{ substr($add['item']["description"],0,130) }} <em>...</em>
-                      @endif
-                </div>
-              </div>
-            </div>
-          </div>
-          </a>
+				<div class="col-md-4 my-2 col-xs-12">
+			        <a href="{{ url('event/'.$add['item']['id']) }}">
+			          <div class="content">
+			            <div class="card">
+			              <div class="firstinfo">
+			                  <div>
+			                    
+			                  </div>
+			                <div class="profileinfo">
+			                  <h2>{{ $add["item"]["title"] }}</h2>
+			                  <h4> {{ $add['item']['start_date'] }} | {{ $add['item']["start_time"] }} | Max. of People: {{ $add['item']["max_attend"] }}</h4>
+			                  <p class="bio"> 
+			                    @if(strlen($add['item']["description"])< 200)
+			                           {{ $add['item']["description"]}}
+			                      @else
+			                           {{ substr($add['item']["description"],0,130) }} <em>...</em>
+			                      @endif
+			                </div>
+			              </div>
+			            </div>
+			          </div>
+			          </a>
                 </div>
 				@endforeach
 			</div>

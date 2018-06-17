@@ -164,7 +164,7 @@
             <div class="row">
                 <div class="col-md-8 responsive-wrap mt-4">
                     <div class="joining_wrap">
-					<h2 class="pt-b">Title:&nbsp;&nbsp; {{ $event['title'] }}</h2>
+					<!-- <h2 class="pt-b">Title:&nbsp;&nbsp; {{ $event['title'] }}</h2> -->
 					
 					<h4 class="pt-b" style="padding-bottom:0px;margin-bottom:0px;padding-top:40px;font-weight:bold;">Description: </h4>
 					<div class="pt-b" style="word-break:break-all">{{$event['description']}}</div>

@@ -2,15 +2,24 @@
 @extends('layouts.app')
 
 @section('content')
+ <section class="page-title page-title-2 image-bg overlay parallax">
+    <div class="background-image-holder fadeIn" style="transform: translate3d(0px, 0px, 0px); background: url(../../images/grad16.jpg); top: -100px;">
+        <img alt="Background Image" class="background-image" src="images/home7.jpg" style="display: none;">
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2 class="uppercase mb8">My Events</h2>
+            </div>
+        </div>
+        <!--end of row-->
+    </div>
+    <!--end of container-->
+</section>
 
-<div class="panel-body">
+
+<div class="panel-body events-list">
   <div id="page-wrapper">
-      <div class="row">
-          <div class="col-lg-12">
-              <h1 class="page-header">My Event Page</h1>
-          </div>
-          <!-- /.col-lg-12 -->
-      </div>
       <!-- /.row -->
       <div class="row">
           <div class="col-lg-12">

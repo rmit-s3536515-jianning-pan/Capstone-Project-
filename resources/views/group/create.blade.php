@@ -28,7 +28,7 @@
 </section>
 
 
-<section>
+<section style="background: url(../../images/grad5.jpg);">
     <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
         <div class="feature boxed bg-secondary">
             <form class="form-listing text-center" name="form_G" method="post" action="{{ url('/storeGroup') }}">

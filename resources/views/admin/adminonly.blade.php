@@ -41,6 +41,7 @@
         <div class="container">
             <div class="content">
                 <div class="title">Admin Page Only</div>
+                <a href="#" onClick="history.go(-1);return true;">Go Back</a>
             </div>
         </div>
     </body>
