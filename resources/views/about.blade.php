@@ -21,7 +21,7 @@
 		<div class="row">
 		  <div class="col-lg-8 col-lg-offset-2">
 		    <h3>Who We Are</h3>
-		    <p>The collaborative process of web development requires close integration of technology and design - two disciplines that inform one another. We make hip and exciting web sites. Big and Small. Concept development, interface design, production management, strategic planning, usability testing.</p>
+		    <p>We are here for people who want to communicate or have fun with someone else. We provide service for getting together with real people in real life and meet up with them and enjoy the fun time. Also found people who have the same interest with you.</p>
 		    <h2 class="classic">The Encounter Team</h2>
 		  </div>
 		</div>

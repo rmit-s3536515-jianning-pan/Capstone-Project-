@@ -213,4 +213,8 @@ class HomeController extends Controller
         return view('dashboard', ['parents' => $parent['0'], 'children' => $child] );
     }
 
+    public function pageNotFound(){
+      return view('errors.503');
+    }
+
 }

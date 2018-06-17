@@ -25,7 +25,7 @@
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2">
             <h3>Our Services</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis pulvinar vestibulum. Donec eleifend, sem sed dictum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.s</p>
+            <p>We provide the chance for gathering together people in real life and enjoy their life. Meeting up people with same interest is not only about communication, it learns new knowledge an gain new information around the world as well.</p>
           </div>
         </div>
         <div class="row">
