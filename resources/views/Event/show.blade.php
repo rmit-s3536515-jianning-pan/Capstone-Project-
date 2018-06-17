@@ -23,41 +23,34 @@
 
 	<section>
 	<div class="container">
+
 		<h2>Searched Results</h2>
 		@if (count($records)>0)
 			@foreach(array_chunk($records,3) as $record)
 			<div class="row">
 				@foreach($record as $add)
-				<div class="col-md-4 my-2">
-                    <a href="{{ url('event/'.$add['item']['id']) }}">
-                      <div class="listing-item bg-white shadow-1 blue-hover p-relative text-center panel-primary item-height2">
-                          <!-- <div class="panel-heading" style="background-color: #EB586F">
-                            
-                          </div> -->
-
-                          <div class="panel-heading bg" style=" height: 50%; padding-bottom: 15px;">
-
-                            <h3>{{ $add["item"]["title"] }}</h3>
-                          </div>
-                          <div class="panel-body" style="height: 70px;">
-                              <p>
-									@if(strlen($add['item']["description"])< 200)
-                                         {{ $add['item']["description"]}}
-                                    @else
-                                         {{ substr($add['item']["description"],0,130) }} <em>...</em>
-                                    @endif
-                              </p>
-                              
-                          </div>
-                          <div class="panel-body px-2 text-uppercase d-inline-block font-weight-medium lts-2px" style="width: 100%">
-                            <span class="text-right">{{ $add['item']["start_date"] }}</span> |
-                              <span class="text-left">{{ $add['item']["start_time"] }}</span> 
-                              <hr>
-                              <span>Max Attendee: {{ $add['item']["max_attend"] }}</span>
-                          </div>
-
-                      </div>
-                    </a>
+				<div class="col-md-6 my-2 col-xs-12">
+        <a href="{{ url('event/'.$add['item']['id']) }}">
+          <div class="content">
+            <div class="card">
+              <div class="firstinfo">
+                  <div>
+                    
+                  </div>
+                <div class="profileinfo">
+                  <h2>{{ $add["item"]["title"] }}</h2>
+                  <h4> {{ $add['item']['start_date'] }} | {{ $add['item']["start_time"] }} | People: {{ $add['item']["max_attend"] }}</h4>
+                  <p class="bio"> 
+                    @if(strlen($add['item']["description"])< 200)
+                           {{ $add['item']["description"]}}
+                      @else
+                           {{ substr($add['item']["description"],0,130) }} <em>...</em>
+                      @endif
+                </div>
+              </div>
+            </div>
+          </div>
+          </a>
                 </div>
 				@endforeach
 			</div>
