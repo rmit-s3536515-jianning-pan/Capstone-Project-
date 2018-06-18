@@ -26,7 +26,7 @@
 
 
 
-<section class="flat-row flat-introduce">
+<!-- <section class="flat-row flat-introduce">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
@@ -38,42 +38,42 @@
 			</div>
 		</div>
 	</div>
-</section>
+</section> -->
 
-<section>
-		<div class="block gray ">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						<div class="how-it-works" style="padding-top: 10px">
-							<div class="work-icon"> <img src="images/icon1.png" alt=""> </div>
-							<div class="work-detail">
-								<h3>Register an Account</h3>
-								<p>Fill up a piece of information with username and email and password. It goes to next process after this.</p>
-								<span class="number">01</span>
-							</div>
-						</div><!-- How it Works -->
-						<div class="how-it-works" style="padding-top: 10px">
-							<div class="work-icon"> <img src="images/icon2.png" alt=""> </div>
-							<div class="work-detail">
-								<h3>Choose your preferences</h3>
-								<p>Choose your preferred interest in this part. You have to choose at least 4 preferred interest. It will successfully register for user after this.</p>
-								<span class="number">02</span>
-							</div>
-						</div><!-- How it Works -->
-						<div class="how-it-works" style="padding-top: 10px">
-							<div class="work-icon"> <img src="images/icon3.png" alt=""> </div>
-							<div class="work-detail">
-								<h3>Be matched to an event for you</h3>
-								<p>After registration, it goes to home page. It will show matched events with users' preferences.</p>
-								<span class="number">03</span>
-							</div>
-						</div><!-- How it Works -->
-					</div>
+<section style="padding: 0px 0; ">
+	<div class="block gray " style="background-color: grey; background-image: url('../../images/grad6.jpg'); ">
+		<div class="container" >
+	<div class="row">
+		<div class="col-lg-5">
+			<div class="section-title text-white">
+				<h3>How to Get started?</h3>
+				<!-- <p>Get started with us to explore the exciting</p> -->
+			</div>
+			<div class="enroll-list text-white">
+				<div class="enroll-list-item">
+					<span>1</span>
+					<h5>Register for an Account</h5>
+					<p>Fill up a piece of information with username and email and password. It goes to next process after this.</p>
+				</div>
+				<div class="enroll-list-item">
+					<span>2</span>
+					<h5>Choose your preferences</h5>
+					<p>Choose your preferred interest in this part. You have to choose at least 4 preferred interest. It will successfully register for user after this.</p>
+				</div>
+				<div class="enroll-list-item">
+					<span>3</span>
+					<h5>Be matched to an event for you</h5>
+					<p>After registration, it goes to home page. It will show matched events with users' preferences.</p>
 				</div>
 			</div>
 		</div>
-	</section>
+		<div class="col-lg-6 offset-lg-1 p-lg-0 p-4">
+			<img src="images/m.jpg" alt="">
+		</div>
+	</div>
+</div>
+	</div>
+</section>
 
 
 

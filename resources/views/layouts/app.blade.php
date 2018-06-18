@@ -93,7 +93,6 @@
             box-shadow: 0px .5px 10px .5px rgba(0,0,0,0.67);*/
             /*background:rgba(201,101,103,0.85) !important;*/
             /*background-color: #C96567 !important;*/
-
         }
         a{
             text-decoration: none !important;
@@ -155,7 +154,7 @@
                 <a class="navbar-brand" href="{{ url('/index') }}">
                     Encounter
                 </a>
-                
+                <!-- <div><img style="height: 20px; margin-top: -10px;" src="images/cocotte.italic.png" alt="The Encounter Team"></div> -->
             </div>
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
@@ -297,7 +296,6 @@
     // Set idle time
     $( document ).idleTimer( 600000 );
 });
-
 $(function() {
     $( document ).on( "idle.idleTimer", function(event, elem, obj){
         window.location.href = "http://localhost:8000/login"

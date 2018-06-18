@@ -29,7 +29,7 @@
                 <label>Gender :</label>
                 <Select name="gender" class="form-control col-md-offset-" value="{{ Auth::user()->gender }}">
                     <option value="Male">Male</option>
-                    <option value"Female">Female</option>
+                    <option value="Female">Female</option>
                 </select>
                 </div>
                 <div class="form-group col-md-12">
